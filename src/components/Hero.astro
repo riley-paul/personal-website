@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="name">Riley Paul</div>
+    <div class="phrase">Engineer / Web Developer</div>
+  </div>
+</div>
+
+<style>
+  .container {
+    height: calc(100vh - var(--navHeight));
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: clamp(3rem, 18vw, 12rem);
+    font-family: "Roboto Slab", serif;
+  }
+
+  .phrase {
+    font-size: clamp(1rem,3vw,2rem);
+    color: var(--textSoft);
+    padding-left: 40px;
+  }
+</style>

@@ -1,5 +1,8 @@
 :root {
   --navHeight: 56px;
+  --pagePadding: clamp(1rem,5vw,4rem);
+  --gap: clamp(1rem,2vw,2rem);
+  
   --bg: #202020;
   --bgLighter: #303030;
   --bgDarker: #060606;

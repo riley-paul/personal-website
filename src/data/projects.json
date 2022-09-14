@@ -1,0 +1,67 @@
+[
+  {
+    "name": "AutoCAD Automation Library",
+    "link": "https://github.com/rjp301/autocad",
+    "tags": ["Python", "Object-Oriented Programming", "Custom Library"],
+    "bullets": [
+      "Python library for generating AutoCAD scripts to allow for drawing automation",
+      "Created out of frustration at first engineering job when populating large drawings by hand",
+      "Reduced time to complete a large site drawing by 95% (three months > three days) with far fewer errors"
+    ]
+  },
+  {
+    "name": "Personal Photography Website",
+    "link": "https://github.com/rjp301/photo-portfolio-rileypaul",
+    "tags": [
+      "Node.js",
+      "Google Cloud Platform",
+      "Static-Site Generation",
+      "SCSS"
+    ],
+    "bullets": [
+      "Site to showcase photography portfolio and learn about deploying on Google Cloud Platform",
+      "Pages are algorithmically generated upon server start to mirror the file system structure allowing for very quick editing of albums and photos displayed",
+      "Creating and hosting this site from scratch saves hundreds of dollars per year on Squarespace"
+    ]
+  },
+  {
+    "name": "Chainage Photo Renamer",
+    "link": "https://github.com/rjp301/photo-KP-label",
+    "tags": ["Python", "GUI", "TKinter", "Quadtree Optimization"],
+    "bullets": [
+      "Windows app renames photos taken in the vicinity of a linear construction project with the project chainage (distance in meters from the start of the project to location) of the photos' geolocation",
+      "Used by workers on two, billion-dollar projects to organize tens of thousands of jobsite images"
+    ]
+  },
+  {
+    "name": "Weather Station Constellation & Reporting",
+    "tags": [
+      "Python",
+      "Cronjob",
+      "Third-Party API",
+      "Email Automation",
+      "Linux"
+    ],
+    "bullets": [
+      "Private constellation of weather stations along remote construction project in northern BC with Raspberry Pi collecting data and sending daily summary report to project management to inform their decisions for the day",
+      "Multi-million-dollar contract changes approved due to adverse weather conditions captured by system"
+    ]
+  },
+  {
+    "name": "Pipeline Information Webapp (WIP)",
+    "link": "https://github.com/rjp301/linear-planning-app",
+    "tags": [
+      "Flask",
+      "Leaflet",
+      "ReactJS",
+      "SVG",
+      "SQL ORM",
+      "Express",
+      "JWT",
+      "Styled Components"
+    ],
+    "bullets": [
+      "Single-page application for viewing and cataloging details about linear construction projects in multiple formats (profile, map, tabular) to be a single source of information and inform field decisions"
+    ]
+  }
+]
