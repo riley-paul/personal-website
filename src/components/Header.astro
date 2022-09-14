@@ -1,0 +1,64 @@
+---
+import data from "../data/nav.json";
+---
+
+<nav>
+  <div class="group"></div>
+  <div class="group">
+    {
+      data.map((nav) => (
+        <div class="header-link">
+          <a href={nav.link}>{nav.name}</a>
+        </div>
+      ))
+    }
+  </div>
+</nav>
+
+<style lang="scss">
+  nav {
+    width: 100%;
+    height: var(--navHeight);
+    padding: 0 40px;
+
+    background-color: var(--bg);
+    box-shadow: var(--boxShadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+    position: sticky;
+    top: 0;
+  }
+
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-link {
+    color: var(--textSoft);
+
+    padding: 5px 0;
+
+    background-image: linear-gradient(var(--text), var(--text));
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active,
+    & .active {
+      background-size: 100% 0.1em;
+      color: var(--text);
+    }
+  }
+</style>
