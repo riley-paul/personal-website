@@ -13,7 +13,7 @@ I implemented a constellation of five internet-connected weather stations along 
 
 ## Implementation
 
-The weather stations were connected to Weather Underground for live data display and storage. The Raspberry Pi ran a Python script using a Cronjob that would download the data for the past couple days using the Weather Underground API and summarize it in clean HTML tables, then distribute those tables via an email API.
+The weather stations were connected to [Weather Underground](https://www.wunderground.com/) for live data display and storage. The Raspberry Pi ran a Python script using a Cronjob that would download the data for the past couple days using the Weather Underground API and summarize it in clean HTML tables, then distribute those tables via an email API.
 
 ## Outcome
 
