@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Project.astro
 title: "Chainage Photo Renamer"
 source: "https://github.com/rjp301/photo-KP-label"
 tags: ["Python", "GUI", "TKinter", "Quadtree Optimization"]

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Project.astro
 title: "Personal Photography Website"
 tags: ["Astro","Static-Site-Generation","SCSS","Github Pages"]
 homepage: "https://photo.rileypaul.ca"
