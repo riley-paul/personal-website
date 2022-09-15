@@ -5,10 +5,10 @@ import TagList from "./TagList.astro";
 const { projects } = Astro.props;
 ---
 
-<ul class="divide-y divide-neutal-200 py-6">
+<ul class="divide-y divide-neutal-200">
   {
     projects.map((project) => (
-      <li class="py-4 first:pt-0 last:pb-0">
+      <li class="py-4 transition-all hover:scale-105">
         <a href={project.url}>
           <header class="font-bold text-base">
             {project.frontmatter.title}

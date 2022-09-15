@@ -2,6 +2,11 @@
 const { url, icon = "fa-solid fa-arrow-up-right-from-square" } = Astro.props;
 ---
 
-<a class="text-sm text-neutral-500 pl-1" href={url} target="_blank" rel="noopener noreferrer">
+<a
+  class="text-sm text-neutral-500 pl-1 transition-all hover:scale-105"
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <i class:list={[icon]}></i>
 </a>

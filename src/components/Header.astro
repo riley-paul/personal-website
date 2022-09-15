@@ -1,66 +1,27 @@
 ---
 import data from "../data/nav.json";
+import HamburgerBtn from "./HamburgerBtn.astro";
 ---
 
-<nav
-  class="w-full flex justify-between px-8 h-12 items-center shadow-lg fixed top-0 z-50 bg-white"
->
-  <a href="/" class="text-base">Riley Paul</a>
-  <div class="flex gap-4">
+<nav class="" x-data="{open: false}">
+  <div
+    class="w-full flex justify-between px-8 h-12 items-center shadow-lg fixed top-0 z-50 bg-white"
+  >
+    <a href="/" class="text-base">Riley Paul</a>
+    <HamburgerBtn />
+  </div>
+  <ul
+    class="bg-neutral-50 fixed top-0 pt-12 w-full px-8 divide-y shadow md:hidden origin-top transition-all"
+    x-bind:class="{'scale-y-0 opacity-0':!open}"
+  >
     {
       data.map((nav) => (
-        <div class="">
+        <li
+          class="py-2 text-neutral-600 hover:scale-105 transition-all"
+        >
           <a href={nav.link}>{nav.name}</a>
-        </div>
+        </li>
       ))
     }
-  </div>
+  </ul>
 </nav>
-
-<!-- <style lang="scss">
-  nav {
-    width: 100%;
-    height: var(--navHeight);
-    padding: 0 40px;
-
-    background-color: var(--bg);
-    box-shadow: var(--boxShadow);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    z-index: 100;
-    position: sticky;
-    top: 0;
-  }
-
-  .group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .header-link {
-    color: var(--textSoft);
-
-    padding: 5px 0;
-
-    background-image: linear-gradient(var(--text), var(--text));
-    background-size: 0% 0.1em;
-    background-position-y: 100%;
-    background-position-x: 0%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover,
-    &:focus,
-    &:active,
-    & .active {
-      background-size: 100% 0.1em;
-      color: var(--text);
-    }
-  }
-</style> -->
