@@ -10,10 +10,14 @@ const { title, tags, homepage, source } = Astro.props.frontmatter;
 <Layout>
   <Title text={title} />
   <TagList tags={tags} />
-  <div class="flex p-2 gap-2">
-    {homepage && <IconLink url={homepage} />}
-    {source && <IconLink url={source} icon="fa-solid fa-code" />}
-  </div>
+  {
+    (homepage || source) && (
+      <div class="flex p-2 gap-2">
+        {homepage && <IconLink url={homepage} />}
+        {source && <IconLink url={source} icon="fa-solid fa-code" />}
+      </div>
+    )
+  }
   <Markdown>
     <slot />
   </Markdown>

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Project.astro
+layout: ../../layouts/ProjectPage.astro
 title: "Weather Station Constellation and Reporting"
 tags:
   [
