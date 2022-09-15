@@ -1,0 +1,14 @@
+---
+import Title from "../components/Title.astro";
+import Layout from "./Layout.astro";
+import Markdown from "./Markdown.astro";
+
+const { title } = Astro.props.frontmatter;
+---
+
+<Layout>
+  <Title text={title} />
+  <Markdown>
+    <slot />
+  </Markdown>
+</Layout>

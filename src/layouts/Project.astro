@@ -1,19 +1,20 @@
 ---
 import IconLink from "../components/IconLink.astro";
-import PageHeader from "../components/PageHeader.astro";
 import TagList from "../components/TagList.astro";
+import Title from "../components/Title.astro";
 import Layout from "./Layout.astro";
+import Markdown from "./Markdown.astro";
 const { title, tags, homepage, source } = Astro.props.frontmatter;
 ---
 
 <Layout>
-  <PageHeader text={title}/>
+  <Title text={title} />
   <TagList tags={tags} />
   <div class="flex p-2 gap-2">
     {homepage && <IconLink url={homepage} />}
     {source && <IconLink url={source} icon="fa-solid fa-code" />}
   </div>
-  <article class="prose-sm sm:prose mt-4">
+  <Markdown>
     <slot />
-  </article>
+  </Markdown>
 </Layout>

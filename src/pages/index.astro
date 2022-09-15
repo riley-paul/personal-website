@@ -3,12 +3,18 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import ProjectList from "../components/ProjectList.astro";
 import Title from "../components/Title.astro";
+import Markdown from "../layouts/Markdown.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 ---
 
 <Layout>
   <Hero />
-  <Title text="Projects"/>
+  <Title text="About" />
+  <Markdown>
+    <p>Riley is an engineer and web developer</p>
+    <p>He like to build website</p>
+  </Markdown>
+  <Title text="Projects" />
   <ProjectList projects={projects} />
 </Layout>
