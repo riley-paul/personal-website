@@ -1,0 +1,10 @@
+---
+import ProjectList from "../../components/ProjectList.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const projects = await Astro.glob("./*.md");
+---
+
+<Layout>
+  <ProjectList projects={projects} />
+</Layout>

@@ -1,0 +1,27 @@
+---
+import IconLink from "./IconLink.astro";
+import TagList from "./TagList.astro";
+
+const { projects } = Astro.props;
+---
+
+<div class="container">
+  {
+    projects.map((project) => (
+      <div class="font-bold text-xl">
+        {project.frontmatter.title}
+        {project.frontmatter.homepage && (
+          <IconLink url={project.frontmatter.homepage.link} />
+        )}
+        {project.frontmatter.source && (
+          <IconLink
+            url={project.frontmatter.source.link}
+            icon="fa-solid fa-code"
+          />
+        )}
+
+      </div>
+      <TagList tags={project.frontmatter.tags}/>
+    ))
+  }
+</div>

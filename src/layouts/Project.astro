@@ -1,44 +1,16 @@
 ---
+import IconLink from "../components/IconLink.astro";
+import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";
 const { title, tags, homepage, source } = Astro.props.frontmatter;
 ---
 
 <Layout>
   <div class="flex p-2 gap-2">
-    {
-      homepage && (
-        <a
-          class="pt-0 mt-0"
-          href={homepage}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Homepage
-        </a>
-      )
-    }
-    {
-      source && (
-        <a
-          class="pt-0 mt-0"
-          href={source}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Source
-        </a>
-      )
-    }
+    {homepage && <IconLink url={homepage.link} />}
+    {source && <IconLink url={source.link} icon="fa-solid fa-code" />}
   </div>
-  <div class="flex gap-2 flex-wrap">
-    {
-      tags.map((tag) => (
-        <div class="text-sm px-3 py-0 rounded-full bg-neutral-100 text-neutral-500 shadow">
-          {tag}
-        </div>
-      ))
-    }
-  </div>
+  <TagList tags={tags} />
   <article class="mt-4">
     <h1>{title}</h1>
     <slot />
