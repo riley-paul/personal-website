@@ -2,12 +2,14 @@
 import data from "../data/nav.json";
 ---
 
-<nav>
-  <div class="group"></div>
-  <div class="group">
+<nav
+  class="w-full flex justify-between px-8 h-12 items-center shadow-lg fixed top-0 z-50 bg-white"
+>
+  <div class="flex gap-4 font-bold text-lg">Riley Paul</div>
+  <div class="flex gap-4">
     {
       data.map((nav) => (
-        <div class="header-link">
+        <div class="hidden">
           <a href={nav.link}>{nav.name}</a>
         </div>
       ))
@@ -15,7 +17,7 @@ import data from "../data/nav.json";
   </div>
 </nav>
 
-<style lang="scss">
+<!-- <style lang="scss">
   nav {
     width: 100%;
     height: var(--navHeight);
@@ -61,4 +63,4 @@ import data from "../data/nav.json";
       color: var(--text);
     }
   }
-</style>
+</style> -->

@@ -5,7 +5,7 @@ export interface Props {
 
 const { title = "Riley Paul" } = Astro.props;
 
-import "../utils/theme.css";
+// import "../utils/theme.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -19,46 +19,24 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&family=Roboto+Slab:wght@600&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/c961af0e55.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </head>
-  <body>
+  <body class="text-sm">
     <Header />
-    <main>
+    <main class="prose mx-auto my-6 px-8 mt-12">
       <slot />
+
     </main>
-    <Footer/>
-
-    <style>
-      main {
-        padding: 1em var(--pagePadding);
-      }
-    </style>
-
-    <style is:global>
-      * {
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        line-height: 1.5;
-
-        text-decoration: inherit;
-        color: inherit;
-      }
-
-      body {
-        background-color: var(--bgLighter);
-        color: var(--text);
-      }
-    </style>
+    <Footer />
   </body>
 </html>

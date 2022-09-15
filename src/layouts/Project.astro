@@ -4,37 +4,43 @@ const { title, tags, homepage, source } = Astro.props.frontmatter;
 ---
 
 <Layout>
-  <h1>{title}</h1>
-  {
-    homepage && (
-      <a href={homepage} target="_blank" rel="noopener noreferrer">
-        Homepage
-      </a>
-    )
-  }
-  {
-    source && (
-      <a href={source} target="_blank" rel="noopener noreferrer">
-        Source
-      </a>
-    )
-  }
-  <div class="tags">{tags.map((tag) => <div class="tag">{tag}</div>)}</div>
-  <slot />
+  <div class="flex p-2 gap-2">
+    {
+      homepage && (
+        <a
+          class="pt-0 mt-0"
+          href={homepage}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Homepage
+        </a>
+      )
+    }
+    {
+      source && (
+        <a
+          class="pt-0 mt-0"
+          href={source}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Source
+        </a>
+      )
+    }
+  </div>
+  <div class="flex gap-2 flex-wrap">
+    {
+      tags.map((tag) => (
+        <div class="text-sm px-3 py-0 rounded-full bg-neutral-100 text-neutral-500 shadow">
+          {tag}
+        </div>
+      ))
+    }
+  </div>
+  <article class="mt-4">
+    <h1>{title}</h1>
+    <slot />
+  </article>
 </Layout>
-
-<style>
-  .tags {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .tag {
-    font-size: smaller;
-    background-color: var(--bgDarker);
-    font-family: var(--font-mono);
-    
-    padding: 3px 10px;
-    border-radius: 20px;
-  }
-</style>

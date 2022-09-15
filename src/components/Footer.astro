@@ -1,40 +1,22 @@
 ---
 import data from "../data/contact.json";
+const contacts = [
+  ...data,
+  { link: undefined, name: `© ${new Date().getFullYear()} Riley Paul` },
+];
 ---
 
-<div class="container">
-  <div class="wrapper">
-    {
-      data.map((contact) => (
-        <a href={contact.link} target="_blank" rel="noopener noreferrer">
-          {contact.name}
-        </a>
-      ))
-    }
-    <a>&copy; {new Date().getFullYear()} Riley Paul</a>
-  </div>
+<div class="w-full flex flex-wrap justify-center items-center gap-3 p-6">
+  {
+    contacts.map((contact) => (
+      <a
+        class="text-neutral-500"
+        href={contact.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {contact.name}
+      </a>
+    ))
+  }
 </div>
-
-<style>
-  .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 0;
-  }
-
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  a {
-    color: var(--textSoft);
-    font-size: small;
-    font-weight: 200;
-    text-decoration: inherit;
-  }
-</style>
