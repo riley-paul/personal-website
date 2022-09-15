@@ -1,12 +1,12 @@
 ---
-import PageHeader from "../../components/PageHeader.astro";
 import ProjectList from "../../components/ProjectList.astro";
+import Title from "../../components/Title.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const projects = await Astro.glob("./*.md");
 ---
 
 <Layout>
-  <PageHeader text="Projects"/>
+  <Title text="Projects"/>
   <ProjectList projects={projects} />
 </Layout>
