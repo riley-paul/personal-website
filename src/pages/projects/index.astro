@@ -1,4 +1,5 @@
 ---
+import PageHeader from "../../components/PageHeader.astro";
 import ProjectList from "../../components/ProjectList.astro";
 import Layout from "../../layouts/Layout.astro";
 
@@ -6,5 +7,6 @@ const projects = await Astro.glob("./*.md");
 ---
 
 <Layout>
+  <PageHeader text="Projects"/>
   <ProjectList projects={projects} />
 </Layout>
