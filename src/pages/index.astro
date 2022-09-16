@@ -6,33 +6,106 @@ import Title from "../components/Title.astro";
 import Markdown from "../layouts/Markdown.astro";
 import Html from "../layouts/Html.astro";
 import Header from "../components/Header.astro";
+import ExperienceList from "../components/ExperienceList.astro";
 
 const projects = await Astro.glob("./projects/*.md");
+import skills from "../data/skills.json";
+import TagList from "../components/TagList.astro";
+
+import "../styles/style.css";
+
+const tw_headerlink = `px-2 py-1 border-2 
+border-brand text-brand font-bold hover:text-text2 
+hover:bg-brand hover:border-brand transition-colors duration-500`;
+
+const sections = [
+  {
+    link: "/#section-skills",
+    name: "skills",
+  },
+  {
+    link: "/#section-projects",
+    name: "projects",
+  },
+  {
+    link: "/#section-experience",
+    name: "experience",
+  },
+  {
+    link: "/#section-contact",
+    name: "contact",
+  },
+];
 ---
 
 <Html>
-  <h1>Hello, I am Riley</h1>
-  <h4>engineer / web developer</h4> 
+  <main class="w-full pt-8 pb-32 mx-auto max-w-3xl 2xl:max-w-6xl">
+    <section id="section-hero" class="">
+      <h1 class="font-mono text-text2">
+        Hi, I'm <span class="text-brand">Riley</span>
+      </h1>
+      <h4 class="text-text2">engineer / web developer</h4>
 
-  <p>Are you searching for a motivated indidual for your project?</p>
-  <p>An individual with proven experience optimizing engineering workflows?</p>
+      <p class="mb-4">
+        Are you searching for a motivated indidual for your project?
+      </p>
+      <p class="mb-4">
+        An individual with proven experience optimizing engineering workflows?
+      </p>
 
-  <div class="flex">
-    <a href="/#skills">skills</a>
-    <a href="/#projects">projects</a>
-    <a href="/#experience">experience</a>
-    <a href="/#contact">contact</a>
-  </div>
-
-  <!-- <Hero />
-  <Layout>
-    <Title text="About" />
-    <Markdown>
-      <p>Riley is an engineer and web developer</p>
-      <p>He like to build website</p>
-    </Markdown>
-    <Title text="Projects" />
-    <ProjectList projects={projects} />
-    <Title text="Experience" />
-  </Layout> -->
+      <TagList tags={sections} />
+    </section>
+    <section id="section-skills" class="">
+      <h1 class="">./about/tech</h1>
+      <p>I've working for several years in the</p>
+      <h2>What is my tech stack?</h2>
+      {
+        skills.map((skill) => (
+          <div class="py-1">
+            <div class="pb-2">{skill.name}</div>
+            <TagList tags={skill.tags} />
+          </div>
+        ))
+      }
+    </section>
+    <section id="section-projects" class="">
+      <h1>./projects</h1>
+      <ProjectList projects={projects} />
+    </section>
+    <section id="section-experience">experience</section>
+    <h1>./about/experience</h1>
+    <ExperienceList />
+    <section id="section-contact">contact</section>
+  </main>
 </Html>
+
+<style is:global>
+  section {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+</style>

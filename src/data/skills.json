@@ -1,9 +1,27 @@
-{
-  "Languages":["Javacript (ES2021)","Python 3 🐍"],
-  "Frameworks": ["React ⚛","Astro 🚀","Tailwind CSS 🍃","Express","Flask ⚗️"],
-  "Tools":["NodeJS 🟩","npm 📦","git","cli >_","Jest 🃏"],
-  "Libraries": ["Pandas 📊","Numpy","GeoPandas","Simplekml 🌎"],
-  "Databases": ["PostgreSQL 🐘","PostGIS 📍","MongoDB 🌱"],
-  "Engineering Tools": ["QGIS 🗺","Solidworks ⚙️","Fusion 360","AutoCAD 📐"],
-  "Other Stuff": ["VSCode","Prettier 💄","Markdown ⬇️","Raspberry Pi"]
-}
+[
+  { "name": "Languages", "tags": ["Javacript (ES2021)", "Python 3 🐍"] },
+  {
+    "name": "Frameworks",
+    "tags": ["React ⚛", "Astro 🚀", "Tailwind CSS 🍃", "Express", "Flask ⚗️"]
+  },
+  {
+    "name": "Tools",
+    "tags": ["NodeJS 🟩", "npm 📦", "git", "cli >_", "Jest 🃏"]
+  },
+  {
+    "name": "Libraries",
+    "tags": ["Pandas 📊", "Numpy", "GeoPandas", "Simplekml 🌎"]
+  },
+  {
+    "name": "Databases",
+    "tags": ["PostgreSQL 🐘", "PostGIS 📍", "MongoDB 🌱"]
+  },
+  {
+    "name": "Engineering Tools",
+    "tags": ["QGIS 🗺", "Solidworks ⚙️", "Fusion 360", "AutoCAD 📐"]
+  },
+  {
+    "name": "Other Stuff",
+    "tags": ["VSCode", "Prettier 💄", "Markdown ⬇️", "Raspberry Pi"]
+  }
+]

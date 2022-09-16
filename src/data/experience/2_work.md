@@ -1,3 +1,7 @@
+---
+title: "Work"
+---
+
 ## Pipeline Project Engineer
 
 ### Macro Pipelines, Mar 2021 – present | Chilliwack, BC

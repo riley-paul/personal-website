@@ -1,9 +1,16 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "Personal Photography Website"
-tags: ["Astro","Static-Site-Generation","SCSS","Github Pages"]
-homepage: "https://photo.rileypaul.ca"
-source: "https://github.com/rjp301/photo-portfolio-astro"
+tags: ["Astro", "Static-Site-Generation", "SCSS", "Github Pages"]
+links:
+  [
+    {
+      url: "https://github.com/rjp301/photo-portfolio-astro",
+      name: "Source Code",
+      icon: "fa-solid fa-code",
+    },
+    { url: "https://photo.rileypaul.ca", name: "Homepage" },
+  ]
 ---
 
 ## Background

@@ -1,7 +1,14 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "Chainage Photo Renamer"
-source: "https://github.com/rjp301/photo-KP-label"
+links:
+  [
+    {
+      url: "https://github.com/rjp301/photo-KP-label",
+      name: "Source Code",
+      icon: "fa-solid fa-code",
+    },
+  ]
 tags: ["Python", "GUI", "TKinter", "Quadtree Optimization"]
 ---
 
@@ -26,6 +33,7 @@ The solution to the slack chainage issue is to determine the two closest chainag
 To determine the chainage of a point relative to a centerline I created a custom centerline class to contain both the polyline and the chainage points. Because the chainage finding algorithm requires spatial filtering of a group of points, I implemented my own [Quadtree optimization](https://en.wikipedia.org/wiki/Quadtree#:~:text=A%20quadtree%20is%20a%20tree,into%20four%20quadrants%20or%20regions.) to substantially increase speed.
 
 The GUI was created using Python TKinter and was built specifically for working with large batches of files. The workflow is as follows:
+
 1. User prompted to select a folder containing images taken in proximity to the project
 1. Geotagged location of each image is extracted from the EXIF data and chainage of that point is determined
 1. Photo file is renamed with chainage and exact time of capture
