@@ -4,7 +4,7 @@ const experiences = await Astro.glob("../data/experience/*.md");
 
 <div id="tab-wrapper" x-data="{tab:0}" class="border-2">
   <!-- tabs navigation -->
-  <div class="flex m-0 overflow-x-scroll cursor-pointer md:overflow-hidden">
+  <div class="flex m-0 cursor-pointer md:overflow-hidden">
     {
       experiences.map((experience, index) => (
         <div

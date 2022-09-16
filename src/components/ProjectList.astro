@@ -5,13 +5,17 @@ import TagList from "./TagList.astro";
 const { projects } = Astro.props;
 ---
 
-<div class="">
+<div class="border-2 px-5 divide-y">
   {
     projects.map((project) => (
-      <div class="border">
+      <div class="pt-4 pb-6 hover:text-sky-300">
         <a href={project.url} class="">
-          <h3>{project.frontmatter.title}</h3>
-          <TagList tags={project.frontmatter.tags} />
+          <h2 class="mt-0">{project.frontmatter.title}</h2>
+          <div class="flex flex-wrap gap-2">
+            {project.frontmatter.tags.map((tag) => (
+              <div class="px-2 py-1 border-2 rounded font-bold">{tag}</div>
+            ))}
+          </div>
         </a>
       </div>
     ))
