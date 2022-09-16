@@ -1,7 +1,14 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "AutoCAD Automation Library"
-source: "https://github.com/rjp301/autocad"
+links:
+  [
+    {
+      url: "https://github.com/rjp301/autocad",
+      name: "Source Code",
+      icon: "fa-solid fa-code",
+    },
+  ]
 tags: ["Python", "Object-Oriented Programming", "Custom Library", "Automation"]
 ---
 

@@ -3,25 +3,6 @@ import data from "../data/nav.json";
 import HamburgerBtn from "./HamburgerBtn.astro";
 ---
 
-<nav class="" x-data="{open: false}">
-  <div
-    class="w-full flex justify-between px-8 h-12 items-center shadow-lg fixed top-0 z-50 bg-white"
-  >
-    <a href="/" class="text-base">Riley Paul</a>
-    <HamburgerBtn />
-  </div>
-  <ul
-    class="bg-neutral-50 fixed top-0 pt-12 w-full px-8 divide-y shadow md:hidden origin-top transition-all"
-    x-bind:class="{'scale-y-0 opacity-0':!open}"
-  >
-    {
-      data.map((nav) => (
-        <li
-          class="py-2 text-neutral-600 hover:scale-105 transition-all"
-        >
-          <a href={nav.link}>{nav.name}</a>
-        </li>
-      ))
-    }
-  </ul>
+<nav>
+  
 </nav>

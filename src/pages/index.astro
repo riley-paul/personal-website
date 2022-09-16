@@ -5,12 +5,26 @@ import ProjectList from "../components/ProjectList.astro";
 import Title from "../components/Title.astro";
 import Markdown from "../layouts/Markdown.astro";
 import Html from "../layouts/Html.astro";
+import Header from "../components/Header.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 ---
 
 <Html>
-  <Hero />
+  <h1>Hello, I am Riley</h1>
+  <h4>engineer / web developer</h4> 
+
+  <p>Are you searching for a motivated indidual for your project?</p>
+  <p>An individual with proven experience optimizing engineering workflows?</p>
+
+  <div class="flex">
+    <a href="/#skills">skills</a>
+    <a href="/#projects">projects</a>
+    <a href="/#experience">experience</a>
+    <a href="/#contact">contact</a>
+  </div>
+
+  <!-- <Hero />
   <Layout>
     <Title text="About" />
     <Markdown>
@@ -20,5 +34,5 @@ const projects = await Astro.glob("./projects/*.md");
     <Title text="Projects" />
     <ProjectList projects={projects} />
     <Title text="Experience" />
-  </Layout>
+  </Layout> -->
 </Html>
