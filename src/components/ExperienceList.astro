@@ -8,7 +8,7 @@ const experiences = await Astro.glob("../data/experience/*.md");
     {
       experiences.map((experience, index) => (
         <div
-          x-bind:class={`{'font-bold': tab === ${index}}`}
+          x-bind:class={`{'font-bold text-orange-500': tab === ${index}}`}
           x-on:click={`tab = ${index}`}
           class="py-2 px-5 mt-0 border-b-2 flex-grow text-center"
         >

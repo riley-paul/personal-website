@@ -11,6 +11,7 @@ tags:
     "Pandas",
   ]
 links: []
+description: "Python scripts running on Raspberry Pi to collect data from constellation of remote weather stations and send daily report to project management"
 ---
 
 ## Background

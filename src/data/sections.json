@@ -1,0 +1,18 @@
+[
+  {
+    "link": "/#section-projects",
+    "name": "./projects"
+  },
+  {
+    "link": "/#section-skills",
+    "name": "./about/tech"
+  },
+  {
+    "link": "/#section-experience",
+    "name": "./about/experience"
+  },
+  {
+    "link": "/#footer",
+    "name": "./contact"
+  }
+]
