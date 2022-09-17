@@ -7,7 +7,7 @@ const { title, tags, links } = Astro.props.frontmatter;
 
 <Layout>
   <div class="pb-8 pt-2">
-    <TagList tags={tags} />
+    <TagList tags={tags} classes="bg-none border-2" />
     <div class="flex gap-4 pt-2 underline">
       {
         links.map((link) => (
@@ -24,7 +24,7 @@ const { title, tags, links } = Astro.props.frontmatter;
     </div>
   </div>
   <Markdown>
-    <h1>{title}</h1>
+    <h1 class="">{title}</h1>
     <slot />
   </Markdown>
 </Layout>

@@ -1,0 +1,18 @@
+---
+import sections from "../data/sections.json";
+import PhotoButton from "./PhotoButton.astro";
+---
+
+<!-- navigation -->
+<div class="flex flex-wrap gap-2 mt-16 w-full">
+  {
+    sections.map((section) => (
+      <a href={section.link}>
+        <div class="px-2 py-1 border-2 rounded font-bold text-orange-500 border-orange-700 hover:border-orange-500">
+          {section.name}
+        </div>
+      </a>
+    ))
+  }
+  <PhotoButton />
+</div>
