@@ -1,11 +1,12 @@
 ---
 import ProjectList from "../components/ProjectList.astro";
-import Html from "../layouts/Html.astro";
 import ExperienceList from "../components/ExperienceList.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 import skills from "../data/skills.json";
 import TagList from "../components/TagList.astro";
+import Layout from "../layouts/Layout.astro";
+import Markdown from "../layouts/Markdown.astro";
 
 const sections = [
   {
@@ -27,86 +28,85 @@ const sections = [
 ];
 ---
 
-<Html>
-  <main class="w-full pt-8 pb-32 mx-auto max-w-3xl 2xl:max-w-6xl">
-    <section id="section-hero" class="">
-      <h1 class="font-mono text-text2">
-        Hi, I'm <span class="text-brand">Riley</span>
-      </h1>
-      <h4 class="text-text2">engineer / web developer</h4>
+<Layout>
+  <section id="section-hero" class="">
+    <h1 class="font-mono mb-0 text-5xl">
+      Hi, I'm <span class="text-orange-600">Riley</span>
+    </h1>
+    <h3 class="mb-12 text-xl">engineer / web developer</h3>
 
-      <p class="mb-4">
-        Are you searching for a motivated indidual for your project?
-      </p>
-      <p class="mb-4">
+    <Markdown>
+      <p>Are you searching for a motivated indidual for your project?</p>
+      <p>
         An individual with proven experience optimizing engineering workflows?
       </p>
-      <div class="flex flex-wrap gap-2">
-        {
-          sections.map((section) => (
-            <a href={section.link}>
-              <div class="px-2 py-1 border-2 rounded font-bold">
-                {section.name}
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </section>
-    <section id="section-projects" class="">
-      <h1>./projects</h1>
-      <ProjectList projects={projects} />
-    </section>
-    <section id="section-skills" class="">
-      <h1 class="">./about/tech</h1>
-      <p>I've working for several years in the</p>
-      <h2>What is my tech stack?</h2>
+    </Markdown>
+
+    <div class="flex flex-wrap gap-2 mt-16 ">
       {
-        skills.map((skill) => (
-          <div class="py-1">
-            <div class="pb-2">{skill.name}</div>
-            <TagList tags={skill.tags} />
-          </div>
+        sections.map((section) => (
+          <a href={section.link}>
+            <div class="px-2 py-1 border-2 rounded font-bold text-orange-500 border-orange-700 hover:border-orange-500">
+              {section.name}
+            </div>
+          </a>
         ))
       }
-    </section>
-    <section id="section-experience">
-      <h1>./about/experience</h1>
-      <ExperienceList />
-    </section>
-    <section id="section-contact">
-      <h1>./contact</h1>
-    </section>
-  </main>
-</Html>
+    </div>
+  </section>
+  <section id="section-projects" class="">
+    <h1>./projects</h1>
+    <ProjectList projects={projects} />
+  </section>
+  <section id="section-skills" class="">
+    <h1 class="">./about/tech</h1>
+    <p>I've working for several years in the</p>
+    <h2>What is my tech stack?</h2>
+    {
+      skills.map((skill) => (
+        <div class="py-1">
+          <div class="pb-2">{skill.name}</div>
+          <TagList tags={skill.tags} />
+        </div>
+      ))
+    }
+  </section>
+  <section id="section-experience">
+    <h1>./about/experience</h1>
+    <ExperienceList />
+  </section>
+  <section id="section-contact">
+    <h1>./contact</h1>
+  </section>
 
-<style is:global>
-  section {
-    padding: 4rem 1rem;
-  }
+  <style is:global>
+    section {
+      padding: 4rem 1rem;
+    }
 
-  h1 {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
+    h1 {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
 
-  h2 {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-  h3 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
-    font-weight: bold;
-  }
+    h3 {
+      margin-top: 0.5em;
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+      font-weight: bold;
+    }
 
-  p {
-    margin-bottom: 1rem;
-  }
-</style>
+    p {
+      margin-bottom: 1rem;
+    }
+  </style>
+</Layout>
