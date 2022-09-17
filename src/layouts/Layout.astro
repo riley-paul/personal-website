@@ -1,12 +1,10 @@
 ---
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Html from "./Html.astro";
 ---
 
 <Html>
-  <Header />
-  <main class="mx-auto px-8 mt-12">
+  <main class="mx-auto px-8 max-w-3xl">
     <slot />
   </main>
   <Footer />

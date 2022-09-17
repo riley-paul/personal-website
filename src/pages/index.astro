@@ -1,39 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
 import ProjectList from "../components/ProjectList.astro";
-import Title from "../components/Title.astro";
-import Markdown from "../layouts/Markdown.astro";
 import Html from "../layouts/Html.astro";
-import Header from "../components/Header.astro";
 import ExperienceList from "../components/ExperienceList.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 import skills from "../data/skills.json";
 import TagList from "../components/TagList.astro";
 
-import "../styles/style.css";
-
-const tw_headerlink = `px-2 py-1 border-2 
-border-brand text-brand font-bold hover:text-text2 
-hover:bg-brand hover:border-brand transition-colors duration-500`;
-
 const sections = [
   {
-    link: "/#section-skills",
-    name: "skills",
+    link: "/#section-projects",
+    name: "./projects",
   },
   {
-    link: "/#section-projects",
-    name: "projects",
+    link: "/#section-skills",
+    name: "./about/tech",
   },
   {
     link: "/#section-experience",
-    name: "experience",
+    name: "./about/experience",
   },
   {
     link: "/#section-contact",
-    name: "contact",
+    name: "./contact",
   },
 ];
 ---
@@ -52,8 +41,21 @@ const sections = [
       <p class="mb-4">
         An individual with proven experience optimizing engineering workflows?
       </p>
-
-      <TagList tags={sections} />
+      <div class="flex flex-wrap gap-2">
+        {
+          sections.map((section) => (
+            <a href={section.link}>
+              <div class="px-2 py-1 border-2 rounded font-bold">
+                {section.name}
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+    <section id="section-projects" class="">
+      <h1>./projects</h1>
+      <ProjectList projects={projects} />
     </section>
     <section id="section-skills" class="">
       <h1 class="">./about/tech</h1>
@@ -68,15 +70,13 @@ const sections = [
         ))
       }
     </section>
-    <section id="section-projects" class="">
-      <h1>./projects</h1>
-      <ProjectList projects={projects} />
-    </section>
     <section id="section-experience">
       <h1>./about/experience</h1>
       <ExperienceList />
     </section>
-    <section id="section-contact">contact</section>
+    <section id="section-contact">
+      <h1>./contact</h1>
+    </section>
   </main>
 </Html>
 

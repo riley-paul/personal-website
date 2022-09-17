@@ -1,24 +1,30 @@
 ---
-import IconLink from "../components/IconLink.astro";
 import TagList from "../components/TagList.astro";
-import Title from "../components/Title.astro";
 import Layout from "./Layout.astro";
 import Markdown from "./Markdown.astro";
-const { title, tags, homepage, source } = Astro.props.frontmatter;
+const { title, tags, links } = Astro.props.frontmatter;
 ---
 
 <Layout>
-  <Title text={title} />
-  <TagList tags={tags} />
-  {
-    (homepage || source) && (
-      <div class="flex p-2 gap-2">
-        {homepage && <IconLink url={homepage} />}
-        {source && <IconLink url={source} icon="fa-solid fa-code" />}
-      </div>
-    )
-  }
+  <div class="pb-8 pt-2">
+    <TagList tags={tags} />
+    <div class="flex gap-4 pt-2 underline">
+      {
+        links.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class=" text-sky-400 hover:text-sky-500"
+          >
+            <span>{link.name}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
   <Markdown>
+    <h1>{title}</h1>
     <slot />
   </Markdown>
 </Layout>

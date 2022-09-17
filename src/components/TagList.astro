@@ -1,38 +1,11 @@
 ---
 const { tags, colours = {} } = Astro.props;
-const bg = "bg-" + (colours.bg || "blue-800");
+const bg = "bg-" + (colours.bg || "sky-800");
 const text = "text-" + (colours.text || "gray-50");
-const border = "border-" + (colours.border || "blue-800");
 
-const hov_bg = "bg-" + (colours.hov_bg || "gray-50");
-const hov_text = "text-" + (colours.hov_text || "blue-800");
-const hov_border = "border-" + (colours.hov_border || "gray-50");
-
-const hover = [
-  `hover:${hov_bg}`,
-  `hover:${hov_text}`,
-  `hover:${hov_border}`,
-  "transition-colors",
-  "duration-500",
-];
+const classes = `${text} ${bg} px-2 py-1 rounded font-bold`;
 ---
 
 <div class="flex flex-wrap gap-2">
-  {
-    tags.map((tag) => (
-      <a href={tag.hasOwnProperty("link") ? tag.link : undefined}>
-        <div
-          class:list={[
-            border,
-            text,
-            bg,
-            "px-2 py-1 border-2 rounded font-bold",
-            tag.hasOwnProperty("link") ? hover : "",
-          ]}
-        >
-          {tag?.name || tag}
-        </div>
-      </a>
-    ))
-  }
+  {tags.map((tag) => <div class={classes}>{tag}</div>)}
 </div>
