@@ -5,7 +5,7 @@ import Markdown from "./Markdown.astro";
 const { title, tags, links } = Astro.props.frontmatter;
 ---
 
-<Layout>
+<Layout title={title}>
   <div class="pb-8 pt-2">
     <TagList tags={tags} classes="bg-none border-2" />
     <div class="flex gap-4 pt-2 underline">

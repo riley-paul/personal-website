@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="36mm"
+   height="36mm"
+   viewBox="0 0 36 36"
+   version="1.1"
+   id="svg138"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs142" />
+  <sodipodi:namedview
+     id="namedview140"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.9949363"
+     inkscape:cx="52.254868"
+     inkscape:cy="82.639487"
+     inkscape:window-width="1390"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg138" />
+  <circle
+     style="fill:#ea580c;fill-opacity:1;stroke:none;stroke-width:1.5254;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;stroke-opacity:1"
+     id="path2480"
+     cx="18"
+     cy="18"
+     r="18" />
+  <path
+     d="m 18.806637,10.125335 q -1.387651,0 -2.437659,1.79945 -1.050008,1.800239 -1.050008,4.275765 v 10.050414 h 2.662492 v 0.674498 H 6.2806965 V 26.250175 H 8.3444236 V 9.749825 H 6.2806965 V 9.074538 H 15.31897 v 3.600478 q 0.487532,-1.91305 1.875183,-2.925191 1.387652,-1.050008 3.150024,-1.050008 1.762372,0 2.850247,1.012141 1.124952,0.975064 1.124952,2.813169 0,1.799451 -0.825175,2.774514 -0.825175,0.975064 -2.549681,0.975064 -1.688218,0 -2.512604,-1.124952 -0.788098,-1.124952 -0.187755,-3.112157 h 1.349785 q 0.937986,-1.91305 -0.787309,-1.91305 z m 7.574889,17.174848 q -1.612485,0 -2.437661,-0.937197 -0.787309,-0.975064 -0.787309,-2.324849 0,-1.38844 0.825176,-2.325637 0.862254,-0.937197 2.399794,-0.937197 1.538328,0 2.437658,0.787308 0.90012,0.787309 0.90012,2.362715 0,1.575407 -0.862254,2.474738 -0.825174,0.900119 -2.475524,0.900119 z"
+     id="path134"
+     style="font-size:47.5376px;font-family:'Abril Fatface';-inkscape-font-specification:'Abril Fatface, Normal';fill:#0f222a;fill-opacity:1;stroke-width:0.552221;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1" />
+</svg>

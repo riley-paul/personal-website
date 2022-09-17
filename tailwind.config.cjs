@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      mono: ["Fira Code", "monospace"],
+      mono: ["Share Tech Mono", "monospace"],
       serif: ["Merriweather", "serif"],
       sans: ["Source Sans Pro", "sans-serif"],
+      display: ["Abril Fatface", "cursive"],
+      photo: ["Montserrat", "sans-serif"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

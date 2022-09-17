@@ -8,8 +8,6 @@ import Markdown from "../layouts/Markdown.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 import skills from "../data/skills.json";
-import sections from "../data/sections.json";
-import PhotoButton from "../components/PhotoButton.astro";
 ---
 
 <Layout>
@@ -26,19 +24,6 @@ import PhotoButton from "../components/PhotoButton.astro";
       </p>
     </Markdown>
 
-    <!-- navigation -->
-    <div class="flex flex-wrap gap-2 mt-16 w-full">
-      {
-        sections.map((section) => (
-          <a href={section.link}>
-            <div class="px-2 py-1 border-2 rounded font-bold text-orange-500 border-orange-700 hover:border-orange-500">
-              {section.name}
-            </div>
-          </a>
-        ))
-      }
-      <PhotoButton />
-    </div>
   </section>
 
   <section id="section-projects" class="-skew-y-3 bg-sky-600">

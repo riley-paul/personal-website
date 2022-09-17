@@ -1,9 +1,13 @@
 ---
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import Html from "./Html.astro";
+
+const { title } = Astro.props;
 ---
 
-<Html>
+<Html title={title}>
+  <Header/>
   <main class="w-full pt-8 pb-32 px-4 mx-auto max-w-3xl 2xl:max-w-6xl">
     <slot />
   </main>
