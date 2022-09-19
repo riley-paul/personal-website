@@ -6,6 +6,7 @@ import TagList from "../components/TagList.astro";
 import Layout from "../layouts/Layout.astro";
 import Markdown from "../layouts/Markdown.astro";
 
+const experiences = await Astro.glob("../data/experience/*.md");
 const projects = await Astro.glob("./projects/*.md");
 import skills from "../data/skills.json";
 ---
@@ -23,7 +24,6 @@ import skills from "../data/skills.json";
         An individual with proven experience optimizing engineering workflows?
       </p>
     </Markdown>
-
   </section>
 
   <section id="section-projects" class="-skew-y-3 bg-sky-600">
@@ -51,7 +51,7 @@ import skills from "../data/skills.json";
 
   <section id="section-experience">
     <h1>./about/experience</h1>
-    <ExperienceList />
+    <ExperienceList experiences={experiences} />
   </section>
 
   <style is:global>

@@ -1,5 +1,5 @@
 ---
-const experiences = await Astro.glob("../data/experience/*.md");
+const { experiences } = Astro.props;
 ---
 
 <div id="tab-wrapper" x-data="{tab:0}" class="border-2 rounded-lg">
