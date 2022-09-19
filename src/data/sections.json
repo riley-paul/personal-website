@@ -1,7 +1,7 @@
 [
   {
-    "link": "/#section-projects",
-    "name": "./projects"
+    "link": "/#section-about",
+    "name": "./about"
   },
   {
     "link": "/#section-skills",
@@ -10,6 +10,10 @@
   {
     "link": "/#section-experience",
     "name": "./about/experience"
+  },
+  {
+    "link": "/#section-projects",
+    "name": "./projects"
   },
   {
     "link": "/#footer",

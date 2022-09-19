@@ -5,10 +5,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       mono: ["Share Tech Mono", "monospace"],
-      serif: ["Merriweather", "serif"],
-      sans: ["Source Sans Pro", "sans-serif"],
+      serif: ["Roboto Slab", "serif"],
       display: ["Abril Fatface", "cursive"],
-      photo: ["Montserrat", "sans-serif"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

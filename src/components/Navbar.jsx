@@ -1,15 +1,16 @@
 import { useState } from "react";
+import sections from "../data/sections.json";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow">
+    <nav className="w-full bg-white shadow fixed top-0 z-50">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
-              <h2 className="text-2xl font-bold">LOGO</h2>
+            <a href="/">
+              <img src="/logo.svg" alt="logo" className="h-14" />
             </a>
             <div className="md:hidden">
               <button
@@ -56,18 +57,15 @@ export default function NavBar() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-gray-600 hover:text-blue-600">
-                <a href="javascript:void(0)">Home</a>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <a href="javascript:void(0)">Blog</a>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <a href="javascript:void(0)">About US</a>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <a href="javascript:void(0)">Contact US</a>
-              </li>
+              {sections.map((section) => (
+                <li
+                  className="text-gray-600 hover:text-blue-600"
+                  key={section.name}
+                  onClick={() => setNavbar(false)}
+                >
+                  <a href={section.link}>{section.name}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

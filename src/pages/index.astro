@@ -8,29 +8,25 @@ import Markdown from "../layouts/Markdown.astro";
 
 const experiences = await Astro.glob("../data/experience/*.md");
 const projects = await Astro.glob("./projects/*.md");
+
+const abouts = await Astro.glob("../data/about.md");
+const about = abouts[0];
 import skills from "../data/skills.json";
 ---
 
 <Layout>
-  <section id="section-hero" class="h-screen">
-    <h1 class="font-mono mb-0 text-5xl">
-      Hi, I'm <span class="text-orange-600">Riley</span>
+  <section id="section-hero" class="h-screen flex flex-col">
+    <h1 class="mb-0 text-4xl font-light">
+      hi, I'm <span class="text-orange-600 font-display text-5xl">riley.</span>
     </h1>
-    <h3 class="mb-12">engineer / web developer</h3>
-
-    <Markdown>
-      <p>Are you searching for a motivated indidual for your project?</p>
-      <p>
-        An individual with proven experience optimizing engineering workflows?
-      </p>
-    </Markdown>
+    <h3 class="pl-12 font-mono text-lg">engineer / web developer</h3>
   </section>
 
-  <section id="section-projects" class="-skew-y-3 bg-sky-600">
-    <div class="skew-y-3">
-      <h1>./projects</h1>
-      <ProjectList projects={projects} />
-    </div>
+  <section id="section-about">
+    <h1>./about</h1>
+    <Markdown>
+      <about.Content />
+    </Markdown>
   </section>
 
   <section id="section-skills" class="-skew-y-3 bg-orange-600 text-slate-900">
@@ -52,6 +48,13 @@ import skills from "../data/skills.json";
   <section id="section-experience">
     <h1>./about/experience</h1>
     <ExperienceList experiences={experiences} />
+  </section>
+
+  <section id="section-projects" class="-skew-y-3 bg-sky-600">
+    <div class="skew-y-3">
+      <h1>./projects</h1>
+      <ProjectList projects={projects} />
+    </div>
   </section>
 
   <style is:global>
