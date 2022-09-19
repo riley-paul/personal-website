@@ -11,6 +11,7 @@ links:
   ]
 tags: ["Python", "GUI", "TKinter", "Quadtree Optimization"]
 description: "GUI Windows application written in Python for renaming photos with their location relative to a linear project's centerline"
+date: "2020"
 ---
 
 ## Background

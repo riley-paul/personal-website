@@ -11,6 +11,7 @@ links:
   ]
 tags: ["Python", "Object-Oriented Programming", "Custom Library", "Automation"]
 description: "A Python library for automating AutoCAD by programmatically generating script files"
+date: "2019"
 ---
 
 ## Background

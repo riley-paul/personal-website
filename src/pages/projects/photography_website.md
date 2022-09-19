@@ -12,6 +12,7 @@ links:
     { url: "https://photo.rileypaul.ca", name: "Homepage" },
   ]
 description: "Photo portfolio site built from scratch using Astro"
+date: "2022"
 ---
 
 ## Background
