@@ -1,6 +1,8 @@
 ---
-title: "3D Printed Boat Toys"
-
-
+layout: ../../layouts/ProjectPage.astro
+title: ""
+tags: []
+links: []
+description: ""
+date: ""
 ---
-

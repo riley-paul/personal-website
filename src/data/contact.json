@@ -20,10 +20,5 @@
     "name": "Youtube",
     "link": "https://www.youtube.com/channel/UCt3RczuBzIindDG5I8JW45A",
     "icon": "fa-brands fa-youtube"
-  },
-  {
-    "name": "Download Resume",
-    "link": "/Resume - Riley Paul.pdf",
-    "icon": "fa-solid fa-file"
   }
 ]

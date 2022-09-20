@@ -1,25 +1,21 @@
 ---
 import data from "../data/contact.json";
-const contacts = [
-  ...data,
-  { link: undefined, name: `© ${new Date().getFullYear()} Riley Paul` },
-];
 ---
 
-<footer
-  id="footer"
-  class="w-full flex flex-wrap justify-center items-center gap-3 p-6 py-16"
->
-  {
-    contacts.map((contact) => (
-      <a
-        class="text-gray-400 hover:text-gray-500 text-sm"
-        href={contact.link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {contact.name}
-      </a>
-    ))
-  }
+<footer id="footer" class="py-12 flex flex-col items-center gap-4">
+  <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+    {
+      data.map((contact) => (
+        <a
+          class="border-2 px-2 py-1 rounded"
+          href={contact.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class={contact.icon} />
+        </a>
+      ))
+    }
+  </div>
+  <div>&copy <span>{new Date().getFullYear()}</span> Riley Paul</div>
 </footer>
