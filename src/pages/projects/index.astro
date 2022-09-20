@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const projects = await Astro.glob("./*.md");
+import ProjectCard from "../../components/ProjectCard.astro";
+---
+
+<Layout title="Projects">
+  {projects.map((project) => <ProjectCard project={project} />)}
+</Layout>

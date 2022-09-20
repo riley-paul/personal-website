@@ -1,3 +1,7 @@
+---
+layout: ../layouts/MarkdownPage.astro
+---
+
 Are you searching for a motivated individual for your project?
 
 Perhaps someone who has proven experience optimizing engineering workflows?

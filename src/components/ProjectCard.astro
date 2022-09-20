@@ -1,0 +1,15 @@
+---
+import TagList from "./TagList.astro";
+const { project } = Astro.props;
+---
+
+<div class="pt-4 pb-6 hover:text-orange-500">
+  <a href={project.url} class="">
+    <h2 class="my-0">{project.frontmatter.title}</h2>
+    <p class="my-0 pb-2">{project.frontmatter.description}</p>
+    <TagList
+      tags={project.frontmatter.tags}
+      classes=""
+    />
+  </a>
+</div>

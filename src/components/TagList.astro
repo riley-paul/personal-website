@@ -1,11 +1,11 @@
 ---
-const { tags, classes = "bg-sky-800" } = Astro.props;
+const { tags, classes = "" } = Astro.props;
 ---
 
 <div class="flex flex-wrap gap-2">
   {
     tags.map((tag) => (
-      <div class:list={[classes, "px-2 py-1 rounded font-bold"]}>{tag}</div>
+      <div class:list={[classes, "px-2 py-1 rounded border-2"]}>{tag}</div>
     ))
   }
 </div>
