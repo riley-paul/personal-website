@@ -7,9 +7,13 @@ links:
     {
       url: "https://github.com/rjp301/photo-portfolio-astro",
       name: "Source Code",
-      icon: "fa-solid fa-code",
+      icon: "fa-brands fa-github",
     },
-    { url: "https://photo.rileypaul.ca", name: "Homepage" },
+    {
+      url: "https://photo.rileypaul.ca",
+      name: "Homepage",
+      icon: "fa-solid fa-arrow-up-right-from-square",
+    },
   ]
 description: "Photo portfolio site built from scratch using Astro"
 date: "2022"

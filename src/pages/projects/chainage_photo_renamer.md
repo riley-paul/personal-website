@@ -6,7 +6,7 @@ links:
     {
       url: "https://github.com/rjp301/photo-KP-label",
       name: "Source Code",
-      icon: "fa-solid fa-code",
+      icon: "fa-brands fa-github",
     },
   ]
 tags: ["Python", "GUI", "TKinter", "Quadtree Optimization"]

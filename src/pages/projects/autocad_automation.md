@@ -6,7 +6,7 @@ links:
     {
       url: "https://github.com/rjp301/autocad",
       name: "Source Code",
-      icon: "fa-solid fa-code",
+      icon: "fa-brands fa-github",
     },
   ]
 tags: ["Python", "Object-Oriented Programming", "Custom Library", "Automation"]
