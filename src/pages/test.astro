@@ -17,9 +17,11 @@
       import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
       import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-      let camera, scene, renderer, pivot;
+      let camera, scene, renderer, pivot, controls;
+      let spotLight, bbox, ground;
 
       init();
+      animate();
 
       function init() {
         scene = new THREE.Scene();
@@ -44,6 +46,24 @@
         hemiLight.position.set(0, 100, 0);
         scene.add(hemiLight);
 
+        spotLight = new THREE.SpotLight(0xffffff, 1);
+        spotLight.position.set(-50, 50, 50);
+        // spotLight.angle = Math.PI / 6;
+        spotLight.penumbra = 1;
+        // spotLight.decay = 10;
+        // spotLight.distance = 10;
+
+        spotLight.castShadow = true;
+        spotLight.shadow.bias = -0.0001;
+        spotLight.shadow.mapSize.width = 1024 * 4;
+        spotLight.shadow.mapSize.height = 1024 * 4;
+        // spotLight.shadow.mapSize.width = 1024;
+        // spotLight.shadow.mapSize.height = 1024;
+        // spotLight.shadow.camera.near = 10;
+        // spotLight.shadow.camera.far = 200;
+        // spotLight.shadow.focus = 1;
+        scene.add(spotLight);
+
         const dirLight = new THREE.DirectionalLight(0xffffff);
         dirLight.position.set(-0, 40, 50);
         dirLight.castShadow = true;
@@ -54,25 +74,11 @@
         dirLight.shadow.camera.near = 0.1;
         dirLight.shadow.camera.far = 200;
         dirLight.shadow.mapSize.set(1024, 1024);
-        scene.add(dirLight);
-
-        // scene.add( new THREE.CameraHelper( dirLight.shadow.camera ) );
-
-        //
+        // scene.add(dirLight);
 
         const manager = new THREE.LoadingManager();
 
-        // const loader = new ThreeMFLoader(manager);
-        // loader.load("./models/3mf/truck.3mf", function (object) {
-        //   object.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)); // z-up conversion
-
-        //   object.traverse(function (child) {
-        //     child.castShadow = true;
-        //   });
-
-        //   scene.add(object);
-        // });
-
+        // import model
         new GLTFLoader(manager).load(
           "models/RC_tank.gltf",
           function (gltf) {
@@ -81,15 +87,21 @@
             const scale = 0.1;
             model.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)); // z-up conversion
             model.scale.set(scale, scale, scale);
-            model.traverse((o) => (o.castShadow = true));
+            model.traverse((o) => {
+              if (o.isMesh) {
+                o.receiveShadow = true;
+                o.castShadow = true;
+              }
+            });
 
-            const bbox = new THREE.Box3().setFromObject(model);
+            bbox = new THREE.Box3().setFromObject(model);
+            console.log(bbox);
             const offset = new THREE.Vector3();
             bbox.getCenter(offset).negate();
             model.position.set(offset.x, offset.y, offset.z);
 
-            pivot = new THREE.Group()
-            pivot.add(model)
+            pivot = new THREE.Group();
+            pivot.add(model);
             scene.add(pivot);
           },
           function (xhr) {
@@ -106,18 +118,17 @@
         };
         //
 
-        const ground = new THREE.Mesh(
+        ground = new THREE.Mesh(
           new THREE.PlaneGeometry(1000, 1000),
           new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false })
         );
 
         ground.rotation.x = -Math.PI / 2;
-        ground.position.y = 11;
+        ground.position.y = -50;
         ground.receiveShadow = true;
         scene.add(ground);
 
-        //
-
+        // renderer
         renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -128,13 +139,13 @@
 
         //
 
-        const controls = new OrbitControls(camera, renderer.domElement);
+        controls = new OrbitControls(camera, renderer.domElement);
         controls.addEventListener("change", render);
         controls.minDistance = 50;
         controls.maxDistance = 200;
         controls.enablePan = false;
         controls.target.set(0, 0, 0);
-        controls.update();
+        controls.autoRotate = true;
 
         window.addEventListener("resize", onWindowResize);
         render();
@@ -147,6 +158,20 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         render();
+      }
+
+      function animate() {
+        spotLight.position.set(
+          camera.position.x + 10,
+          camera.position.y + 10,
+          camera.position.z + 10
+        );
+
+        ground.position.y = bbox ? bbox.min.y : -50;
+
+        controls.update();
+        render();
+        requestAnimationFrame(animate);
       }
 
       function render() {
