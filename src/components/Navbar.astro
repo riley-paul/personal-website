@@ -1,0 +1,14 @@
+<nav x-data="{open: false}">
+  <div>
+    <a href="/">Home</a>
+    <a href="/projects">Projects</a>
+    <a href="#" x-on:click="open = !open">More</a>
+  </div>
+  <div x-show="open" x-transition>
+    <a href="/about">About</a>
+    <a href="/experience">Experience</a>
+    <a href="/skills">Skills</a>
+    <a href="https://photo.rileypaul.ca">Photography</a>
+    <a href="/Resume - Riley Paul">Resume</a>
+  </div>
+</nav>

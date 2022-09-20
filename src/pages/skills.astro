@@ -1,0 +1,20 @@
+---
+import TagList from "../components/TagList.astro";
+import skills from "../data/skills.json";
+import Layout from "../layouts/Layout.astro";
+import Markdown from "../layouts/Markdown.astro";
+---
+
+<Layout>
+  <Markdown>
+    <p>I love the challenge of developing a new skillset and trying new technologies.</p>
+  </Markdown>
+  {
+    skills.map((skill) => {
+      <div>
+        <h3>{skill.name}</h3>
+        <TagList tags={skill.tags} />
+      </div>;
+    })
+  }
+</Layout>
