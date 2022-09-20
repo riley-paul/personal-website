@@ -1,0 +1,172 @@
+---
+import getModels from "../../utils/getModels";
+
+export async function getStaticPaths() {
+  const models = await getModels();
+  return models.map((model) => ({ params: { model } }));
+}
+
+const modelUrl = `/models/${Astro.params.model}`;
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="modelUrl" style="display: none;">{modelUrl}</div>
+    <script>
+      import * as THREE from "three";
+
+      import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+      import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
+      const modelUrl = document.getElementById("modelUrl").innerText;
+
+      let camera, scene, renderer, controls;
+      let spotLight, bbox, ground;
+
+      init();
+      animate();
+
+      function processModel(model) {
+        const scale = 0.1;
+        model.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)); // z-up conversion
+        model.scale.set(scale, scale, scale);
+        model.traverse((o) => {
+          if (o.isMesh) {
+            o.receiveShadow = true;
+            o.castShadow = true;
+          }
+        });
+
+        const offset = new THREE.Vector3();
+        bbox = new THREE.Box3().setFromObject(model);
+        bbox.getCenter(offset).negate();
+        model.position.set(offset.x, offset.y, offset.z);
+        return model;
+      }
+
+      function init() {
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xa0a0a0);
+        scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
+
+        // camera
+        camera = new THREE.PerspectiveCamera(
+          35,
+          window.innerWidth / window.innerHeight,
+          1,
+          500
+        );
+        camera.position.set(-50, 40, 50);
+        scene.add(camera);
+
+        // axes helper
+        const axesHelper = new THREE.AxesHelper(20);
+        // scene.add(axesHelper);
+
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+        hemiLight.position.set(0, 100, 0);
+        scene.add(hemiLight);
+
+        spotLight = new THREE.SpotLight(0xffffff, 0.2);
+        spotLight.position.set(-50, 50, 50);
+        spotLight.penumbra = 0;
+
+        spotLight.castShadow = true;
+        spotLight.shadow.bias = -0.0001;
+        spotLight.shadow.mapSize.width = 1024 * 4;
+        spotLight.shadow.mapSize.height = 1024 * 4;
+        scene.add(spotLight);
+
+        const manager = new THREE.LoadingManager();
+
+        // import model
+        new GLTFLoader(manager).load(
+          modelUrl,
+          function (gltf) {
+            const model = processModel(gltf.scene);
+            scene.add(model);
+          },
+          function (xhr) {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+          },
+          function (err) {
+            console.error(err);
+          }
+        );
+
+        // render once model loads
+        manager.onLoad = function () {
+          render();
+        };
+
+        // ground
+        ground = new THREE.Mesh(
+          new THREE.PlaneGeometry(1000, 1000),
+          new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false })
+        );
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = -50;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        // renderer
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        document.body.appendChild(renderer.domElement);
+
+        // orbit controls
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.addEventListener("change", render);
+        controls.minDistance = 50;
+        controls.maxDistance = 200;
+        controls.enablePan = false;
+        controls.target.set(0, 0, 0);
+        controls.autoRotate = true;
+
+        window.addEventListener("resize", onWindowResize);
+        render();
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        render();
+      }
+
+      function animate() {
+        spotLight.position.set(
+          camera.position.x + 10,
+          camera.position.y + 10,
+          camera.position.z + 10
+        );
+
+        ground.position.y = bbox ? bbox.min.y : -50;
+
+        controls.update();
+        render();
+        requestAnimationFrame(animate);
+      }
+
+      function render() {
+        renderer.render(scene, camera);
+      }
+    </script>
+  </body>
+</html>
