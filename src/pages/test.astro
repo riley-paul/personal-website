@@ -28,6 +28,7 @@
         scene.background = new THREE.Color(0xa0a0a0);
         scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
 
+        // camera
         camera = new THREE.PerspectiveCamera(
           35,
           window.innerWidth / window.innerHeight,
@@ -37,10 +38,9 @@
         camera.position.set(-50, 40, 50);
         scene.add(camera);
 
-        //
-
+        // axes helper
         const axesHelper = new THREE.AxesHelper(20);
-        scene.add(axesHelper);
+        // scene.add(axesHelper);
 
         const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
         hemiLight.position.set(0, 100, 0);
@@ -48,33 +48,13 @@
 
         spotLight = new THREE.SpotLight(0xffffff, 1);
         spotLight.position.set(-50, 50, 50);
-        // spotLight.angle = Math.PI / 6;
         spotLight.penumbra = 1;
-        // spotLight.decay = 10;
-        // spotLight.distance = 10;
 
         spotLight.castShadow = true;
         spotLight.shadow.bias = -0.0001;
         spotLight.shadow.mapSize.width = 1024 * 4;
         spotLight.shadow.mapSize.height = 1024 * 4;
-        // spotLight.shadow.mapSize.width = 1024;
-        // spotLight.shadow.mapSize.height = 1024;
-        // spotLight.shadow.camera.near = 10;
-        // spotLight.shadow.camera.far = 200;
-        // spotLight.shadow.focus = 1;
         scene.add(spotLight);
-
-        const dirLight = new THREE.DirectionalLight(0xffffff);
-        dirLight.position.set(-0, 40, 50);
-        dirLight.castShadow = true;
-        dirLight.shadow.camera.top = 50;
-        dirLight.shadow.camera.bottom = -25;
-        dirLight.shadow.camera.left = -25;
-        dirLight.shadow.camera.right = 25;
-        dirLight.shadow.camera.near = 0.1;
-        dirLight.shadow.camera.far = 200;
-        dirLight.shadow.mapSize.set(1024, 1024);
-        // scene.add(dirLight);
 
         const manager = new THREE.LoadingManager();
 
@@ -111,18 +91,17 @@
             console.error(err);
           }
         );
-        //
 
+        // render once model loads
         manager.onLoad = function () {
           render();
         };
-        //
 
+        // ground
         ground = new THREE.Mesh(
           new THREE.PlaneGeometry(1000, 1000),
           new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false })
         );
-
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -50;
         ground.receiveShadow = true;
@@ -137,8 +116,7 @@
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         document.body.appendChild(renderer.domElement);
 
-        //
-
+        // orbit controls
         controls = new OrbitControls(camera, renderer.domElement);
         controls.addEventListener("change", render);
         controls.minDistance = 50;
