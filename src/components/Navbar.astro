@@ -3,46 +3,68 @@ const pathname = Astro.url.pathname;
 const currentPath = pathname.slice(1);
 ---
 
+<script>
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-4rem";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+
 <nav
-  class="w-full fixed top-0 bg-slate-900"
+  class="w-full fixed top-0 bg-indigo-500 transition-all"
+  id="navbar"
   x-data="{open: false}"
   x-bind:class="{'shadow':open}"
 >
-  <div class="flex flex-row items-center justify-center">
+  <div class="flex flex-row items-center justify-center h-16">
     <a
-      class:list={["link-underline", { active: currentPath === "" }, "p-6"]}
-      x-bind:class="{'hide':open}"
+      class:list={[
+        "link-underline",
+        { active: currentPath === "" },
+        "flex items-center px-6 h-full",
+      ]}
       href="/">Home</a
     >
     <a
       class:list={[
         "link-underline",
         { active: currentPath === "projects" },
-        "p-6",
+        "flex items-center px-6 h-full",
       ]}
-      x-bind:class="{'hide':open}"
       href="/projects">Projects</a
     >
     <a
-      class="link-underline p-6"
+      class="flex items-center px-6 h-full"
       href="#"
-      x-bind:class="{'active': open }"
-      x-on:click="open = !open">More</a
-    >
+      x-text="open ? 'Less' : 'More'"
+      x-on:click="open = !open"></a>
   </div>
-  <div x-show="open" x-transition class="flex flex-col margin-auto max-w-sm">
-    <a class:list={[{ "font-bold": currentPath === "about" }]} href="/about"
-      >About</a
+  <div x-show="open" x-transition class="flex flex-col max-w-sm mx-auto py-2">
+    <a
+      class:list={[{ active: currentPath === "about" }, "p-3 link-underline"]}
+      href="/about">About</a
     >
     <a
-      class:list={[{ "font-bold": currentPath === "experience" }]}
+      class:list={[
+        { active: currentPath === "experience" },
+        "p-3 link-underline",
+      ]}
       href="/experience">Experience</a
     >
-    <a class:list={[{ "font-bold": currentPath === "skills" }]} href="/skills"
-      >Skills</a
+    <a
+      class:list={[{ active: currentPath === "skills" }, "p-3 link-underline"]}
+      href="/skills">Skills</a
     >
-    <a href="https://photo.rileypaul.ca">Photography</a>
-    <a href="/Resume - Riley Paul.pdf">Resume</a>
+    <a href="https://photo.rileypaul.ca" class="p-3 link-underline"
+      >Photography</a
+    >
+    <a href="/Resume - Riley Paul.pdf" class="p-3 link-underline">Resume</a>
   </div>
 </nav>
 
@@ -54,12 +76,17 @@ const currentPath = pathname.slice(1);
     background-size: 0 3px;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    /* transition: background-size 0.5s ease-in-out; */
+    transition: background-size 0.2s ease-in-out;
   }
 
-  .link-underline-black {
+  .link-leftline {
+    border-left-width: 0;
     background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#f2c, #f2c);
+      linear-gradient(#fff, #fff);
+    background-size: 3px 0;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
   }
 
   .link-underline:hover {
@@ -70,9 +97,5 @@ const currentPath = pathname.slice(1);
   .link-underline.active {
     background-size: 100% 3px;
     background-position: 0 100%;
-  }
-
-  .link-underline.hide {
-    background-size: 0% 3px;
   }
 </style>

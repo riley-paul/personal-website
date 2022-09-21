@@ -2,7 +2,10 @@
 import data from "../data/contact.json";
 ---
 
-<footer id="footer" class="py-12 flex flex-col items-center gap-4">
+<footer
+  id="footer"
+  class="h-24 flex flex-row justify-center items-center gap-4"
+>
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       data.map((contact) => (
@@ -17,5 +20,7 @@ import data from "../data/contact.json";
       ))
     }
   </div>
-  <div>&copy <span>{new Date().getFullYear()}</span> Riley Paul</div>
+  <div class="hidden md:block">
+    &copy <span>{new Date().getFullYear()}</span> Riley Paul
+  </div>
 </footer>
