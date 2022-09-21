@@ -11,9 +11,9 @@ const experiences = await Astro.glob("../data/experience/*.md");
       {
         experiences.map((experience, index) => (
           <div
-            x-bind:class={`{'font-bold text-orange-500': tab === ${index}}`}
+            x-bind:class={`{'font-bold': tab === ${index}}`}
             x-on:click={`tab = ${index}`}
-            class="py-2 px-5 mt-0 border-b-2 flex-grow text-center"
+            class="py-2 px-5 mt-0 border-b-2 flex-grow text-lg text-center"
           >
             {experience.frontmatter.title}
           </div>
@@ -26,7 +26,7 @@ const experiences = await Astro.glob("../data/experience/*.md");
       experiences.map((experience, index) => (
         <div
           x-show={`tab === ${index}`}
-          class="p-5 prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-0 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4"
+          class="p-5 prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-0 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal"
         >
           <experience.Content />
         </div>

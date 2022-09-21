@@ -2,7 +2,14 @@
   { "name": "Languages", "tags": ["Javacript (ES2021)", "Python 3 🐍"] },
   {
     "name": "Frameworks",
-    "tags": ["React ⚛", "Astro 🚀", "Tailwind CSS 🍃", "Express", "Flask ⚗️","Alpine.js 🗻"]
+    "tags": [
+      "React ⚛",
+      "Astro 🚀",
+      "Tailwind CSS 🍃",
+      "Express",
+      "Flask ⚗️",
+      "Alpine.js 🗻"
+    ]
   },
   {
     "name": "Tools",
@@ -18,7 +25,13 @@
   },
   {
     "name": "Engineering Tools",
-    "tags": ["QGIS 🗺", "Solidworks ⚙️", "Fusion 360", "AutoCAD 📐"]
+    "tags": [
+      "QGIS 🗺",
+      "Solidworks ⚙️",
+      "Fusion 360",
+      "AutoCAD 📐",
+      "Finite Element Analyis 🔻"
+    ]
   },
   {
     "name": "Other Stuff",

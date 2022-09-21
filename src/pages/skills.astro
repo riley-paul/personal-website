@@ -7,14 +7,21 @@ import Markdown from "../layouts/Markdown.astro";
 
 <Layout>
   <Markdown>
-    <p>I love the challenge of developing a new skillset and trying new technologies.</p>
+    <p>
+      I have accumulated a great deal of skills and knowledge over the years in
+      a variety of subjects and technologies. This is because I love to learn
+      and am always seeking the best tool for the job.
+    </p>
+    <p>For every skill I gain, I find two more I am lacking in.</p>
   </Markdown>
-  {
-    skills.map((skill) => {
-      <div>
-        <h3>{skill.name}</h3>
-        <TagList tags={skill.tags} />
-      </div>;
-    })
-  }
+  <div class="py-1">
+    {
+      skills.map((skill) => (
+        <div class="py-1">
+          <h3 class="font-bold py-1">{skill.name}</h3>
+          <TagList tags={skill.tags} />
+        </div>
+      ))
+    }
+  </div>
 </Layout>

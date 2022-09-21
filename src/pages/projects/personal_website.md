@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Personal Website (here)"
+title: "Personal Website"
 tags: ["Web Dev","Astro","HTML","CSS","Github Pages","Markdown"]
 links: []
 description: "Portfolio/resume website to showcase my projects and experience all in one place."

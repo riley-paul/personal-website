@@ -3,7 +3,7 @@ title: "Baja SAE"
 ---
 
 ## Mechanical Design & Fabrication Lead
-### Memorial University Baja SAE Team, Jan 2017 - Jun 2019 | St. John's, NL
+### Memorial University Baja SAE Team, _Jan 2017 - Jun 2019 | St. John's, NL_
 
 - Built single-seat off-road vehicle alongside a team of students to compete against over 100 other engineering schools in various dynamic events, including a four-hour endurance race
 
