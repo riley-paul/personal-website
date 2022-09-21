@@ -7,14 +7,12 @@
   {
     "name": "Github",
     "link": "https://github.com/rjp301",
-    "icon": "fa-brands fa-github",
-    "header": true
+    "icon": "fa-brands fa-github"
   },
   {
     "name": "LinkedIn",
     "link": "https://www.linkedin.com/in/riley-paul-b84352106/",
-    "icon": "fa-brands fa-linkedin",
-    "header": true
+    "icon": "fa-brands fa-linkedin"
   },
   {
     "name": "Youtube",
