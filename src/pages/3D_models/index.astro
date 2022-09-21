@@ -1,9 +1,9 @@
 ---
-import Html from "../../layouts/Html.astro";
+import Layout from "../../layouts/Layout.astro";
 import getModels from "../../utils/getModels";
 const models = await getModels();
 ---
 
-<Html>
+<Layout>
   {models.map((model) => <a href={`3D_models/${model}`}>{model}</a>)}
-</Html>
+</Layout>
