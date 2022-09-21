@@ -26,7 +26,7 @@ To solve the issue of organizing photos I wanted to able to label them with the 
 
 To measure the chainage of a point given the centerline of the project seems simple enough but can get complicated when considering 'slack chainage'. If two points along the centerline are said to be 100m away from each other it may be less than that when viewed from above. This is because chainage measurements take into account 3D topology and a valley or peak increases the distance between two points. This is clear in the below image.
 
-![slack chainage](https://github.com/rjp301/personal-website-astro/blob/master/public/media/chainage_renamer_slack.png?raw=true)_Slack Chainage_
+![slack chainage](/images/chainage_renamer_slack.png)_Slack Chainage_
 
 The solution to the slack chainage issue is to determine the two closest chainage points on either side of your point of interest and linearly interpolate between them. This gives a close approximation without three dimensional information.
 
@@ -40,7 +40,7 @@ The GUI was created using Python TKinter and was built specifically for working 
 1. Geotagged location of each image is extracted from the EXIF data and chainage of that point is determined
 1. Photo file is renamed with chainage and exact time of capture
 
-![gui](https://github.com/rjp301/personal-website-astro/blob/master/public/media/chainage_renamer_ui.png?raw=true)_Graphical User Interface built using TKinter Python Library_
+![gui](/images/chainage_renamer_ui.png)_Graphical User Interface built using TKinter Python Library_
 
 ## Outcome
 
