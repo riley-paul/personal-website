@@ -8,6 +8,7 @@ import ProjectCard from "../../components/ProjectCard.astro";
 <Layout title="Projects">
   {
     projects
+      .filter((project) => !project.frontmatter.hidden)
       .sort(
         (a, b) =>
           Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
