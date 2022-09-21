@@ -1,9 +1,15 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "Remote Control Hovercraft"
-date: "2018"
+date: "2018-12"
 tags:
-  ["3D Printing", "Mechanical Design", "Sheet Metal Modelling", "Electronics"]
+  [
+    "3D Printing",
+    "Mechanical Design",
+    "Sheet Metal Modelling",
+    "Onshape",
+    "Electronics",
+  ]
 links: []
 description: "Remote control hovercraft built using foamboard, 3D printing, and hobby RC electronics. Designed using Onshape."
 ---

@@ -12,7 +12,7 @@ tags:
   ]
 links: []
 description: "Python scripts running on Raspberry Pi to collect data from constellation of remote weather stations and send daily report to project management"
-date: "2021"
+date: "2020-11"
 ---
 
 ## Background

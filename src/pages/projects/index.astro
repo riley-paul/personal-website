@@ -6,5 +6,12 @@ import ProjectCard from "../../components/ProjectCard.astro";
 ---
 
 <Layout title="Projects">
-  {projects.map((project) => <ProjectCard project={project} />)}
+  {
+    projects
+      .sort(
+        (a, b) =>
+          Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+      )
+      .map((project) => <ProjectCard project={project} />)
+  }
 </Layout>

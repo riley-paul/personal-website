@@ -1,11 +1,17 @@
 ---
 import TagList from "./TagList.astro";
 const { project } = Astro.props;
+const date = new Date(project.frontmatter.date).toLocaleString("en-US", {
+  year: "numeric",
+});
 ---
 
 <div class="pt-4 pb-6">
   <a href={project.url} class="">
-    <h2 class="text-lg font-bold">{project.frontmatter.title}</h2>
+    <div class="flex items-center gap-2 justify-between">
+      <h2 class="text-lg font-bold">{project.frontmatter.title}</h2>
+      <span class="italic">{date}</span>
+    </div>
     <p class="pb-2 font-light">{project.frontmatter.description}</p>
     <TagList tags={project.frontmatter.tags} classes="" />
   </a>

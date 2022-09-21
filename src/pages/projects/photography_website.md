@@ -16,7 +16,7 @@ links:
     },
   ]
 description: "Photo portfolio site built from scratch using Astro"
-date: "2022"
+date: "2022-08"
 ---
 
 ## Background
