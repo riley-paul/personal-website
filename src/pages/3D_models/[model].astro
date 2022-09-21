@@ -37,7 +37,7 @@ const modelUrl = `/models/${Astro.params.model}`;
       animate();
 
       function processModel(model) {
-        const scale = 0.1;
+        const scale = 100;
         model.quaternion.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)); // z-up conversion
         model.scale.set(scale, scale, scale);
         model.traverse((o) => {
@@ -153,9 +153,9 @@ const modelUrl = `/models/${Astro.params.model}`;
 
       function animate() {
         spotLight.position.set(
-          camera.position.x + 10,
+          camera.position.x + 50,
           camera.position.y + 10,
-          camera.position.z + 10
+          camera.position.z - 50
         );
 
         ground.position.y = bbox ? bbox.min.y : -50;
