@@ -1,18 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 
 const projects = await Astro.glob("./*.md");
-import ProjectCard from "../../components/ProjectCard.astro";
+const sortProjects = (a, b) =>
+  Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
 ---
 
 <Layout title="Projects">
   {
     projects
       .filter((project) => !project.frontmatter.hidden)
-      .sort(
-        (a, b) =>
-          Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
-      )
+      .sort(sortProjects)
       .map((project) => <ProjectCard project={project} />)
   }
 </Layout>
