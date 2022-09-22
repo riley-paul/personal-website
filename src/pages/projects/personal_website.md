@@ -1,8 +1,30 @@
 ---
 layout: ../../layouts/ProjectPage.astro
 title: "Personal Website"
-tags: ["Web Dev","Astro","HTML","CSS","Github Pages","Markdown","ThreeJS"]
-links: []
+tags:
+  [
+    "Javascript",
+    "Tailwind CSS",
+    "Astro",
+    "ThreeJS",
+    "HTML",
+    "CSS",
+    "Github Pages",
+    "MDX",
+  ]
+links:
+  [
+    {
+      url: "https://github.com/rjp301/personal-website-astro",
+      name: "Source Code",
+      icon: "fa-brands fa-github",
+    },
+    {
+      url: "https://rileypaul.ca",
+      name: "Homepage",
+      icon: "fa-solid fa-arrow-up-right-from-square",
+    },
+  ]
 description: "Portfolio/resume website to showcase my projects and experience all in one place."
 date: "2022-09"
 ---
@@ -27,5 +49,4 @@ I wanted to directly embed the canvas rendered by ThreeJS in my project pages; b
 
 I would like to continue to improve the design of this site going forward. I'm still not completely happy with it, but as they say:
 
->Perfection is the enemy of the good
-
+> Perfection is the enemy of the good
