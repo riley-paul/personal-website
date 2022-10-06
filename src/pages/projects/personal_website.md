@@ -8,7 +8,6 @@ tags:
     "Astro",
     "ThreeJS",
     "HTML",
-    "CSS",
     "Github Pages",
     "MDX",
   ]

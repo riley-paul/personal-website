@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Personal Website"
+title: "Plot Digitizer Web App"
 tags: ["Typescript", "React", "Tailwind CSS", "Firebase", "HTML Canvas"]
 links:
   [
