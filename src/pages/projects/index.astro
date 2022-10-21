@@ -8,10 +8,12 @@ const sortProjects = (a, b) =>
 ---
 
 <Layout title="Projects">
-  {
-    projects
-      .filter((project) => !project.frontmatter.hidden)
-      .sort(sortProjects)
-      .map((project) => <ProjectCard project={project} />)
-  }
+  <div class="divide-y">
+    {
+      projects
+        .filter((project) => !project.frontmatter.hidden)
+        .sort(sortProjects)
+        .map((project) => <ProjectCard project={project} />)
+    }
+  </div>
 </Layout>
