@@ -5,9 +5,25 @@ import Button from "./Button.astro";
 
 <footer
   id="footer"
-  class="h-24 flex flex-row justify-center items-center gap-4"
+  class="py-6 flex flex-col justify-center items-center gap-2"
 >
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {data.map((contact) => <Button icon={contact.icon} link={contact.link} />)}
   </div>
+  <div class="flex gap-2 opacity-80">
+    <a href="/resume" class="hover:opacity-100"> Resume</a>
+    •
+    <a
+      href="https://photo.rileypaul.ca/portfolio"
+      class="flex items-center gap-1 opacity-100"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <!-- <img src="/photo-logo.svg" alt="" class="invert h-5" /> -->
+      Photography
+    </a>
+  </div>
+  <span class="opacity-50 text-sm"
+    >&copy <span>{new Date().getFullYear()}</span> Riley Paul</span
+  >
 </footer>

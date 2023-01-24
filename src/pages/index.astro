@@ -1,26 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await Astro.glob("./projects/*.md");
+const sortProjects = (a, b) =>
+  Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
 ---
 
 <Layout>
-  <div
-    class="flex flex-col items-center gap-2"
-    style="height: calc(100vh - 12rem);"
-  >
-    <div class="py-12 flex items-center flex-col gap-2">
-      <h1 class="text-5xl font-bold">Riley Paul</h1>
-      <h3 class="text-2xl font-light">Engineer-In-Training / Web Developer</h3>
-    </div>
-
-    <img
-      src="/images/profile.jpg"
-      alt=""
-      class="rounded"
-      style="height: calc(100vh - 12rem - 16rem);"
-    />
-
-    <button class="border-2 my-8 px-2 py-1 rounded text-lg"
-      ><a href="/projects">View Projects</a>
-    </button>
+  <div class="py-12 flex items-center flex-col gap-2">
+    <h1 class="text-5xl font-bold">Riley Paul</h1>
+    <h3 class="text-2xl font-light">Engineer-In-Training / Web Developer</h3>
+  </div>
+  <div class="divide-y">
+    {
+      projects
+        .filter((project) => !project.frontmatter.draft)
+        .sort(sortProjects)
+        .map((project) => <ProjectCard project={project} />)
+    }
   </div>
 </Layout>

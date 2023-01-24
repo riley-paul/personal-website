@@ -6,5 +6,6 @@ const { icon = "", text = "", link } = Astro.props;
   <a href={link} target="_blank" rel="noopener noreferrer">
     {icon && <i class={icon} />}
     {text && text}
+    <slot />
   </a>
 </button>

@@ -23,22 +23,9 @@ const currentPath = pathname.slice(1);
   x-bind:class="{'shadow':open}"
 >
   <div class="flex flex-row items-center justify-center h-16">
-    <a
-      class:list={[
-        "link-underline",
-        { active: currentPath === "" },
-        "flex items-center px-6 h-full",
-      ]}
-      href="/">Home</a
-    >
-    <a
-      class:list={[
-        "link-underline",
-        { active: currentPath === "projects" },
-        "flex items-center px-6 h-full",
-      ]}
-      href="/projects">Projects</a
-    >
+    <div class="">
+      <img src="/logo.svg" class="h-10" alt="" />
+    </div>
     <a
       class="flex items-center px-6 h-full"
       href="#"
