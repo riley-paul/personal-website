@@ -1,19 +1,22 @@
 ---
 import TagList from "../components/TagList.astro";
-import skills from "../data/skills.json";
 import Layout from "../layouts/Layout.astro";
 import Markdown from "../layouts/Markdown.astro";
+
+async function getSkills() {
+  const data = await Astro.glob("../data/skills.md");
+  const frontmatter = data[0].frontmatter;
+  const transformed = Object.keys(frontmatter).map((key) => ({
+    name: key,
+    tags: frontmatter[key],
+  }));
+  return transformed;
+}
+
+const skills = await getSkills()
 ---
 
 <Layout title="Skills">
-  <Markdown>
-    <p>
-      I have accumulated a great deal of skills and knowledge over the years in
-      a variety of subjects and technologies. This is because I love to learn
-      and am always seeking the best tool for the job.
-    </p>
-    <p>For every skill I gain, I find two more I am lacking in.</p>
-  </Markdown>
   <div class="py-1">
     {
       skills.map((skill) => (
