@@ -1,9 +1,20 @@
 ---
-const { icon = "", text = "", link } = Astro.props;
+interface Props {
+  link: string;
+  icon?: string;
+  text?: string;
+  newTab?: boolean;
+}
+
+const { icon = "", text = "", link, newTab = true } = Astro.props;
 ---
 
 <button class="px-2 py-1 rounded border-2 text-lg">
-  <a href={link} target="_blank" rel="noopener noreferrer">
+  <a
+    href={link}
+    target={newTab ? "_blank" : ""}
+    rel={newTab ? "noopener noreferrer" : ""}
+  >
     {icon && <i class={icon} />}
     {text && text}
     <slot />
