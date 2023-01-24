@@ -3,76 +3,33 @@ layout: ../layouts/MarkdownPage.astro
 title: About
 ---
 
-import TagList from "../components/TagList.astro";
-
 ## About
 
-I'm an engineer-in-training and developer with a passion for learning and a drive to solve problems in the most robust and efficient manner. I love a challenge and love thinking about how to approach problems.
-
-## Skills
-
-### Languages
-
-<TagList tags={["Javacript (ES2021)", "Typescript", "Python 3 🐍"]} />
-
-### Frameworks
-
-<TagList
-  tags={[
-    "React ⚛",
-    "Astro 🚀",
-    "Tailwind CSS 🍃",
-    "Express",
-    "Flask ⚗️",
-    "Alpine.js 🗻",
-  ]}
-/>
-
-### Tools
-
-<TagList tags={["NodeJS 🟩", "npm 📦", "git", "cli >_", "Jest 🃏"]} />
-
-### Libraries
-
-<TagList tags={["Pandas 📊", "Numpy", "GeoPandas", "Simplekml 🌎"]} />
-
-### Databases
-
-<TagList tags={["PostgreSQL 🐘", "PostGIS 📍", "MongoDB 🌱"]} />
-
-### Engineering Tools
-
-<TagList
-  tags={[
-    "QGIS 🗺",
-    "Solidworks ⚙️",
-    "Fusion 360",
-    "AutoCAD 📐",
-    "Finite Element Analyis 🔻",
-  ]}
-/>
-
-### Other Stuff
-
-<TagList tags={["VSCode", "Prettier 💄", "Markdown ⬇️", "Raspberry Pi"]} />
+Engineer-in-training and developer with a passion for learning and a drive to solve problems in the most robust and efficient manner
 
 ## Education
 
-### Full Stack Web Development Bootcamp
-
-#### Lighthouse Labs, _Jan 2022 - Apr 2022_
+**Full Stack Web Development Bootcamp** Lighthouse Labs, _Jan 2022 - Apr 2022_
 
 Node.js, Express, ReactJS, Testing, Ruby on Rails, Database Design, PostgreSQL
 
-### Bachelors of Mechanical Engineering
+**Bachelors of Mechanical Engineering**
 
-#### Memorial University of Newfoundland, _Sep 2014 – Apr 2019 | St. John's, NL_
+Memorial University of Newfoundland, _Sep 2014 – Apr 2019 | St. John's, NL_
 
 GPA 3.53 / 4.00, Baja SAE Mechanical Design & Fabrication Lead
 
+## Technologies
+
+**Web :** HTML, CSS, JS, React, Astro, Node, SCSS, Express, Tailwind, Flask
+
+**Languages :** Python, Javascript, Typescript, SQL, NoSQL
+
+**Tools :** GIS, AutoCAD, Solidworks
+
 ## Experience
 
-__Project Engineer__ Macro Pipelines _Mar 2021 – present | Chilliwack, BC_
+**Project Engineer** Macro Industries, _Mar 2021 – present | Chilliwack, BC_
 
 - Accustomed to a demanding, highly dynamic work environment from on-site role with construction contractor
 
@@ -84,9 +41,7 @@ __Project Engineer__ Macro Pipelines _Mar 2021 – present | Chilliwack, BC_
 
 - Performed complicated analyses of geospatial, project controls, and natural resource data to inform key decisions
 
-### Junior Pipeline Project Engineer
-
-#### SA Energy Group, _Jun 2019 – Mar 2021 | Western Canada_
+**Junior Project Engineer** SA Energy Group, _Jun 2019 – Mar 2021 | Western Canada_
 
 - On-site contract role on large-scale construction projects in Northern BC, Edmonton and Saskatchewan
 
@@ -96,9 +51,7 @@ __Project Engineer__ Macro Pipelines _Mar 2021 – present | Chilliwack, BC_
 
 - Also worked in Calgary office where exposed to all stages of project estimating; including crew planning, subcontractor relations and resource allocation
 
-## Mechanical Design & Fabrication Lead
-
-### Memorial University Baja SAE Team, _Jan 2017 - Jun 2019 | St. John's, NL_
+**Mechanical Design & Fabrication Lead** Memorial University Baja SAE Team, _Jan 2017 - Jun 2019 | St. John's, NL_
 
 - Built single-seat off-road vehicle alongside a team of students to compete against over 100 other engineering schools in various dynamic events, including a four-hour endurance race
 
@@ -110,3 +63,9 @@ __Project Engineer__ Macro Pipelines _Mar 2021 – present | Chilliwack, BC_
   - Revised rear suspension trailing links using cutting-edge generative design software - 30% lighter and more manufacturable
 
 ## Interests
+
+**Outdoor Recreation :** Camping, backcountry skiing, rock climbing, biking, running, kayaking
+
+**Photography :** Portfolio @ [photo.rileypaul.ca](https://photo.rileypaul.ca)
+
+**3D Modelling, 3D Printing and Robotics :** Projects @ [rileypaul.ca](https://rileypaul.ca)
