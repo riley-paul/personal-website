@@ -1,5 +1,6 @@
 ---
 import data from "../data/contact.json";
+import Button from "./Button.astro";
 ---
 
 <footer
@@ -7,17 +8,6 @@ import data from "../data/contact.json";
   class="h-24 flex flex-row justify-center items-center gap-4"
 >
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
-    {
-      data.map((contact) => (
-        <a
-          class="border-2 px-2 py-1 rounded"
-          href={contact.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class={contact.icon} />
-        </a>
-      ))
-    }
+    {data.map((contact) => <Button icon={contact.icon} link={contact.link} />)}
   </div>
 </footer>

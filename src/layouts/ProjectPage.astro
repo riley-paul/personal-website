@@ -13,6 +13,7 @@ type Props = MarkdownLayoutProps<{
 import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";
 import Markdown from "./Markdown.astro";
+import Button from "../components/Button.astro";
 const { title, tags, links } = Astro.props.frontmatter;
 ---
 
@@ -24,8 +25,6 @@ const { title, tags, links } = Astro.props.frontmatter;
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
-    <button class="border-2 rounded px-2 py-1 text-lg"
-      ><a href="/projects">More Projects</a>
-    </button>
+    <Button text="More Projects" link="/projects"/>
   </div>
 </Layout>
