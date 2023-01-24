@@ -1,6 +1,4 @@
 ---
-const pathname = Astro.url.pathname;
-const currentPath = pathname.slice(1);
 ---
 
 <script>
@@ -16,76 +14,12 @@ const currentPath = pathname.slice(1);
   };
 </script>
 
-<nav
-  class="w-full fixed top-0 bg-indigo-500 transition-all z-50"
-  id="navbar"
-  x-data="{open: false}"
-  x-bind:class="{'shadow':open}"
->
+<nav class="w-full fixed top-0 bg-indigo-500 transition-all z-50" id="navbar">
   <div class="flex flex-row items-center justify-center h-16">
-    <div class="">
-      <img src="/logo.svg" class="h-10" alt="" />
-    </div>
-    <a
-      class="flex items-center px-6 h-full"
-      href="#"
-      x-text="open ? 'Less' : 'More'"
-      x-on:click="open = !open"></a>
-  </div>
-  <div x-show="open" x-transition class="flex flex-col max-w-sm mx-auto py-2">
-    <a
-      class:list={[{ active: currentPath === "about" }, "p-3 link-underline"]}
-      href="/about">About</a
-    >
-    <a
-      class:list={[
-        { active: currentPath === "experience" },
-        "p-3 link-underline",
-      ]}
-      href="/experience">Experience</a
-    >
-    <a
-      class:list={[{ active: currentPath === "skills" }, "p-3 link-underline"]}
-      href="/skills">Skills</a
-    >
-    <a href="https://photo.rileypaul.ca" class="p-3 link-underline"
-      >Photography</a
-    >
-    <a href="/Resume - Riley Paul.pdf" class="p-3 link-underline">Resume</a>
-    <div class="p-3">
-      &copy <span>{new Date().getFullYear()}</span> Riley Paul
-    </div>
+    <button>
+      <a href="/">
+        <img src="/logo.svg" class="h-10" alt="" />
+      </a>
+    </button>
   </div>
 </nav>
-
-<style>
-  .link-underline {
-    border-bottom-width: 0;
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#fff, #fff);
-    background-size: 0 3px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-  }
-
-  .link-leftline {
-    border-left-width: 0;
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#fff, #fff);
-    background-size: 3px 0;
-    background-position: 100% 0;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-  }
-
-  .link-underline:hover {
-    background-size: 100% 3px;
-    background-position: 0 100%;
-  }
-
-  .link-underline.active {
-    background-size: 100% 3px;
-    background-position: 0 100%;
-  }
-</style>
