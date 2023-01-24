@@ -11,7 +11,7 @@ const sortProjects = (a, b) =>
   <div class="divide-y">
     {
       projects
-        .filter((project) => !project.frontmatter.hidden)
+        .filter((project) => !project.frontmatter.draft)
         .sort(sortProjects)
         .map((project) => <ProjectCard project={project} />)
     }

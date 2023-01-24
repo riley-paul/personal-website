@@ -1,5 +1,5 @@
 ---
-title: "Education"
+title: Education
 ---
 
 ## Full Stack Web Development Bootcamp

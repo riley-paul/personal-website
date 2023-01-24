@@ -9,7 +9,7 @@ tags:
 links: []
 description: Large-scale, primarily 3D printed, tracked vehicle with a totally overkill drive system.
 date: 2018-07
-hidden: true
+draft: true
 ---
 
 <div class="iframe-container model">

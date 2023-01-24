@@ -1,5 +1,5 @@
 ---
-title: "Work"
+title: Work
 ---
 
 ## Pipeline Project Engineer

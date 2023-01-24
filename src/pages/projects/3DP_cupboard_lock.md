@@ -7,5 +7,5 @@ tags:
 links: []
 description: Custom 3D printed cupboard lock to keep dog out of the garbage under the sink.
 date: 2022-04
-hidden: true
+draft: true
 ---

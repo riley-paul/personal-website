@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/MarkdownPage.astro
-title: "About"
+title: About
 ---
 
 Are you searching for a motivated individual for your project?

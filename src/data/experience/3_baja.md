@@ -1,5 +1,5 @@
 ---
-title: "Baja SAE"
+title: Baja SAE
 ---
 
 ## Mechanical Design & Fabrication Lead
