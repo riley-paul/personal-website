@@ -1,17 +1,17 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Chainage Photo Renamer"
+title: Chainage Photo Renamer
 links:
-  [
-    {
-      url: "https://github.com/rjp301/photo-KP-label",
-      name: "Source Code",
-      icon: "fa-brands fa-github",
-    },
-  ]
-tags: ["Python", "GUI", "TKinter", "Quadtree Optimization"]
-description: "GUI Windows application written in Python for renaming photos with their location relative to a linear project's centerline"
-date: "2021-11"
+  - url: https://github.com/rjp301/photo-KP-label
+    name: Source Code
+    icon: fa-brands fa-github
+tags: 
+  - Python
+  - GUI
+  - TKinter
+  - Quadtree Optimization
+description: GUI Windows application written in Python for renaming photos with their location relative to a linear project's centerline.
+date: 2021-11
 ---
 
 ## Background

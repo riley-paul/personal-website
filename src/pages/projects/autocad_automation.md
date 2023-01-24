@@ -1,17 +1,17 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "AutoCAD Automation Library"
+title: AutoCAD Automation Library
 links:
-  [
-    {
-      url: "https://github.com/rjp301/autocad",
-      name: "Source Code",
-      icon: "fa-brands fa-github",
-    },
-  ]
-tags: ["Python", "Object-Oriented Programming", "Custom Library", "Automation"]
-description: "A Python library for automating AutoCAD by programmatically generating script files"
-date: "2019-09"
+  - url: https://github.com/rjp301/autocad
+    name: Source Code
+    icon: fa-brands fa-github
+tags: 
+  - Python
+  - Object-Oriented Programming
+  - Custom Library
+  - Automation
+description: A Python library for automating AutoCAD by programmatically generating script files
+date: 2019-09
 ---
 
 ## Background

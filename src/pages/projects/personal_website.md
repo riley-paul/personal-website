@@ -1,31 +1,23 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Personal Website"
+title: Personal Website
 tags:
-  [
-    "Javascript",
-    "Tailwind CSS",
-    "Astro",
-    "ThreeJS",
-    "HTML",
-    "Github Pages",
-    "MDX",
-  ]
+  - Javascript
+  - Tailwind CSS
+  - Astro
+  - ThreeJS
+  - HTML
+  - Github Pages
+  - MDX
 links:
-  [
-    {
-      url: "https://github.com/rjp301/personal-website-astro",
-      name: "Source Code",
-      icon: "fa-brands fa-github",
-    },
-    {
-      url: "https://rileypaul.ca",
-      name: "Homepage",
-      icon: "fa-solid fa-arrow-up-right-from-square",
-    },
-  ]
-description: "Portfolio/resume website to showcase my projects and experience all in one place."
-date: "2022-09"
+  - url: https://github.com/rjp301/personal-website-astro
+    name: Source Code
+    icon: fa-brands fa-github
+  - url: https://rileypaul.ca
+    name: Homepage
+    icon: fa-solid fa-arrow-up-right-from-square
+description: You're browing it as we speak.
+date: 2022-09
 ---
 
 Coming fresh off the rebuild of my [photography site](https://photo.rileypaul.ca) using [Astro](https://astro.build/), I decided to make myself a personal website to showcase my projects and experience.

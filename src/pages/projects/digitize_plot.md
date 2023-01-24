@@ -1,22 +1,21 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Plot Digitizer Web App"
-tags: ["Typescript", "React", "Tailwind CSS", "Firebase", "HTML Canvas"]
+title: Plot Digitizer Web App
+tags: 
+  - Typescript
+  - React
+  - Tailwind CSS
+  - Firebase
+  - HTML Canvas
 links:
-  [
-    {
-      url: "https://github.com/rjp301/digitize-plot",
-      name: "Source Code",
-      icon: "fa-brands fa-github",
-    },
-    {
-      url: "https://digitize-plot.web.app",
-      name: "Homepage",
-      icon: "fa-solid fa-arrow-up-right-from-square",
-    },
-  ]
-description: "Web app to convert images of plots to raw data"
-date: "2022-10"
+  - url: https://github.com/rjp301/digitize-plot
+    name: Source Code
+    icon: fa-brands fa-github
+  - url: https://digitize-plot.web.app
+    name: Homepage
+    icon: fa-solid fa-arrow-up-right-from-square
+description: Web app to convert images of plots to raw data
+date: 2022-10
 ---
 
 ## Introduction

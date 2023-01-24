@@ -1,18 +1,16 @@
 ---
 layout: ../../layouts/ProjectPage.astro
-title: "Weather Station Constellation and Reporting"
+title: Weather Station Constellation
 tags:
-  [
-    "Python",
-    "Cronjob",
-    "Third-Party API",
-    "Email Automation",
-    "Linux",
-    "Pandas",
-  ]
+  - Python
+  - Cronjob
+  - Third-Party API
+  - Email Automation
+  - Linux
+  - Pandas
 links: []
-description: "Python scripts running on Raspberry Pi to collect data from constellation of remote weather stations and send daily report to project management"
-date: "2020-11"
+description: Python scripts running on Raspberry Pi to collect data from constellation of remote weather stations and send daily report to project management.
+date: 2020-11
 ---
 
 ## Background
