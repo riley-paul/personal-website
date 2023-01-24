@@ -1,0 +1,21 @@
+---
+const { links } = Astro.props;
+---
+
+<div class="flex gap-4 underline my-2">
+  {
+    links.map((link) => (
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class=" text-sky-400 hover:text-sky-500"
+      >
+        <span>
+          {link.icon && <i class={link.icon} />}
+          {link.name}
+        </span>
+      </a>
+    ))
+  }
+</div>

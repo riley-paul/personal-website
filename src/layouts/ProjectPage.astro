@@ -1,5 +1,6 @@
 ---
 import type { MarkdownLayoutProps } from "astro";
+import LinkList from "../components/LinkList.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -16,28 +17,15 @@ const { title, tags, links } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
-  <div class="pb-8 pt-2">
-    <TagList tags={tags} classes="bg-none border-2" />
-    <div class="flex gap-4 pt-2 underline">
-      {
-        links.map((link) => (
-          <a
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class=" text-sky-400 hover:text-sky-500"
-          >
-            <span>{link.name}</span>
-          </a>
-        ))
-      }
-    </div>
-  </div>
   <Markdown>
     <h1 class="">{title}</h1>
+    <LinkList links={links} />
+    <TagList tags={tags} />
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
-    <button class="border-2 rounded px-2 py-1 text-lg"><a href="/projects">More Projects</a></button>
+    <button class="border-2 rounded px-2 py-1 text-lg"
+      ><a href="/projects">More Projects</a>
+    </button>
   </div>
 </Layout>
