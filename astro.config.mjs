@@ -3,10 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
-import svelte from "@astrojs/svelte";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), alpinejs(), svelte()],
+  integrations: [tailwind(), alpinejs()],
   site: "https://rileypaul.ca"
 });
