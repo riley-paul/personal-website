@@ -22,5 +22,4 @@ Tools:
   - Solidworks ⚙️
   - Pandas 📊
   - AutoCAD 📐
-
 ---

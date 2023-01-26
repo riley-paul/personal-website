@@ -18,13 +18,14 @@ const { title, tags, links } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
+  <h1 class="text-4xl font-bold">{title}</h1>
+  <TagList tags={tags} />
+  <LinkList links={links} />
   <Markdown>
-    <h1 class="">{title}</h1>
-    <LinkList links={links} />
-    <TagList tags={tags} />
+    <br>
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
-    <Button text="More Projects" link="/"/>
+    <Button text="More Projects" link="/" />
   </div>
 </Layout>
