@@ -5,7 +5,6 @@ tags:
   - Typescript
   - React
   - Tailwind CSS
-  - Firebase
   - HTML Canvas
 links:
   - url: https://github.com/rjp301/digitize-plot
