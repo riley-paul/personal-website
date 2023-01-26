@@ -20,6 +20,8 @@ description: You're browing it as we speak.
 date: 2022-09
 ---
 
+> Perfection is the enemy of the good
+
 Coming fresh off the rebuild of my [photography site](https://photo.rileypaul.ca) using [Astro](https://astro.build/), I decided to make myself a personal website to showcase my projects and experience.
 
 ## Design
@@ -40,4 +42,24 @@ I wanted to directly embed the canvas rendered by ThreeJS in my project pages; b
 
 I would like to continue to improve the design of this site going forward. I'm still not completely happy with it, but as they say:
 
-> Perfection is the enemy of the good
+---
+
+## _Update Jan 2023_
+
+I just completed an overhaul on my personal portfolio website with a focus on simplification and allowing quicker access to information. These are the changes I made:
+
+### Consolidated Pages
+
+I considerably reduced the amount of pages while maintaining the same amount of information. I did this by removing the landing page and replacing it with a single-page application that immediately shows the list of my projects. There is a toggle at the top that can replace the project list with my resume. This will hopefully grab the visitor's eye and removes one level of friction between them and learning more about my work.
+
+Originally I had each section of my resume on individual pages but have now placed it all on one long page. I was initially worried it would be too much scrolling but our thumbs are quite good at that these days so it shouldn't be a problem. I created a tab-switching widget to flip between different types of experience to make this page more compact on smaller screens.
+
+### Removed Colours
+
+Originally I had a rich, dark, blue background with a mauve accent colour for the navigation menu. As I removed the navigation menu because there are so few pages I got rid of that accent colour too. This results in a much cleaner site in my opinion.
+
+### Conclusion
+
+The creative and technical freedom was absolutely overwhelming when I was first building this site last year. Knowing there was no opinion that mattered but my own actually made it harder to make choices. I had many false starts and abandoned repositories. At first I couldn't decide on which tech stack to use, after that it was how to organize the site navigation, after that it was hundreds of tiny decisions on styling. It didn't help that there are thousands of examples of uniquely beautiful portfolio websites out there that I kept trying to draw inspiration from simultaneously.
+
+I got a functioning site up and running that I wasn't entirely happy with but it was good enough. Coming back to it months later with fresh eyes made the decision making process so much easier. I could clearly see areas for improvement as though looking at someone else's work not my own. Making changes was incremental rather than fundamental and my mind had had time to distill all those other sites I looked at for inspiration into several guiding concepts rather than literal guides.

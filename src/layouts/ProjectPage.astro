@@ -1,6 +1,7 @@
 ---
 import type { MarkdownLayoutProps } from "astro";
 import LinkList from "../components/LinkList.astro";
+import formatDate from "../utils/formatDate";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -14,15 +15,17 @@ import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";
 import Markdown from "./Markdown.astro";
 import Button from "../components/Button.astro";
-const { title, tags, links } = Astro.props.frontmatter;
+const { title, tags, links, date } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
-  <h1 class="text-4xl font-bold">{title}</h1>
   <TagList tags={tags} />
   <LinkList links={links} />
+  <br />
+  <h1 class="text-4xl font-bold">{title}</h1>
+  <div class="opacity-70">{formatDate(date)}</div>
   <Markdown>
-    <br>
+    <br />
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
