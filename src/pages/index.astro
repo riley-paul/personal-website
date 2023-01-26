@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import Button from "../components/Button.astro";
+
+import Resume from "../components/Resume.astro";
 
 const projects = await Astro.glob("./projects/*.md");
 const sortProjects = (a, b) =>
@@ -8,16 +11,41 @@ const sortProjects = (a, b) =>
 ---
 
 <Layout>
-  <div class="py-12 flex items-center flex-col gap-2">
-    <h1 class="text-5xl font-bold">Riley Paul</h1>
-    <h3 class="text-2xl font-light">Engineer-In-Training / Web Developer</h3>
+  <div class="py-12 flex justify-center">
+    <div class="flex items-center gap-4">
+      <img class="h-24 md:h-32 w-auto" src="/logo.svg" alt="" />
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Riley Paul</h1>
+        <p class="text-lg md:text-2xl font-light">
+          Engineer-In-Training / Web Developer
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="divide-y">
-    {
-      projects
-        .filter((project) => !project.frontmatter.draft)
-        .sort(sortProjects)
-        .map((project) => <ProjectCard project={project} />)
-    }
+  <div x-data="{page: 0}">
+    <div class="flex gap-4 justify-center pb-4">
+      <button
+        class="px-4 py-1 text-lg border-2 rounded transition-all duration-100"
+        x-bind:class="page === 0 ? 'flex-1' : ''"
+        x-on:click="page = 0">Projects</button
+      >
+      <button
+        class="px-4 py-1 text-lg border-2 rounded transition-all duration-100"
+        x-bind:class="page === 1 ? 'flex-1' : ''"
+        x-on:click="page = 1">Resume</button
+      >
+    </div>
+    <!-- <div class="text-2xl font-bold bg-slate-700 text-gray-200 text-center py-1 rounded">Projects</div> -->
+    <div id="projest-list" class="divide-y" x-show="page === 0">
+      {
+        projects
+          .filter((project) => !project.frontmatter.draft)
+          .sort(sortProjects)
+          .map((project) => <ProjectCard project={project} />)
+      }
+    </div>
+    <div id="resume-container" x-show="page === 1">
+      <Resume />
+    </div>
   </div>
 </Layout>

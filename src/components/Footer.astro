@@ -8,7 +8,7 @@ import Button from "./Button.astro";
   class="py-6 flex flex-col justify-center items-center gap-2"
 >
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
-    {data.map((contact) => <Button icon={contact.icon} link={contact.link} />)}
+    {data.map((contact) => <Button icon={contact.icon} link={contact.link} newTab/>)}
   </div>
   <div class="flex gap-2 opacity-80">
     <a href="/resume" class="hover:opacity-100"> Resume</a>
