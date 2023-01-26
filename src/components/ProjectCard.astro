@@ -1,16 +1,15 @@
 ---
 import TagList from "./TagList.astro";
+import formatDate from "../utils/formatDate";
+
 const { project } = Astro.props;
-const date = new Date(project.frontmatter.date).toLocaleString("en-US", {
-  year: "numeric",
-});
 ---
 
 <div class="py-4">
   <a href={project.url} class="">
     <div class="flex items-center gap-2 justify-between">
       <h2 class="text-lg font-bold">{project.frontmatter.title}</h2>
-      <span class="italic">{date}</span>
+      <span class="opacity-70">{formatDate(project.frontmatter.date)}</span>
     </div>
     <p class="pb-2 font-light text-sm">{project.frontmatter.description}</p>
     <TagList tags={project.frontmatter.tags} classes="" />
