@@ -1,10 +1,8 @@
 ---
-Languages:
-  - Javacript (ES2021)
-  - Typescript
-  - Python 3 🐍
-
-Frameworks:
+Web:
+  - HTML
+  - CSS
+  - NodeJS 🟩
   - React ⚛
   - Astro 🚀
   - Tailwind CSS 🍃
@@ -12,34 +10,17 @@ Frameworks:
   - Flask ⚗️
   - Alpine.js 🗻
 
+Languages:
+  - Javacript (ES2021)
+  - Typescript
+  - Python 3 🐍
+  - SQL
+  - NoSQL
+
 Tools:
-  - NodeJS 🟩
-  - npm 📦
-  - git
-  - cli >\_
-  - Jest 🃏
-
-Libraries:
-  - Pandas 📊
-  - Numpy
-  - GeoPandas
-  - Simplekml 🌎
-
-Databases:
-  - PostgreSQL 🐘
-  - PostGIS 📍
-  - MongoDB 🌱
-
-Engineering Tools:
-  - QGIS 🗺
+  - GIS 🗺
   - Solidworks ⚙️
-  - Fusion 360
+  - Pandas 📊
   - AutoCAD 📐
-  - Finite Element Analyis 🔻
 
-Other Stuff:
-  - VSCode
-  - Prettier 💄
-  - Markdown ⬇️
-  - Raspberry Pi
 ---

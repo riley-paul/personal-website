@@ -2,9 +2,7 @@
 title: Work
 ---
 
-## Pipeline Project Engineer
-
-### Macro Pipelines, _Mar 2021 – present | Chilliwack, BC_
+**Project Engineer** Macro Industries, _Mar 2021 – present | Chilliwack, BC_
 
 - Accustomed to a demanding, highly dynamic work environment from on-site role with construction contractor
 
@@ -16,9 +14,9 @@ title: Work
 
 - Performed complicated analyses of geospatial, project controls, and natural resource data to inform key decisions
 
-## Junior Pipeline Project Engineer
+---
 
-### SA Energy Group, _Jun 2019 – Mar 2021 | Western Canada_
+**Junior Project Engineer** SA Energy Group, _Jun 2019 – Mar 2021 | Western Canada_
 
 - On-site contract role on large-scale construction projects in Northern BC, Edmonton and Saskatchewan
 

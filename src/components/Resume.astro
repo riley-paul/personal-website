@@ -18,15 +18,11 @@ const experiences = await Astro.glob("../data/experience/*.md");
 ---
 
 <Markdown>
-  <h2>Skills</h2>
-  {
-    skills.map((skill) => (
-      <>
-        <strong class="font-bold py-1">{skill.name}</strong>
-        <TagList tags={skill.tags} />
-      </>
-    ))
-  }
+  <h2>About</h2>
+  <p>
+    Engineer-in-training and developer with a passion for learning and a drive
+    to solve problems in the most robust and efficient manner
+  </p>
 
   <h2>Experience</h2>
   <div id="tab-wrapper" x-data="{tab:0}" class="border-2 rounded">
@@ -57,4 +53,29 @@ const experiences = await Astro.glob("../data/experience/*.md");
       ))
     }
   </div>
+
+  <h2>Technologies</h2>
+  {
+    skills.map((skill) => (
+      <>
+        <strong class="font-bold py-1">{skill.name}</strong>
+        <TagList tags={skill.tags} />
+      </>
+    ))
+  }
+
+  <h2>Interests</h2>
+  <p>
+    <strong>Outdoor Recreation :</strong> Camping, backcountry skiing, rock climbing,
+    biking, running, kayaking
+  </p>
+  <p>
+    <strong>Photography :</strong>Portfolio @ <a
+      href="https://photo.rileypaul.ca">photo.rileypaul.ca</a
+    >
+  </p>
+  <p>
+    <strong>3D Modelling, 3D Printing and Robotics :</strong>Projects @
+    <a href="https://rileypaul.ca">rileypaul.ca</a>
+  </p>
 </Markdown>
