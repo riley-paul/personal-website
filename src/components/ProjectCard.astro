@@ -5,7 +5,7 @@ import formatDate from "../utils/formatDate";
 const { project } = Astro.props;
 ---
 
-<div class="py-4">
+<div class="py-3 hover:py-6 transition-all">
   <a href={project.url} class="">
     <div class="flex items-center gap-2 justify-between">
       <h2 class="text-lg font-bold">{project.frontmatter.title}</h2>

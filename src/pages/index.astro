@@ -11,7 +11,7 @@ const sortProjects = (a, b) =>
 ---
 
 <Layout>
-  <div class="py-12 flex justify-center">
+  <header class="py-12 flex justify-center">
     <div class="flex items-center gap-4">
       <img class="h-24 md:h-32 w-auto" src="/logo.svg" alt="" />
       <div>
@@ -21,8 +21,9 @@ const sortProjects = (a, b) =>
         </p>
       </div>
     </div>
-  </div>
-  <div x-data="{page: 0}">
+  </header>
+
+  <main x-data="{page: 0}">
     <div class="flex gap-4 justify-between pb-4">
       <button
         class="px-4 py-1 text-lg border-2 rounded transition-all duration-100"
@@ -47,5 +48,5 @@ const sortProjects = (a, b) =>
     <div id="resume-container" x-show="page === 1">
       <Resume />
     </div>
-  </div>
+  </main>
 </Layout>

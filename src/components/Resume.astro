@@ -29,13 +29,15 @@ const experiences = await Astro.glob("../data/experience/*.md");
   <h2>Experience</h2>
   <div id="tab-wrapper" x-data="{tab:0}" class="border-2 rounded my-1">
     <!-- tabs navigation -->
-    <div class="flex m-0 cursor-pointer overflow-scroll">
+    <div
+      class="flex m-0 cursor-pointer overflow-x-scroll no-scrollbar border-b-2 items-center"
+    >
       {
         experiences.map((experience, index) => (
           <div
             x-bind:class={`{'font-bold': tab === ${index}}`}
             x-on:click={`tab = ${index}`}
-            class="py-2 px-5 mt-0 border-b-2 flex-grow text-lg text-center white"
+            class="py-2 px-4 flex-grow mt-0 text-lg text-center"
           >
             {experience.frontmatter.title}
           </div>
@@ -67,7 +69,6 @@ const experiences = await Astro.glob("../data/experience/*.md");
   }
 
   <h2>Interests</h2>
-  <strong>Outdoor Recreation</strong>
   <TagList
     tags={[
       "Camping 🏕️",
@@ -76,12 +77,15 @@ const experiences = await Astro.glob("../data/experience/*.md");
       "Biking 🚴🏼",
       "Running 🏃🏻‍♂️",
       "Paddling 🚣🏻‍♂️",
+      "Photography 📸",
+      "Robotics 🤖",
+      "3D Printing 🖨️",
     ]}
   />
-  <strong>Photography</strong> - Portfolio @ <a
+  <!-- <strong>Photography</strong> - Portfolio @ <a
     href="https://photo.rileypaul.ca">photo.rileypaul.ca</a
   >
   <br />
   <strong>3D Modelling, 3D Printing and Robotics</strong> - Projects @
-  <a href="https://rileypaul.ca">rileypaul.ca</a>
+  <a href="https://rileypaul.ca">rileypaul.ca</a> -->
 </Markdown>
