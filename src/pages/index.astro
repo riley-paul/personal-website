@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import Button from "../components/Button.astro";
-
 import Resume from "../components/Resume.astro";
 
 const projects = await Astro.glob("./projects/*.md");
@@ -24,6 +22,7 @@ const sortProjects = (a, b) =>
   </header>
 
   <main x-data="{page: 0}">
+    <!-- Page switcher -->
     <div class="flex gap-4 justify-between pb-4">
       <button
         class="px-4 py-1 text-lg border-2 rounded transition-all duration-100"

@@ -2,6 +2,7 @@
 import TagList from "../components/TagList.astro";
 import Layout from "../layouts/Layout.astro";
 import Markdown from "../layouts/Markdown.astro";
+import Experience from "./Experience.astro";
 
 async function getSkills() {
   const data = await Astro.glob("../data/skills.md");
@@ -14,7 +15,6 @@ async function getSkills() {
 }
 
 const skills = await getSkills();
-const experiences = await Astro.glob("../data/experience/*.md");
 ---
 
 <Markdown>
@@ -27,36 +27,7 @@ const experiences = await Astro.glob("../data/experience/*.md");
   </p>
 
   <h2>Experience</h2>
-  <div id="tab-wrapper" x-data="{tab:0}" class="border-2 rounded my-1">
-    <!-- tabs navigation -->
-    <div
-      class="flex m-0 cursor-pointer overflow-x-scroll no-scrollbar border-b-2 items-center"
-    >
-      {
-        experiences.map((experience, index) => (
-          <div
-            x-bind:class={`{'font-bold': tab === ${index}}`}
-            x-on:click={`tab = ${index}`}
-            class="py-2 px-4 flex-grow mt-0 text-lg text-center"
-          >
-            {experience.frontmatter.title}
-          </div>
-        ))
-      }
-    </div>
-
-    <!-- tabs content -->
-    {
-      experiences.map((experience, index) => (
-        <div
-          x-show={`tab === ${index}`}
-          class="p-5 prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-0 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal"
-        >
-          <experience.Content />
-        </div>
-      ))
-    }
-  </div>
+  <Experience />
 
   <h2>Technologies</h2>
   {
@@ -82,10 +53,4 @@ const experiences = await Astro.glob("../data/experience/*.md");
       "3D Printing 🖨️",
     ]}
   />
-  <!-- <strong>Photography</strong> - Portfolio @ <a
-    href="https://photo.rileypaul.ca">photo.rileypaul.ca</a
-  >
-  <br />
-  <strong>3D Modelling, 3D Printing and Robotics</strong> - Projects @
-  <a href="https://rileypaul.ca">rileypaul.ca</a> -->
 </Markdown>
