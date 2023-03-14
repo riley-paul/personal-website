@@ -4,17 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Markdown from "../layouts/Markdown.astro";
 import Experience from "./Experience.astro";
 
-async function getSkills() {
-  const data = await Astro.glob("../data/skills.md");
-  const frontmatter = data[0].frontmatter;
-  const transformed = Object.keys(frontmatter).map((key) => ({
-    name: key,
-    tags: frontmatter[key],
-  }));
-  return transformed;
-}
+import skills from "../data/skills.json"
 
-const skills = await getSkills();
 ---
 
 <Markdown>
@@ -34,7 +25,7 @@ const skills = await getSkills();
     skills.map((skill) => (
       <>
         <strong class="font-bold py-1">{skill.name}</strong>
-        <TagList tags={skill.tags} />
+        <TagList tags={skill.items} />
       </>
     ))
   }
