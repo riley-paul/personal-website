@@ -12,7 +12,7 @@ links:
   - url: https://github.com/rjp301/photo-portfolio-astro
     name: Source Code
     icon: fa-brands fa-github
-description: Python scripts running on Raspberry Pi to collect data from constellation of remote weather stations and send daily report to project management.
+description: Python scripts running on Linux server to collect data from constellation of remote weather stations and send daily report to project management.
 date: 2022-04
 ---
 
