@@ -17,7 +17,14 @@ const projectCollection = defineCollection({
 });
 
 const experienceCollection = defineCollection({
-  schema: z.object({ title: z.string() }),
+  schema: z.object({
+    position: z.string(),
+    organization: z.string(),
+    location: z.string().nullable(),
+    date_beg: z.string(),
+    date_end: z.string().nullable(),
+    category: z.enum(["school", "work", "baja"]),
+  }),
 });
 
 const taglistCollection = defineCollection({
