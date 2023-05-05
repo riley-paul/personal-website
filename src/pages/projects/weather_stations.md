@@ -6,7 +6,9 @@ tags:
   - Cronjob
   - Third-Party API
   - Email Automation
+  - SendGrid
   - Linux
+  - NodeJS
   - Pandas
 links: 
   - url: https://github.com/rjp301/photo-portfolio-astro
