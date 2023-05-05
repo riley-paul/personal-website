@@ -19,7 +19,7 @@
   }
 
   .invert {
-    @apply bg-primary text-background;
+    @apply bg-primary text-background font-bold;
   }
 }
 

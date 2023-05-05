@@ -9,6 +9,9 @@ const categories = [
   { id: "school", name: "Education" },
   { id: "baja", name: "Baja SAE" },
 ];
+
+const sortDates = (a, b) =>
+  Date.parse(b.data.date_end) - Date.parse(a.data.date_end);
 ---
 
 <div id="tab-wrapper" x-data="{tab: 0}" class="border-2 rounded my-1">
@@ -19,7 +22,7 @@ const categories = [
     {
       categories.map((category, index) => (
         <div
-          x-bind:class={`{'font-bold invert': tab === ${index}}`}
+          x-bind:class={`{'invert': tab === ${index}}`}
           x-on:click={`tab = ${index}`}
           class="py-2 px-4 flex-grow mt-0 text-lg text-center"
         >
@@ -36,7 +39,12 @@ const categories = [
         x-show={`tab === ${index}`}
         class="p-5 prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-0 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal"
       >
-        {experiences.filter(experience => experience.data.category === category.id).map(experience => <Experience {experience} />)}
+        {
+          experiences
+            .filter(experience => experience.data.category === category.id)
+            .sort(sortDates)
+            .map(experience => <Experience {experience} />)
+        }
       </div>
     ))
   }
