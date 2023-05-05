@@ -19,7 +19,7 @@ const experiences = await Promise.all(
     {
       experiences.map((experience, index) => (
         <div
-          x-bind:class={`{'font-bold': tab === ${index}}`}
+          x-bind:class={`{'font-bold invert': tab === ${index}}`}
           x-on:click={`tab = ${index}`}
           class="py-2 px-4 flex-grow mt-0 text-lg text-center"
         >

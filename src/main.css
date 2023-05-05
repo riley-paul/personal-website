@@ -6,6 +6,7 @@
     https://github.com/tailwindlabs/tailwindcss/discussions/2394
     https://github.com/tailwindlabs/tailwindcss/pull/5732
 */
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -15,5 +16,19 @@
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  .invert {
+    @apply bg-primary text-background;
+  }
+}
+
+@layer components {
+  .hover-invert {
+    @apply hover:invert transition-colors;
+  }
+
+  .btn {
+    @apply px-2 py-1 rounded border-2 text-lg hover-invert;
   }
 }

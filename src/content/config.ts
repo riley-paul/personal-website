@@ -20,6 +20,10 @@ const experienceCollection = defineCollection({
   schema: z.object({ title: z.string() }),
 });
 
+const taglistCollection = defineCollection({
+  schema: z.object({ items: z.string() }),
+});
+
 export const collections = {
   projects: projectCollection,
   experience: experienceCollection,

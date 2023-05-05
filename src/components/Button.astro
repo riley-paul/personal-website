@@ -10,7 +10,7 @@ interface Props {
 const { icon = "", text = "", title, link, newTab } = Astro.props;
 ---
 
-<button class="px-2 py-1 rounded border-2 text-lg">
+<button class="btn">
   <a
     href={link}
     target={newTab ? "_blank" : ""}
