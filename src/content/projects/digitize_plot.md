@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Plot Digitizer Web App
 tags:
   - Typescript

@@ -1,15 +1,6 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
 import LinkList from "../components/LinkList.astro";
 import formatDate from "../utils/formatDate";
-
-type Props = MarkdownLayoutProps<{
-  title: string;
-  tags: Array<{ string }>;
-  links: Array<{ url: string; name: string; icon: string }>;
-  description: string;
-  date: string;
-}>;
 
 import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";

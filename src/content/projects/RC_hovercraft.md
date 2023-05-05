@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Remote Control Hovercraft
 date: 2018-12
 tags:

@@ -8,35 +8,19 @@ const iconMap = {
   },
   home: {
     name: "Homepage",
+    icon: "fa-solid fa-link",
   },
-};
-
-type Link = {
-  url: string;
-  type?: string;
-  icon?: string;
-  name?: string;
-};
-
-const getInfo = (link: Link): Link => {
-  link.icon = iconMap[link.type]?.icon;
-  link.name = iconMap[link.type]?.name;
-
-  link.name ||= "Link";
-  link.icon ||= "fa-solid fa-link";
-
-  return link;
 };
 ---
 
 <div class="flex gap-2 my-2">
   {
-    links.map(getInfo).map((link) => (
+    links.map((link) => (
       <a href={link.url} target="_blank" rel="noopener noreferrer">
-        <div class="bg-gray-300 rounded px-3 py-1 text-sky-600 hover:text-sky-400 hover:underline">
+        <div class="bg-gray-300 rounded px-3 py-1 text-sky-600 hover:text-sky-400">
           <span>
-            {link.icon && <i class={link.icon} />}
-            {link.name}
+            <i class={iconMap[link.type].icon} />
+            {iconMap[link.type].name}
           </span>
         </div>
       </a>

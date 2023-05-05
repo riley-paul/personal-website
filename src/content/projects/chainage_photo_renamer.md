@@ -1,10 +1,8 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Chainage Photo Renamer
 links:
   - url: https://github.com/rjp301/photo-KP-label
-    name: Source Code
-    icon: fa-brands fa-github
+    type: source
 tags: 
   - Python
   - GUI

@@ -1,10 +1,8 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: AutoCAD Automation Library
 links:
   - url: https://github.com/rjp301/autocad
-    name: Source Code
-    icon: fa-brands fa-github
+    type: source
 tags: 
   - Python
   - Object-Oriented Programming

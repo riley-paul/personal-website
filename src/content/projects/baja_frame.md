@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Baja SAE Spaceframe Chassis
 tags:
   - 3D Modelling

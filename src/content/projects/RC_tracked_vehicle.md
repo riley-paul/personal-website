@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: RC Tracked Vehicle
 tags: 
   - 3D Printing

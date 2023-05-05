@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: 3D Printed Lens Hoods
 tags: 
   - 3D Printing

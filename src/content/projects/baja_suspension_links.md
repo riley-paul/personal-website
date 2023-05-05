@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: "Baja SAE Rear Suspension Trailing Links"
 tags: ["3D Modelling", "Finite-Element Analysis", "Generative Design"]
 links: []

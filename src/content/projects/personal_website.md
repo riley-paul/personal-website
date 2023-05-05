@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Personal Website
 tags:
   - Javascript
@@ -11,11 +10,9 @@ tags:
   - MDX
 links:
   - url: https://github.com/rjp301/personal-website-astro
-    name: Source Code
-    icon: fa-brands fa-github
+    type: source
   - url: https://rileypaul.ca
-    name: Homepage
-    icon: fa-solid fa-arrow-up-right-from-square
+    type: home
 description: You're browing it as we speak.
 date: 2022-09
 ---

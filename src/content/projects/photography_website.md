@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Personal Photography Website
 tags:
   - Astro
@@ -9,11 +8,9 @@ tags:
   - Github Pages
 links:
   - url: https://photo.rileypaul.ca
-    name: Homepage
-    icon: fa-solid fa-arrow-up-right-from-square
+    type: home
   - url: https://github.com/rjp301/photo-portfolio-astro
-    name: Source Code
-    icon: fa-brands fa-github
+    type: source
 description: Photo portfolio site built from scratch using Astro and Svelte and deployed on Github Pages.
 date: 2022-08
 ---

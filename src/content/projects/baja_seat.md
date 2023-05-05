@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: Baja SAE Sheet Metal Seat
 tags: 
   - 3D Modelling

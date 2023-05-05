@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage.astro
 title: 3D Printed Cupboard Lock
 tags: 
   - 3D Printing

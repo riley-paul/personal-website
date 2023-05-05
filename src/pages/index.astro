@@ -2,10 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Resume from "../components/Resume.astro";
+import { getCollection } from "astro:content";
 
-const projects = await Astro.glob("./projects/*.md");
+const projects = await getCollection(
+  "projects",
+  ({ data }) => data.draft !== true
+);
 const sortProjects = (a, b) =>
-  Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
+  Date.parse(b.data.date) - Date.parse(a.data.date);
 ---
 
 <Layout>
@@ -39,7 +43,6 @@ const sortProjects = (a, b) =>
     <div id="projest-list" class="divide-y" x-show="page === 0">
       {
         projects
-          .filter((project) => !project.frontmatter.draft)
           .sort(sortProjects)
           .map((project) => <ProjectCard project={project} />)
       }
