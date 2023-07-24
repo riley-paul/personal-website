@@ -5,31 +5,21 @@ import formatDate from "../utils/formatDate";
 import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";
 import Markdown from "./Markdown.astro";
-import { Button } from "@/components/ui/button";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
+import Button from "../components/Button.astro";
 const { title, tags, links, date } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
-  <h1 class="text-4xl font-bold">{title}</h1>
-  <div class="opacity-70">{formatDate(date)}</div>
-  <br />
   <TagList tags={tags} />
   <LinkList links={links} />
+  <br />
+  <h1 class="text-4xl font-bold">{title}</h1>
+  <div class="opacity-70">{formatDate(date)}</div>
   <Markdown>
     <br />
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
-    <a href="/"><Button>More Projects</Button></a>
+    <Button text="More Projects" link="/" />
   </div>
 </Layout>

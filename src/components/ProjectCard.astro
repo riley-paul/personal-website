@@ -3,31 +3,15 @@ import TagList from "./TagList.astro";
 import formatDate from "../utils/formatDate";
 
 const { project } = Astro.props;
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 ---
 
-<a href={`/projects/${project.slug}`}>
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex justify-between">
-        <span>{project.data.title}</span>
-        <small class="text-muted-foreground">
-          {formatDate(project.data.date)}
-        </small>
-      </CardTitle>
-      <CardDescription>{project.data.description}</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <TagList tags={project.data.tags} />
-    </CardContent>
-  </Card>
-</a>
+<div class="py-3 hover:py-6 transition-all">
+  <a href={`/projects/${project.slug}`} class="">
+    <div class="flex items-center gap-2 justify-between">
+      <h2 class="text-lg font-bold">{project.data.title}</h2>
+      <span class="opacity-70">{formatDate(project.data.date)}</span>
+    </div>
+    <p class="pb-2 font-light text-sm">{project.data.description}</p>
+    <TagList tags={project.data.tags} classes="" />
+  </a>
+</div>

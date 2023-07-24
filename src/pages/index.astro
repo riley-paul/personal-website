@@ -1,14 +1,8 @@
 ---
-import "@/main.css";
-
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Resume from "../components/Resume.astro";
 import { getCollection } from "astro:content";
-
-import { Button } from "@/components/ui/button";
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const projects = await getCollection(
   "projects",
@@ -19,7 +13,7 @@ const sortProjects = (a, b) =>
 ---
 
 <Layout>
-  <!-- <header class="py-12 flex justify-center">
+  <header class="py-12 flex justify-center">
     <div class="flex items-center gap-4">
       <img class="h-24 md:h-32 w-auto" src="/logo.svg" alt="" />
       <div>
@@ -29,26 +23,7 @@ const sortProjects = (a, b) =>
         </p>
       </div>
     </div>
-  </header> -->
-
-  <!-- <Tabs defaultValue="projects" client:load>
-    <TabsList client:load>
-      <TabsTrigger value="projects" client:load>Projects</TabsTrigger>
-      <TabsTrigger value="resume" client:load>Resume</TabsTrigger>
-    </TabsList>
-    <TabsContent value="projects" client:load>
-      <div id="projest-list" class="grid gap-4" x-show="page === 0">
-        {
-          projects
-            .sort(sortProjects)
-            .map((project) => <ProjectCard project={project} />)
-        }
-      </div>
-    </TabsContent>
-    <TabsContent value="resume" client:load>
-      <!-- <Resume /> -->
-    <!-- </TabsContent> -->
-  <!-- </Tabs>  -->
+  </header>
 
   <main x-data="{page: 0}">
     <!-- Page switcher -->
@@ -65,7 +40,7 @@ const sortProjects = (a, b) =>
       >
     </div>
     <!-- <div class="text-2xl font-bold bg-slate-700 text-gray-200 text-center py-1 rounded">Projects</div> -->
-    <div id="projest-list" class="grid gap-4" x-show="page === 0">
+    <div id="projest-list" class="divide-y" x-show="page === 0">
       {
         projects
           .sort(sortProjects)
