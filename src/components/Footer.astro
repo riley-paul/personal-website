@@ -1,6 +1,6 @@
 ---
 import data from "../data/contact.json";
-import Button from "./Button.astro";
+import { Button } from "./ui/button";
 ---
 
 <footer
@@ -10,12 +10,11 @@ import Button from "./Button.astro";
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       data.map((contact) => (
-        <Button
-          icon={contact.icon}
-          link={contact.link}
-          title={contact.name}
-          newTab
-        />
+        <a href={contact.link} target="_blank">
+          <Button size="icon" title={contact.name}>
+            <i class={contact.icon} />
+          </Button>
+        </a>
       ))
     }
   </div>
@@ -23,13 +22,13 @@ import Button from "./Button.astro";
     <a
       href="/Resume - Riley Paul.pdf"
       title="Download resume as PDF"
-      class="hover:opacity-100 opacity-60">Resume.pdf</a
+      class="hover:text-foreground text-muted-foreground">Resume.pdf</a
     >
     •
     <a
       href="https://photo.rileypaul.ca"
       title="Photography Portfolio"
-      class="flex items-center gap-1 hover:opacity-100 opacity-60"
+      class="flex items-center gap-1 hover:text-foreground text-muted-foreground"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -37,7 +36,7 @@ import Button from "./Button.astro";
       Photography
     </a>
   </div>
-  <span class="opacity-50 text-sm"
+  <span class="text-muted-foreground text-sm"
     >&copy <span>{new Date().getFullYear()}</span> Riley Paul</span
   >
 </footer>
