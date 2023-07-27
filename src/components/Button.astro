@@ -8,9 +8,10 @@ interface Props {
 }
 
 const { icon = "", text = "", title, link, newTab } = Astro.props;
+const justIcon = icon && !text;
 ---
 
-<button class="btn">
+<button class={"btn " + (justIcon ? "aspect-square " : "")}>
   <a
     href={link}
     target={newTab ? "_blank" : ""}

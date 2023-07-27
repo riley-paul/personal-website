@@ -1,5 +1,5 @@
 ---
-title: Pipeline Applets
+title: Construction Applets
 description: Custom GIS data analysis tooling packaged in an easy-to-use web application
 tags:
   - SvelteKit

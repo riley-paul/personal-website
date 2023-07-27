@@ -36,4 +36,4 @@ This single-page React application is written in Typescript and hosted on GitHub
 
 ## Future Plans
 
-In the future I would consider adding options for different axis scales such as logarithmic and datetime. As well I would like to improve the general fit and finish for a better user experience.
+In the future I would consider adding options for different axis scales such as logarithmic and datetime.

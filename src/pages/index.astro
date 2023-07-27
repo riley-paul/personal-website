@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Resume from "../components/Resume.astro";
 import { getCollection } from "astro:content";
+import Header from "../components/Header.astro";
 
 const projects = await getCollection(
   "projects",
@@ -13,24 +14,15 @@ const sortProjects = (a, b) =>
 ---
 
 <Layout>
-  <header class="py-12 flex justify-center">
-    <div class="flex items-center gap-4">
-      <img class="h-24 md:h-32 w-auto" src="/logo.svg" alt="" />
-      <div>
-        <h1 class="text-3xl md:text-5xl font-bold mb-2">Riley Paul</h1>
-        <p class="text-lg md:text-2xl font-light">
-          Engineer-In-Training / Web Developer
-        </p>
-      </div>
-    </div>
-  </header>
+  <Header />
 
   <main x-data="{page: 0}">
     <!-- Page switcher -->
     <div class="flex gap-4 justify-between pb-4">
       <button
-        class="btn px-4 transition-all duration-100"
+        class="btn px-4 transition-all duration-100 flex-1"
         x-bind:class="page === 0 ? 'flex-1 invert' : ''"
+        x-bind:class="page !== 0 ? 'flex-none' : ''"
         x-on:click="page = 0">Projects</button
       >
       <button

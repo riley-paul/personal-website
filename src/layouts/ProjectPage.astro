@@ -10,11 +10,11 @@ const { title, tags, links, date } = Astro.props.frontmatter;
 ---
 
 <Layout title={title}>
-  <TagList tags={tags} />
-  <LinkList links={links} />
-  <br />
   <h1 class="text-4xl font-bold">{title}</h1>
   <div class="opacity-70">{formatDate(date)}</div>
+  <br />
+  <TagList tags={tags} />
+  <LinkList links={links} />
   <Markdown>
     <br />
     <slot />

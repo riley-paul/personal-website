@@ -29,6 +29,6 @@
   }
 
   .btn {
-    @apply px-2 py-1 rounded border-2 text-lg hover-invert;
+    @apply px-2 py-1 h-10 rounded border-2 text-lg hover-invert;
   }
 }
