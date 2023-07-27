@@ -35,9 +35,11 @@ I decided to take matters into my own hand by building out a full-stack web appl
 
 As I'm a huge fan of the file-based routing, non-virtual DOM, built-in stores, and HTML-like syntax of SvelteKit, it was an obvious choice for the front-end framework. I chose to use Postgres for the database as the flexibility of NoSQL feels overwhelming at times. FastAPI is used on the backend for the calculation server hosting all the Python scripts, though I hope to move those to serverless functions going forward.
 
-**Frontend |** SvelteKit w/ Skeleton UI Components
+**Frontend |** SvelteKit w/ Shadcn UI Components
 
 **Backend |** Python FastAPI, PostgreSQL, Prisma ORM
+
+![User Interface](/images/contruction_applets.png)
 
 ## Lessons
 
@@ -48,3 +50,13 @@ Sending files through HTTP forms was also a massive learning curve for this proj
 ## Plans
 
 I would like to continue to add more scripts to the application to build out the functionality.
+
+---
+
+## _Update Jul 2023_
+
+I implemented pagination for data fetching because the serverless functions were timing out when trying to fetch excessive amounts of entities.
+
+I rewrote my chainage algorithm in typescript so it can be used in a Node environment. This will become very useful for future plans I have.
+
+I replaced the Skeleton UI components with [Shadcn](https://www.shadcn-svelte.com) components because the look is much cleaner and they are easier to work with.
