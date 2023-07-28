@@ -1,0 +1,13 @@
+---
+const { tags = [] } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2 my-2">
+  {
+    tags.map((tag) => (
+      <div class="px-2 py-1 text-sm rounded bg-background_secondary text-secondary">
+        {tag}
+      </div>
+    ))
+  }
+</div>

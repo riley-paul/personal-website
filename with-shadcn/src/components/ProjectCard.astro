@@ -1,0 +1,17 @@
+---
+import TagList from "./TagList.astro";
+import formatDate from "../utils/formatDate";
+
+const { project } = Astro.props;
+---
+
+<div class="py-3 px-2 hover:bg-slate-800 transition-all">
+  <a href={`/projects/${project.slug}`} class="">
+    <div class="flex items-center gap-2 justify-between">
+      <h2 class="text-lg font-bold">{project.data.title}</h2>
+      <span class="opacity-70">{formatDate(project.data.date)}</span>
+    </div>
+    <p class="pb-2 font-light text-sm">{project.data.description}</p>
+    <TagList tags={project.data.tags} classes="" />
+  </a>
+</div>

@@ -1,0 +1,43 @@
+---
+import data from "../data/contact.json";
+import Button from "./Button.astro";
+---
+
+<footer
+  id="footer"
+  class="py-6 flex flex-col justify-center items-center gap-2"
+>
+  <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+    {
+      data.map((contact) => (
+        <Button
+          icon={contact.icon}
+          link={contact.link}
+          title={contact.name}
+          newTab
+        />
+      ))
+    }
+  </div>
+  <div class="flex gap-2">
+    <a
+      href="/Resume - Riley Paul.pdf"
+      title="Download resume as PDF"
+      class="hover:opacity-100 opacity-60">Resume.pdf</a
+    >
+    •
+    <a
+      href="https://photo.rileypaul.ca"
+      title="Photography Portfolio"
+      class="flex items-center gap-1 hover:opacity-100 opacity-60"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <!-- <img src="/photo-logo.svg" alt="" class="invert h-5" /> -->
+      Photography
+    </a>
+  </div>
+  <span class="opacity-50 text-sm"
+    >&copy <span>{new Date().getFullYear()}</span> Riley Paul</span
+  >
+</footer>

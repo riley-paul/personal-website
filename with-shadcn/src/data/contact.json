@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Email",
+    "link": "mailto:rileypaul96@gmail.com",
+    "icon": "fa-solid fa-at"
+  },
+  {
+    "name": "Github",
+    "link": "https://github.com/rjp301",
+    "icon": "fa-brands fa-github"
+  },
+  {
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/in/riley-paul-b84352106/",
+    "icon": "fa-brands fa-linkedin"
+  },
+  {
+    "name": "Youtube",
+    "link": "https://www.youtube.com/channel/UCt3RczuBzIindDG5I8JW45A",
+    "icon": "fa-brands fa-youtube"
+  }
+]
