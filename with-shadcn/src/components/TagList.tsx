@@ -8,7 +8,7 @@ export default function TagList(props: Props) {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <Badge>{tag}</Badge>
+        <Badge variant="secondary">{tag}</Badge>
       ))}
     </div>
   );

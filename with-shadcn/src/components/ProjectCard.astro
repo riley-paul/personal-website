@@ -18,9 +18,9 @@ const { project } = Astro.props;
   <CardHeader>
     <CardTitle className="flex justify-between">
       <span>{project.data.title}</span>
-      <span class="font-sm text-secondary-foreground font-medium"
-        >{formatDate(project.data.date)}</span
-      >
+      <span class="font-sm text-secondary-foreground font-medium">
+        {formatDate(project.data.date)}
+      </span>
     </CardTitle>
     <CardDescription>{project.data.description}</CardDescription>
   </CardHeader>
