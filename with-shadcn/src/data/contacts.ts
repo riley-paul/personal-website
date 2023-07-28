@@ -4,7 +4,7 @@ export type Contact = {
   icon: string;
 };
 
-export const contact: Contact[] = [
+export const contacts: Contact[] = [
   {
     name: "Email",
     link: "mailto:rileypaul96@gmail.com",

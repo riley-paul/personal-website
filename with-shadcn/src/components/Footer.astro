@@ -1,5 +1,5 @@
 ---
-import { contact } from "@/data/contact.js";
+import { contacts } from "@/data/contacts.js";
 import { Button } from "./ui/button";
 ---
 
@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 >
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
-      contact.map((c) => (
+      contacts.map((c) => (
         <a href={c.link} target="_blank">
           <Button variant="invert" size="icon">
             <i class={`${c.icon}`} class="h-5 w-5"/>
@@ -37,3 +37,4 @@ import { Button } from "./ui/button";
     >&copy <span>{new Date().getFullYear()}</span> Riley Paul</span
   >
 </footer>../data/contact
+@/data/contacts.js
