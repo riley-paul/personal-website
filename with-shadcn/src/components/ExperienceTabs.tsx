@@ -12,37 +12,35 @@ const categories = [
 const sortDates = (
   a: CollectionEntry<"experience">,
   b: CollectionEntry<"experience">
-) => Date.parse(b.data.date_end) - Date.parse(a.data.date_end);
+) => Date.parse(b.data.date_beg) - Date.parse(a.data.date_beg);
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 export type Props = {};
 
 export default function ExperienceTabs(props: Props) {
   return (
     <Tabs defaultValue="work" className="w-full">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="work">Work</TabsTrigger>
-        <TabsTrigger value="education">Education</TabsTrigger>
-        <TabsTrigger value="baja">Baja SAE</TabsTrigger>
+      <TabsList className={`grid w-full grid-cols-${categories.length}`}>
+        {categories.map((category) => (
+          <TabsTrigger key={category.id} value={category.id}>
+            {category.name}
+          </TabsTrigger>
+        ))}
       </TabsList>
-      <TabsContent value="work">
-        <Card>
-          <Experience experience={experiences[0]}></Experience>
-          <Experience experience={experiences[2]}></Experience>
-          <Experience experience={experiences[1]}></Experience>
-        </Card>
-      </TabsContent>
-      <TabsContent value="education">school</TabsContent>
-      <TabsContent value="baja">baja</TabsContent>
+      {categories.map((category) => (
+        <TabsContent key={category.id} value={category.id}>
+          <Card>
+            {experiences
+              .filter((exp) => exp.data.category === category.id)
+              .sort(sortDates)
+              .map((exp) => (
+                <Experience key={exp.id} experience={exp}></Experience>
+              ))}
+          </Card>
+        </TabsContent>
+      ))}
     </Tabs>
   );
 }

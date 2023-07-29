@@ -21,10 +21,6 @@ export default function Experience(props: Props) {
   const { position, organization, location, date_beg, date_end } =
     experience.data;
 
-  useEffect(() => {
-    console.log(date_beg);
-  }, [date_beg]);
-
   return (
     <div className="prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-0 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal">
       <CardHeader>
