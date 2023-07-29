@@ -14,14 +14,14 @@ const { title, tags, links, date } = Astro.props.frontmatter;
   <div class="opacity-70">{formatDate(date)}</div>
   <br />
   <TagList tags={tags} />
-  <LinkList links={links} />
+  {links && <LinkList links={links} />}
   <Markdown>
     <br />
     <slot />
   </Markdown>
-  <div class="flex justify-center py-10">
+  <div class="flex justify-center pt-20 pb-10">
     <a href="/">
-      <Button variant="invert">More Projects</Button>
+      <Button variant="invert" size="lg">More Projects</Button>
     </a>
   </div>
 </Layout>

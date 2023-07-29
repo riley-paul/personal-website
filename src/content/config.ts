@@ -5,12 +5,14 @@ const projectCollection = defineCollection({
     title: z.string(),
     tags: z.array(z.string()),
     description: z.string(),
-    links: z.array(
-      z.object({
-        url: z.string().url(),
-        type: z.enum(["home", "source"]).optional(),
-      })
-    ),
+    links: z
+      .array(
+        z.object({
+          url: z.string().url(),
+          type: z.enum(["home", "source"]).optional(),
+        })
+      )
+      .optional(),
     date: z.string(),
     draft: z.boolean().optional(),
   }),
