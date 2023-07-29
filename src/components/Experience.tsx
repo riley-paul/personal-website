@@ -26,8 +26,8 @@ export default function Experience(props: Props) {
       <CardHeader>
         <CardTitle>
           {position}
-          <span className="font-light text-muted-foreground">
-            <span className="mx-2">|</span>
+          <span className="font-light text-muted-foreground block mt-1 md:inline md:mt-0">
+            <span className="mx-2 hidden md:inline">|</span>
             {organization}
           </span>
         </CardTitle>
