@@ -1,15 +1,15 @@
 ---
-title: Personal Photography Website
+title: Photography Portfolio
 tags:
   - Astro
-  - Svelte
+  - React
   - Static-Site-Generation
   - Tailwind CSS
   - Github Pages
 links:
   - url: https://photo.rileypaul.ca
     type: home
-  - url: https://github.com/rjp301/photo-portfolio-astro
+  - url: https://github.com/rjp301/photo-portfolio
     type: source
 description: Photo portfolio site built from scratch using Astro and Svelte and deployed on Github Pages.
 date: 2022-08

@@ -7,8 +7,7 @@ tags:
   - Sheet Metal Modelling
   - Onshape
   - Electronics
-links: []
-description: Remote control hovercraft built using foamboard, 3D printing, and hobby RC electronics. Designed using Onshape.
+description: Remote control hovercraft built using foamboard, 3D printing, and hobby RC electronics. Designed using Onshape
 ---
 
 Since I was very young I have been fascinated by RC vehicles - especially those that move in an unconventional manner. Hovercrafts are incredibly cool because they don't actually touch the ground, are super fun to drive, and can (theoretically) drive across land as easily as water.

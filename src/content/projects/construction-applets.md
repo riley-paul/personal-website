@@ -10,7 +10,7 @@ tags:
   - SQL Database
   - Python GIS
 links:
-  - url: https://github.com/rjp301/pipeline-applets
+  - url: https://github.com/rjp301/construction-applets
     type: source
   - url: https://pipeline-applets.vercel.app
     type: home

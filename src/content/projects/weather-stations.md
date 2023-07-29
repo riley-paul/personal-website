@@ -11,9 +11,9 @@ tags:
   - NodeJS
   - Pandas
 links:
-  - url: https://github.com/rjp301/photo-portfolio-astro
+  - url: https://github.com/rjp301/pi-weather
     type: source
-description: Python scripts running on Linux server to collect data from constellation of remote weather stations and send daily report to project management.
+description: NodeJS script running on Linux server to collect data from constellation of remote weather stations and send daily report to project management
 date: 2022-04
 ---
 

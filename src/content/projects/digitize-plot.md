@@ -1,14 +1,14 @@
 ---
 title: Plot Digitizer Web App
 tags:
-  - Typescript
   - React
+  - Typescript
   - Tailwind CSS
   - HTML Canvas
 links:
   - url: https://github.com/rjp301/digitize-plot
     type: source
-  - url: https://digitize-plot.web.app
+  - url: https://digitizeplot.com
     type: home
 description: Web app to convert images of plots to raw data
 date: 2022-10
@@ -28,11 +28,17 @@ There are many instances where data is available in only a chart format with an 
 
 ![example plot](/images/BPL220K_24ft.png)
 
-![example plot in app](/images/digitize_plot_app.png)
+This app allows users to import an image, calibrate the image, then place as many points as they would like and export those to a CSV file. Currently the tool is only able to be calibrated for linear plots.
+
+![example plot in app](/images/digitize-plot.png)
 
 ## How I Built It
 
-This single-page React application is written in Typescript and hosted on GitHub Pages. I made use of several libraries such as react-csv, react-konva (for the canvas) and react-dropzone.
+This single-page React application is written in Typescript and hosted on GitHub Pages. I tried to use as few libraries as possible and work directly with native web technologies such as canvas and form elements.
+
+I used the [Shadcn](https://ui.shadcn.com) UI component library to enhance the overall fit and finish.
+
+I implemented my own version of the [Quadtree Optimization](https://en.wikipedia.org/wiki/Quadtree) algorithm to efficiently determine which point the cursor is hovering over in the canvas.
 
 ## Future Plans
 

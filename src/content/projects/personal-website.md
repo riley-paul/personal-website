@@ -1,15 +1,14 @@
 ---
 title: Personal Website
 tags:
-  - Javascript
-  - Tailwind CSS
   - Astro
+  - Tailwind CSS
+  - Typescript
   - ThreeJS
   - HTML
   - Github Pages
-  - MDX
 links:
-  - url: https://github.com/rjp301/personal-website-astro
+  - url: https://github.com/rjp301/personal-website
     type: source
   - url: https://rileypaul.ca
     type: home
@@ -23,7 +22,7 @@ Coming fresh off the rebuild of my [photography site](https://photo.rileypaul.ca
 
 ## Design
 
-The most difficult part of this project was by far settling on a design and sticking to it. There are so many fantastic personal websites out there for inspiration that I felt like I was being pulled in many different directions and the site suffered because of it. I started off with a single-page design because I thought it would be the most engaging to viewers as it requires little effort to see every section. While that sentiment is still valid, I ended up going with a multi-page site because it allowed me to be more organized and modular.
+The most difficult part of this project by far was settling on a design and sticking to it. There are so many fantastic personal websites out there for inspiration that I felt like I was being pulled in many different directions and the site suffered because of it. I started off with a single-page design because I thought it would be the most engaging to viewers as it requires little effort to see every section. While that sentiment is still valid, I ended up going with a multi-page site because it allowed me to be more organized and modular.
 
 I hummed and hawed over many colour schemes and font choices, but in the end kept things as simple as possible with a dark colour, a light colour and an accent.
 
@@ -39,6 +38,8 @@ I wanted to directly embed the canvas rendered by ThreeJS in my project pages; b
 
 I would like to continue to improve the design of this site going forward. I'm still not completely happy with it, but as they say:
 
+> Perfection is the enemy of the good
+
 ---
 
 ## _Update Jan 2023_
@@ -47,7 +48,7 @@ I just completed an overhaul on my personal portfolio website with a focus on si
 
 ### Consolidated Pages
 
-I considerably reduced the amount of pages while maintaining the same amount of information. I did this by removing the landing page and replacing it with a single-page application that immediately shows the list of my projects. There is a toggle at the top that can replace the project list with my resume. This will hopefully grab the visitor's eye and removes one level of friction between them and learning more about my work.
+I considerably reduced the amount of pages while maintaining the same amount of information. I did this by removing the landing page and replacing it with a  list of my projects. There is a toggle at the top that links to my resume. This will hopefully grab the visitor's eye and removes one level of friction between them and learning more about my work.
 
 Originally I had each section of my resume on individual pages but have now placed it all on one long page. I was initially worried it would be too much scrolling but our thumbs are quite good at that these days so it shouldn't be a problem. I created a tab-switching widget to flip between different types of experience to make this page more compact on smaller screens.
 

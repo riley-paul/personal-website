@@ -6,7 +6,6 @@ tags:
   - Iterative Design
   - Prototyping
   - Solidworks
-links: []
 description: Custom bucket seat made of aluminum sheet metal for use in the Baja SAE car.
 date: 2018-03
 ---
