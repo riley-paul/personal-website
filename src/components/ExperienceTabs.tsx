@@ -22,7 +22,7 @@ export type Props = {};
 export default function ExperienceTabs(props: Props) {
   return (
     <Tabs defaultValue="work" className="w-full">
-      <TabsList className={`grid w-full grid-cols-${categories.length}`}>
+      <TabsList className={`grid w-full grid-cols-3`}>
         {categories.map((category) => (
           <TabsTrigger key={category.id} value={category.id}>
             {category.name}
