@@ -1,8 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import Resume from "../components/Resume.astro";
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import Header from "@/components/Header.astro";
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/NavBar.astro";
@@ -11,15 +10,17 @@ const projects = await getCollection(
   "projects",
   ({ data }) => data.draft !== true
 );
-const sortProjects = (a, b) =>
-  Date.parse(b.data.date) - Date.parse(a.data.date);
+const sortProjects = (
+  a: CollectionEntry<"projects">,
+  b: CollectionEntry<"projects">
+) => Date.parse(b.data.date) - Date.parse(a.data.date);
 ---
 
 <Layout>
   <Header />
   <NavBar />
 
-  <div id="projest-list" class="columns-xs gap-4" x-show="page === 0">
+  <div class="columns-xs gap-4">
     {
       projects
         .sort(sortProjects)

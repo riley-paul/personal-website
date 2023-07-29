@@ -10,14 +10,30 @@ const { experience } = Astro.props;
 const { Content } = await experience.render();
 const { position, organization, location, date_beg, date_end } =
   experience.data;
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 ---
 
-<div><strong>{position} |&nbsp</strong>{organization}</div>
-<div>
-  <em>
-    {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"} | {
-      location
-    }
-  </em>
-</div>
-<Content />
+<Card>
+  <CardHeader>
+    <CardTitle>
+      {position}<span class="font-medium"> |&nbsp{organization}</span>
+    </CardTitle>
+    <CardDescription>
+      <em>
+        {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"} |
+        {location}
+      </em>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    <Content />
+  </CardContent>
+</Card>

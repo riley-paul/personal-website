@@ -11,7 +11,7 @@ const projectCollection = defineCollection({
         type: z.enum(["home", "source"]).optional(),
       })
     ),
-    date: z.string().transform((str) => new Date(str)),
+    date: z.string(),
     draft: z.boolean().optional(),
   }),
 });
