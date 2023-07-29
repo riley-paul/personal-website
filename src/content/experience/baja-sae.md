@@ -3,8 +3,8 @@ position: Mechanical Design & Fabrication Lead
 organization: Memorial University Baja SAE Team
 location: St. John's, NL
 
-date_beg: 2017 01
-date_end: 2019 06
+date_beg: 2017-01
+date_end: 2019-06
 
 category: baja
 ---

@@ -5,7 +5,7 @@ import formatDate from "../utils/formatDate";
 import TagList from "../components/TagList.astro";
 import Layout from "./Layout.astro";
 import Markdown from "./Markdown.astro";
-import Button from "../components/Button.astro";
+import { Button } from "@/components/ui/button";
 const { title, tags, links, date } = Astro.props.frontmatter;
 ---
 
@@ -20,6 +20,8 @@ const { title, tags, links, date } = Astro.props.frontmatter;
     <slot />
   </Markdown>
   <div class="flex justify-center py-10">
-    <Button text="More Projects" link="/" />
+    <a href="/">
+      <Button variant="invert">More Projects</Button>
+    </a>
   </div>
 </Layout>

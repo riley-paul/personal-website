@@ -14,7 +14,7 @@ links:
     type: source
   - url: https://pipeline-applets.vercel.app
     type: home
-date: 2023 04
+date: 2023-04
 ---
 
 ## Problem
