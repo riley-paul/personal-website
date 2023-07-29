@@ -3,8 +3,8 @@ position: Junior Project Engineer
 organization: SA Energy Group
 location: Western Canada
 
-date_beg: 2019 06
-date_end: 2021 03
+date_beg: 2019-06
+date_end: 2021-03
 
 category: work
 ---

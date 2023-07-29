@@ -3,7 +3,7 @@ position: Project Engineer
 organization: Macro Construction
 location: Chilliwack, BC
 
-date_beg: 2021 03
+date_beg: 2021-03
 date_end: null
 
 category: work

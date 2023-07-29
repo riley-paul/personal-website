@@ -3,8 +3,8 @@ position: Full Stack Web Development Bootcamp
 organization: Lighthouse Labs
 location: null
 
-date_beg: 2022 01
-date_end: 2022 04
+date_beg: 2022-01
+date_end: 2022-04
 
 category: school
 ---
