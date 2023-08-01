@@ -26,6 +26,7 @@ const experienceCollection = defineCollection({
     date_beg: z.string(),
     date_end: z.string().nullable(),
     category: z.enum(["school", "work", "baja"]),
+    draft: z.boolean().optional(),
   }),
 });
 

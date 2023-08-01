@@ -1,7 +1,7 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import Experience from "./Experience.jsx";
 
-const experiences = await getCollection("experience");
+const experiences = (await getCollection("experience")).filter(i => !i.data.draft);
 
 const categories = [
   { id: "work", name: "Work" },

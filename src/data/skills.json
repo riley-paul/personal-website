@@ -4,19 +4,20 @@
     "items": [
       "HTML",
       "CSS",
-      "NodeJS 🟩",
-      "React ⚛",
-      "Astro 🚀",
-      "Tailwind CSS 🍃",
+      "NodeJS",
+      "React",
+      "Astro",
+      "Tailwind CSS",
       "Express",
-      "Flask ⚗️",
-      "Alpine.js 🗻"
+      "Flask",
+      "FastAPI",
+      "Sveltekit"
     ]
   },
 
   {
     "name": "Languages",
-    "items": ["Javacript (ES2021)", "Typescript", "Python 3 🐍", "SQL", "NoSQL"]
+    "items": ["Javacript", "Typescript", "Python", "SQL", "NoSQL"]
   },
 
   {
