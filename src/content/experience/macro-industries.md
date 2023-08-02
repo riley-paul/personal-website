@@ -11,10 +11,10 @@ category: work
 
 - Accustomed to a demanding, highly dynamic work environment from on-site role with construction contractor
 
-- Programmatically generated large, detailed site drawings, using self-developed method of AutoCAD automation, saving thousands of man-hours and reducing likelihood of errors
+- Performed drafting, field inspection, technical writing, project coordination and project estimation duties on a day to day basis
 
-- Pioneered aerial survey program; creating online database of 2D and 3D models using photogrammetry for use in construction planning, drawings, estimating and progress tracking
+- Programmatically generated large, detailed site drawings, using self-developed method of AutoCAD automation, saving thousands of man-hours and reducing likelihood of errors. Time to produce a drawing dropped from 3 months to 3 days
 
-- Created advanced, map-based visualizations of dynamic project information allowing for all stakeholders to clearly understand performance metrics and project specifications
+- Pioneered aerial survey program; performing drone flights to create an online database of 2D and 3D imagery using photogrammetry. Imagery was used extensively for construction planning, drawings, estimating and progress tracking
 
-- Performed complicated analyses of geospatial, project controls, and natural resource data to inform key decisions
+- Performed complicated analyses of geospatial, project controls, and natural resource data using Python and created visualizations to allow for all stakeholders to clearly understand performance metrics and project specifications

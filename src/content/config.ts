@@ -22,7 +22,7 @@ const experienceCollection = defineCollection({
   schema: z.object({
     position: z.string(),
     organization: z.string(),
-    location: z.string().nullable(),
+    location: z.string().optional(),
     date_beg: z.string(),
     date_end: z.string().nullable(),
     category: z.enum(["school", "work", "baja"]),

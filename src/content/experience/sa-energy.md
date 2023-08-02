@@ -9,7 +9,9 @@ date_end: 2021-03
 category: work
 ---
 
-- On-site contract role on large-scale construction projects in Northern BC, Edmonton and Saskatchewan
+- On-site contract roles on large-scale construction projects in Northern BC, Edmonton and Saskatchewan
+
+- Engaged in all processes of project estimation; including initial on-site scouting, detailed execution planning, schedule resource loading, and delivery/discussion with the client
 
 - Exceptionally strong skills in modelling and visualization, honed through experience incorporating field survey data into engineering drawings such as pipeline profiles, site layouts, grade execution plans
 
