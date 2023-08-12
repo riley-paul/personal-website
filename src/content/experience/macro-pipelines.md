@@ -1,10 +1,10 @@
 ---
 position: Project Engineer
-organization: Macro Construction
+organization: Macro Pipelines
 location: Chilliwack, BC
 
 date_beg: 2021-03
-date_end: null
+date_end: 2023-08
 
 category: work
 ---
