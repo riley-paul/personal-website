@@ -1,6 +1,8 @@
 ---
-import { contacts } from "@/data/contacts.js";
+import { getCollection } from "astro:content";
 import { Button } from "./ui/button";
+
+const contacts = await getCollection("contact");
 ---
 
 <footer
@@ -10,9 +12,9 @@ import { Button } from "./ui/button";
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       contacts.map((c) => (
-        <a href={c.link} target="_blank">
+        <a href={c.data.link} target="_blank">
           <Button variant="invert" size="icon">
-            <i class={`${c.icon}`} class="h-5 w-5" />
+            <i class={`${c.data.icon}`} class="h-5 w-5" />
           </Button>
         </a>
       ))
