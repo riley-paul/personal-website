@@ -6,7 +6,7 @@ location: Calgary, AB
 date_beg: 2023-02
 date_end: 2023-05
 
-category: work
+category: 1-work
 ---
 
 - Performed analysis of geospatial, ﬁnancial, and climate data to aid in the presentation of a contractual discrepancy suit

@@ -27,6 +27,13 @@ const projectCollection = defineCollection({
   }),
 });
 
+const experienceCategoryCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+  }),
+});
+
 const experienceCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -35,7 +42,7 @@ const experienceCollection = defineCollection({
     location: z.string().optional(),
     date_beg: z.string(),
     date_end: z.string().nullable(),
-    category: z.enum(["school", "work", "baja"]),
+    category: reference("experienceCategory"),
     draft: z.boolean().optional(),
   }),
 });
@@ -54,4 +61,5 @@ export const collections = {
   experience: experienceCollection,
   contact: contactCollection,
   projectLinkType: projectLinkTypeCollection,
+  experienceCategory: experienceCategoryCollection,
 };

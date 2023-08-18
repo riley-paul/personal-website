@@ -5,11 +5,7 @@ const experiences = (await getCollection("experience")).filter(
   (i) => !i.data.draft
 );
 
-const categories = [
-  { id: "work", name: "Work" },
-  { id: "school", name: "Education" },
-  { id: "baja", name: "Baja SAE" },
-];
+const categories = await getCollection("experienceCategory");
 
 const sortDates = (
   a: CollectionEntry<"experience">,
@@ -27,11 +23,11 @@ export type Props = {};
 
 export default function ExperienceTabs(props: Props) {
   return (
-    <Tabs defaultValue="work" className="w-full">
+    <Tabs defaultValue={categories[0].id} className="w-full">
       <TabsList className={`grid w-full grid-cols-3`}>
         {categories.map((category) => (
           <TabsTrigger key={category.id} value={category.id}>
-            {category.name}
+            {category.data.name}
           </TabsTrigger>
         ))}
       </TabsList>
@@ -39,7 +35,7 @@ export default function ExperienceTabs(props: Props) {
         <TabsContent key={category.id} value={category.id}>
           <Card>
             {experiences
-              .filter((exp) => exp.data.category === category.id)
+              .filter((exp) => exp.data.category.id === category.id)
               .sort(sortDates)
               .map((exp) => (
                 <Experience key={exp.id} experience={exp}></Experience>
