@@ -1,4 +1,12 @@
-import { z, defineCollection } from "astro:content";
+import { z, reference, defineCollection } from "astro:content";
+
+const projectLinkTypeCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    icon: z.string(),
+  }),
+});
 
 const projectCollection = defineCollection({
   type: "content",
@@ -10,7 +18,7 @@ const projectCollection = defineCollection({
       .array(
         z.object({
           url: z.string().url(),
-          type: z.enum(["home", "source"]).optional(),
+          type: reference("projectLinkType"),
         })
       )
       .optional(),
@@ -45,4 +53,5 @@ export const collections = {
   projects: projectCollection,
   experience: experienceCollection,
   contact: contactCollection,
+  projectLinkType: projectLinkTypeCollection,
 };
