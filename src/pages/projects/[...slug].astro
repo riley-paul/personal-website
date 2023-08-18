@@ -1,6 +1,12 @@
 ---
-import { getCollection } from "astro:content";
-import ProjectPage from "../../layouts/ProjectPage.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import formatDate from "@/utils/formatDate";
+
+import { Button } from "@/components/ui/button";
+import LinkList from "@/components/LinkList.astro";
+import TagList from "@/components/TagList.astro";
+import Layout from "@/layouts/Layout.astro";
+import Markdown from "@/layouts/Markdown.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -10,11 +16,29 @@ export async function getStaticPaths() {
     props: { entry },
   }));
 }
-// 2. When it's time to render, you can get the entry directly from the prop
+
+interface Props {
+  entry: CollectionEntry<"projects">;
+}
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<ProjectPage frontmatter={entry.data}>
-  <Content />
-</ProjectPage>
+<Layout title={entry.data.title}>
+  <h1 class="text-4xl font-bold">{entry.data.title}</h1>
+  <div class="opacity-70">{formatDate(entry.data.date)}</div>
+  <br />
+  <TagList tags={entry.data.tags} />
+  <LinkList links={entry.data.links} />
+  <Markdown>
+    <br />
+    <Content />
+  </Markdown>
+  <div class="flex justify-center pt-20 pb-10">
+    <a href="/">
+      <Button variant="invert" size="lg">More Projects</Button>
+    </a>
+  </div>
+</Layout>
+
