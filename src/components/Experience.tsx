@@ -2,15 +2,12 @@ import type { CollectionEntry } from "astro:content";
 import formatDate from "../utils/formatDate";
 
 import {
-  Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import ReactMarkdown from "react-markdown";
-import { useEffect } from "react";
 
 export type Props = {
   experience: CollectionEntry<"experience">;
