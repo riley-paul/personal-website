@@ -39,7 +39,7 @@ As I'm a huge fan of the file-based routing, non-virtual DOM, built-in stores, a
 
 **Backend |** Python FastAPI, PostgreSQL, Prisma ORM
 
-![User Interface](/images/contruction_applets.png)
+![User Interface](./contruction_applets.png)
 
 ## Lessons
 

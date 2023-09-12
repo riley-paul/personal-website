@@ -17,7 +17,7 @@ description: NodeJS script running on Linux server to collect data from constell
 date: 2022-04
 ---
 
-![adverse weather](/images/smap-weather.jpg)
+![adverse weather](./smap-weather.jpg)
 
 ## Background
 
@@ -27,7 +27,7 @@ While working on a remote construction project in Northern BC in 2020, adverse w
 
 I implemented a constellation of five internet-connected weather stations along with a Raspberry Pi server to record the weather along the construction project and produce a daily report. This report was distributed to upper management to inform them on their decisions for the day.
 
-![Weather Report](/images/weather_report.png)
+![Weather Report](./weather_report.png)
 
 In 2022 the Pi stopped working so I deployed the codebase to a linux server hosted by [Linode](https://linode.com).
 

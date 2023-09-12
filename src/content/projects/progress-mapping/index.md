@@ -11,7 +11,7 @@ description: Amalgamation of multiple sources of construction progress informati
 date: 2022 07
 ---
 
-![Construction Activities](/images/construction-activities.jpeg)
+![Construction Activities](./construction-activities.jpeg)
 
 ## Problem
 
@@ -25,7 +25,7 @@ Additionally, the scope of this project was divided among a few different contra
 
 I applied my skills in data analysis and geospatial mapping to distill the various spreadsheets into a simplified form, then converted that data into several easy-to-understand maps with multi-coloured lines and a clear legend.
 
-![Progress Map](/images/progress-map.png)
+![Progress Map](./progress-map.png)
 
 ## Implementation
 
@@ -60,11 +60,11 @@ Using this clean data, it is much simpler to produce maps and other analyses.
 
 By filtering for certain crews in the dataset, a point in the construction timeline can be displayed. for instance, pipe installed in the ground.
 
-![Installed Pipe](/images/progress-installed.png)
+![Installed Pipe](./progress-installed.png)
 
 Of course, every crew can be plotted as well. In this case, I chose to group mechanical, civil and clearing crews with one another.
 
-![Crew Progress](/images/progress-crews.png)
+![Crew Progress](./progress-crews.png)
 
 ## Outcome
 
