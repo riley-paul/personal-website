@@ -1,30 +1,33 @@
 ---
 import { Button } from "./ui/button";
 
-const links = [
-  { name: "Projects", href: "/" },
-  { name: "Resume", href: "/resume" },
+interface Link {
+  name: string,
+  href: string,
+  active: (pathname: string) => boolean
+}
+
+const links: Link[] = [
+  { name: "Projects", href: "/", active: (pathname: string) => pathname.startsWith('/projects') || pathname === "/" },
+  { name: "Resume", href: "/resume", active: (pathname: string) => pathname.startsWith('/resume') },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="flex gap-4 justify-between pb-8 w-full">
+<div class="flex gap-4 justify-between pb-8 pt-4 w-full sticky top-0  z-50 bg-gradient-to-b from-background from-60%">
   {
-    links.map((link) => {
-      const active =
-        currentPath === link.href || currentPath === link.href + "/";
-      return (
-        <a href={link.href} class={active ? "flex-1" : ""}>
+    links.map((link) => (
+        <a href={link.href} class={link.active(Astro.url.pathname) ? "flex-1" : ""}>
           <Button
-            variant={active ? "default" : "invert"}
+            variant={link.active(Astro.url.pathname) ? "default" : "invert"}
             size="lg"
             className="w-full"
           >
             {link.name}
           </Button>
         </a>
-      );
-    })
+      )
+    )
   }
 </div>

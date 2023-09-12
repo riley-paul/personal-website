@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import formatDate from "@/utils/formatDate";
 
 import { Button } from "@/components/ui/button";
@@ -26,13 +26,12 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <h1 class="text-4xl font-bold">{entry.data.title}</h1>
-  <div class="opacity-70">{formatDate(entry.data.date)}</div>
-  <br />
-  <TagList tags={entry.data.tags} />
-  <LinkList links={entry.data.links} />
-  <Markdown>
+    <h1 class="text-4xl font-bold">{entry.data.title}</h1>
+    <div class="opacity-70">{formatDate(entry.data.date)}</div>
     <br />
+    <TagList tags={entry.data.tags} />
+    <LinkList links={entry.data.links} />
+  <Markdown>
     <Content />
   </Markdown>
   <div class="flex justify-center pt-20 pb-10">

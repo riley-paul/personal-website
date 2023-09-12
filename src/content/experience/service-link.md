@@ -3,7 +3,7 @@ position: Junior Software Developer
 organization: Service-Link
 
 date_beg: 2023-08
-date_end: undefined
+date_end: null
 
 category: 1-work
 ---
