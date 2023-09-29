@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { Button } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 
 const contacts = await getCollection("contact");
 ---
@@ -12,10 +12,12 @@ const contacts = await getCollection("contact");
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       contacts.map((c) => (
-        <a href={c.data.link} target="_blank">
-          <Button variant="invert" size="icon">
-            <i class={`${c.data.icon}`} class="h-5 w-5" />
-          </Button>
+        <a
+          href={c.data.link}
+          target="_blank"
+          class={buttonVariants({ variant: "invert", size: "icon" })}
+        >
+          <i class={`${c.data.icon}`} class="h-5 w-5" />
         </a>
       ))
     }
