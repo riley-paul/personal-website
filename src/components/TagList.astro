@@ -8,5 +8,14 @@ const { tags } = Astro.props;
 ---
 
 <div class="flex flex-wrap gap-2">
-  {tags.map((tag) => <Badge variant="secondary">{tag}</Badge>)}
+  {
+    tags.map((tag) => (
+      <Badge
+        variant="secondary"
+        className="font-normal font text-muted-foreground"
+      >
+        {tag}
+      </Badge>
+    ))
+  }
 </div>
