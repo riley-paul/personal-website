@@ -9,7 +9,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
@@ -30,7 +30,9 @@ const { title } = Astro.props;
       src="https://kit.fontawesome.com/c961af0e55.js"
       crossorigin="anonymous"></script>
   </head>
-  <body class="bg-background text-primary font-serif min-h-full h-full">
+  <body
+    class="bg-background text-primary font-serif min-h-full h-full bg-[url('/asfalt-light.png')]"
+  >
     <!-- <Navbar /> -->
     <main class="w-full p-4 mx-auto max-w-3xl 2xl:max-w-6xl">
       <slot />
