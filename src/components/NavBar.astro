@@ -26,22 +26,24 @@ const currentPath = Astro.url.pathname;
 ---
 
 <div
-  class="flex gap-4 justify-between pb-8 pt-4 w-full sticky top-0 z-50"
+  class="pb-8 pt-4 w-full sticky top-0 z-50 bg-gradient-to-b from-background to-transparent"
 >
-  {
-    links.map((link) => (
-      <a
-        href={link.href}
-        class={cn(
-          link.active(Astro.url.pathname) ? "flex-1" : "",
-          buttonVariants({
-            size: "lg",
-            variant: link.active(Astro.url.pathname) ? "default" : "invert",
-          })
-        )}
-      >
-        {link.name}
-      </a>
-    ))
-  }
+  <div class="container flex gap-4 justify-between">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class={cn(
+            link.active(Astro.url.pathname) ? "flex-1" : "",
+            buttonVariants({
+              size: "lg",
+              variant: link.active(Astro.url.pathname) ? "default" : "invert",
+            })
+          )}
+        >
+          {link.name}
+        </a>
+      ))
+    }
+  </div>
 </div>
