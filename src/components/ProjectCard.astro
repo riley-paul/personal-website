@@ -17,16 +17,18 @@ const { project } = Astro.props;
 <a href={`/projects/${project.slug}`} class="w-full">
   <Card className="inline-block mb-4 w-full">
     <CardHeader>
-      <CardTitle className="flex justify-between">
-        <span>{project.data.title}</span>
-        <span class="opacity-70 font-light">
-          {formatDate(project.data.date)}
-        </span>
+      <CardTitle>
+        {project.data.title}
       </CardTitle>
-      <CardDescription>{project.data.description}</CardDescription>
+      <CardDescription>
+        {formatDate(project.data.date)}
+      </CardDescription>
     </CardHeader>
-    <CardContent>
-      <TagList tags={project.data.tags} />
+    <CardContent className="text-muted-foreground">
+      {project.data.description}
     </CardContent>
+    <CardFooter>
+      <TagList tags={project.data.tags} />
+    </CardFooter>
   </Card>
 </a>

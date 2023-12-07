@@ -28,10 +28,7 @@ const linksTyped = await Promise.all(
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          class={cn(
-            "text-sky-500 hover:text-sky-400",
-            buttonVariants({ variant: "outline" })
-          )}
+          class={cn(buttonVariants({ variant: "link" }))}
         >
           <i class={`${link.icon} mr-2`} />
           {link.name}
