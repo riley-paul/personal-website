@@ -1,13 +1,5 @@
 import { z, reference, defineCollection } from "astro:content";
 
-const projectLinkTypeCollection = defineCollection({
-  type: "data",
-  schema: z.object({
-    name: z.string(),
-    icon: z.string(),
-  }),
-});
-
 const projectCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -18,7 +10,7 @@ const projectCollection = defineCollection({
       .array(
         z.object({
           url: z.string().url(),
-          type: reference("projectLinkType"),
+          type: z.enum(["source", "home"]),
         })
       )
       .optional(),
@@ -47,19 +39,8 @@ const experienceCollection = defineCollection({
   }),
 });
 
-const contactCollection = defineCollection({
-  type: "data",
-  schema: z.object({
-    name: z.string(),
-    link: z.string(),
-    icon: z.string(),
-  }),
-});
-
 export const collections = {
   projects: projectCollection,
   experience: experienceCollection,
-  contact: contactCollection,
-  projectLinkType: projectLinkTypeCollection,
   experienceCategory: experienceCategoryCollection,
 };

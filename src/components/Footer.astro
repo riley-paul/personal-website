@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { buttonVariants } from "./ui/button";
 
-const contacts = await getCollection("contact");
+import { contactMethods } from "@/lib/config";
 ---
 
 <footer
@@ -11,13 +11,13 @@ const contacts = await getCollection("contact");
 >
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
-      contacts.map((c) => (
+      contactMethods.map((c) => (
         <a
-          href={c.data.link}
+          href={c.link}
           target="_blank"
           class={buttonVariants({ variant: "invert", size: "icon" })}
         >
-          <i class={`${c.data.icon}`} class="h-5 w-5" />
+          <c.Icon className="h-4 w-4" />
         </a>
       ))
     }

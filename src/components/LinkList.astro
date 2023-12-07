@@ -4,6 +4,8 @@ import { buttonVariants } from "./ui/button";
 import { getEntry } from "astro:content";
 import { cn } from "@/lib/utils";
 
+import { projectLinkTypes, defaultLink } from "@/lib/projectLinks";
+
 type Links = CollectionEntry<"projects">["data"]["links"];
 
 interface Props {
@@ -13,9 +15,9 @@ interface Props {
 const { links = [] } = Astro.props;
 
 const linksTyped = await Promise.all(
-  links.map(async (link) => {
-    const linkType = await getEntry("projectLinkType", link.type.id);
-    return { ...link, ...linkType.data };
+  links.map((link) => {
+    const linkType = projectLinkTypes.find((type) => type.id === link.type);
+    return { ...link, ...defaultLink, ...linkType };
   })
 );
 ---
@@ -30,7 +32,7 @@ const linksTyped = await Promise.all(
           rel="noopener noreferrer"
           class={cn(buttonVariants({ variant: "link" }))}
         >
-          <i class={`${link.icon} mr-2`} />
+          <link.Icon className="h-4 w-4 mr-2" />
           {link.name}
         </a>
       ))}
