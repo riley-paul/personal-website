@@ -17,7 +17,7 @@ const { project } = Astro.props;
 <a href={`/projects/${project.slug}`} class="w-full">
   <Card className="inline-block mb-4 w-full">
     <CardHeader>
-      <CardTitle>
+      <CardTitle className="text-base">
         {project.data.title}
       </CardTitle>
       <CardDescription>
