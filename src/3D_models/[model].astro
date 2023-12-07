@@ -1,5 +1,5 @@
 ---
-import getModels from "../../utils/getModels";
+import getModels from "@/lib/getModels";
 
 export async function getStaticPaths() {
   const models = await getModels();
@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 const modelUrl = `/models/${Astro.params.model}`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
