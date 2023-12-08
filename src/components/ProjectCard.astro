@@ -17,14 +17,14 @@ const { project } = Astro.props;
 <a href={`/projects/${project.slug}`} class="w-full">
   <Card className="inline-block mb-4 w-full">
     <CardHeader>
-      <CardTitle className="text-base">
+      <CardTitle className="text-base font-bold">
         {project.data.title}
       </CardTitle>
       <CardDescription>
         {formatDate(project.data.date)}
       </CardDescription>
     </CardHeader>
-    <CardContent className="text-muted-foreground">
+    <CardContent>
       {project.data.description}
     </CardContent>
     <CardFooter>
