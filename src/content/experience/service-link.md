@@ -1,6 +1,6 @@
 ---
-position: Junior Software Developer
-organization: Service-Link
+position: Junior Front End Developer
+organization: Service-Link (Harris Computer)
 
 date_beg: 2023-08
 date_end: null
@@ -8,4 +8,4 @@ date_end: null
 category: 1-work
 ---
 
-- Developed user interfaces for a ground-up rework of the flagship remote workforce management software
+- Led small team to re-imagine legacy Windows application as a performant, intuitive, web app which justified a 20% increase in licensing fees for overall software package
