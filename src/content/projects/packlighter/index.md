@@ -5,6 +5,11 @@ tags:
   - React
   - Pocketbase
   - SQL Database
+
+links:
+  - url: https://github.com/rjp301/packlighter
+    type: source
+
 description: A web app for creating detailed packing lists for backcountry adventures
 date: 2024-04
 wip: true
