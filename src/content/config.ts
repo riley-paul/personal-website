@@ -16,6 +16,7 @@ const projectCollection = defineCollection({
       .optional(),
     date: z.string(),
     draft: z.boolean().optional(),
+    wip: z.boolean().optional(),
   }),
 });
 
