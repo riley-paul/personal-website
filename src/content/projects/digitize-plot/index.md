@@ -8,7 +8,7 @@ tags:
 links:
   - url: https://github.com/rjp301/digitize-plot
     type: source
-  - url: https://digitizeplot.com
+  - url: https://rjp301.github.io/digitize-plot/
     type: home
 description: Web app to convert images of plots to raw data
 date: 2022-10
@@ -17,8 +17,6 @@ date: 2022-10
 ## Introduction
 
 Have you ever needed to convert data from a graphical format and found yourself painstakingly entering data in a spreadsheet while zooming in and out on the plot image?
-
-Enter [**digitizeplot.com**](https://digitizeplot.com/).
 
 This web app allows users to upload an image of a plot, calibrate an x and y scale, drop as many points as they would like on it, then export those points to CSV with accurate coordinates.
 

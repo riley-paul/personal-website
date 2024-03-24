@@ -19,7 +19,7 @@ export default function Experience(props: Props) {
     experience.data;
 
   return (
-    <div className="prose prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-1.5 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal">
+    <div className="prose dark:prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-1.5 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal">
       <CardHeader className="pb-2">
         <CardTitle>
           {position}
