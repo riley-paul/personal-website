@@ -1,7 +1,5 @@
+import { DateTime } from "luxon";
+
 export default function formatDate(date: string): string {
-  return new Date(date).toLocaleDateString("en-GB", {
-    timeZone: "UTC",
-    month: "short",
-    year: "numeric",
-  });
+  return DateTime.fromISO(date).toFormat("LLL yyyy");
 }
