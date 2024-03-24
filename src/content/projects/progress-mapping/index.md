@@ -8,7 +8,7 @@ tags:
   - Geospatial
   - GIS
 description: Amalgamation of multiple sources of construction progress information to map in easy to understand manner
-date: 2022 07
+date: 2022-07
 ---
 
 ![Construction Activities](./construction-activities.jpeg)
