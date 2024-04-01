@@ -11,7 +11,7 @@ links:
     type: home
   - url: https://github.com/rjp301/photo-portfolio
     type: source
-description: Photo portfolio site built from scratch using Astro and Svelte and deployed on Github Pages.
+description: Photo portfolio site built from scratch using Astro and React and deployed on Github Pages.
 date: 2022-08
 ---
 

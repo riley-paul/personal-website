@@ -12,6 +12,7 @@ links:
     type: home
 description: Web app to convert images of plots to raw data
 date: 2022-10
+top3: true
 ---
 
 ## Introduction

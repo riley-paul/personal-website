@@ -15,6 +15,7 @@ links:
     type: source
 description: NodeJS script running on Linux server to collect data from constellation of remote weather stations and send daily report to project management
 date: 2022-04
+top3: true
 ---
 
 ## Background

@@ -9,10 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import WipBadge from "./WipBadge";
+import WipBadge from "./badges/WipBadge";
 
 import React from "react";
 import type { CollectionEntry } from "astro:content";
+import Top3Badge from "./badges/Top3Badge";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -28,6 +29,7 @@ const ProjectCard: React.FC<Props> = (props) => {
           <CardTitle className="text-base font-bold justify-between flex gap-2">
             {project.data.title}
             {project.data.wip && <WipBadge />}
+            {project.data.top3 && <Top3Badge />}
           </CardTitle>
           <CardDescription>{formatDate(project.data.date)}</CardDescription>
         </CardHeader>

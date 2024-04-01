@@ -8,7 +8,7 @@ import TagList from "@/components/TagList";
 import Layout from "@/layouts/Layout.astro";
 import Markdown from "@/layouts/Markdown.astro";
 import { Badge } from "@/components/ui/badge";
-import WipBadge from "@/components/WipBadge";
+import WipBadge from "@/components/badges/WipBadge";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -51,3 +51,4 @@ const { Content } = await entry.render();
     </div>
   </div>
 </Layout>
+@/components/badges/WipBadge

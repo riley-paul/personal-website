@@ -12,7 +12,7 @@ links:
     type: source
   - url: https://rileypaul.ca
     type: home
-description: You're browing it as we speak.
+description: You're browsing it as we speak.
 date: 2022-09
 ---
 
