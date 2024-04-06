@@ -7,6 +7,12 @@ tags:
   - Email Server
   - Tailwind CSS
 date: 2024-04
+links: 
+  - url: https://3x3-is-15.vercel.app
+    type: home
+  - url: https://github.com/rjp301/3x3-is-15
+    type: source
+  
 ---
 
 Number puzzle game where the goal is to arrange the numbers 1 through 9 in a 3x3 grid such that each horizontal axis and one diagonal sums to 15.
