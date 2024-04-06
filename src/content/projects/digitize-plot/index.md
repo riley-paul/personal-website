@@ -8,7 +8,7 @@ tags:
 links:
   - url: https://github.com/rjp301/digitize-plot
     type: source
-  - url: https://rjp301.github.io/digitize-plot/
+  - url: https://digitize-plot.vercel.app/
     type: home
 description: Web app to convert images of plots to raw data
 date: 2022-10
@@ -21,6 +21,8 @@ Have you ever needed to convert data from a graphical format and found yourself 
 
 This web app allows users to upload an image of a plot, calibrate an x and y scale, drop as many points as they would like on it, then export those points to CSV with accurate coordinates.
 
+![screenshot](./screenshot.png)
+
 ## How it Works
 
 There are many instances where data is available in only a chart format with an x and y axis and minimal labels. The below is a prime example of this.
@@ -28,8 +30,6 @@ There are many instances where data is available in only a chart format with an 
 ![example plot](./BPL220K_24ft.png)
 
 This app allows users to import an image, calibrate the image, then place as many points as they would like and export those to a CSV file. Currently the tool is only able to be calibrated for linear plots.
-
-![example plot in app](./digitize-plot.png)
 
 ## How I Built It
 
