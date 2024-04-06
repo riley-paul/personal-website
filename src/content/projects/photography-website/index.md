@@ -19,7 +19,7 @@ date: 2022-08
 
 I have been practicing photography since 2015 and have hosted my photography portfolio using [Squarespace](https://www.squarespace.com/) since 2017. When I was learning about web development I saw this as the perfect first project as I didn't particularly enjoy spending several hundred dollars every year on Squarespace.
 
-![screenshot of photo website](./photo_site_screenshot.png)
+![screenshot of photo website](./screenshot.png)
 
 ## Implementation
 
