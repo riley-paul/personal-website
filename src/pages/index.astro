@@ -1,24 +1,29 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import RootLayout from "../layouts/root-layout.astro";
 import ProjectCard from "../components/ProjectCard";
 import { type CollectionEntry, getCollection } from "astro:content";
-import MainLayout from "@/layouts/MainLayout.astro";
+import MainLayout from "@/layouts/main-layout.astro";
 
 const projects = await getCollection(
   "projects",
   ({ data }) => data.draft !== true
 );
-const sortProjects = (
+const sortProjectsDate = (
   a: CollectionEntry<"projects">,
   b: CollectionEntry<"projects">
 ) => Date.parse(b.data.date) - Date.parse(a.data.date);
+
+const sortProjectsTop3 = (
+  a: CollectionEntry<"projects">,
+  b: CollectionEntry<"projects">
+) => (b.data.top3 ? 1 : -1);
 ---
 
 <MainLayout>
   <div class="columns-xs gap-4">
     {
       projects
-        .sort(sortProjects)
+        .sort(sortProjectsDate)
         .map((project) => <ProjectCard project={project} />)
     }
   </div>

@@ -1,20 +1,17 @@
 ---
 title: Weather Station Constellation
 tags:
-  - Python
-  - Cronjob
-  - Third-Party API
-  - Email Automation
-  - SendGrid
-  - Linux
-  - Typescript
   - NodeJS
-  - Pandas
+  - CI/CD
+  - Lambda Functions
+  - Email Service
+  - Cronjob
+  - Email Automation
 links:
   - url: https://github.com/rjp301/pi-weather
     type: source
-description: NodeJS script running on Linux server to collect data from constellation of remote weather stations and send daily report to project management
-date: 2022-04
+description: Serverless web application running on Lambda functions to collect data from constellation of remote weather stations and send daily report to project management
+date: 2023-08
 top3: true
 ---
 
@@ -28,8 +25,6 @@ I implemented a constellation of five internet-connected weather stations along 
 
 ![Weather Report](./weather_report.png)
 
-In 2022 the Pi stopped working so I deployed the codebase to a linux server hosted by [Linode](https://linode.com).
-
 ## Implementation
 
 The weather stations are connected to [Weather Underground](https://www.wunderground.com/) for live data display and storage.
@@ -41,3 +36,17 @@ In 2023 I rewrite the codebase in Typscript to take advantage of the strong typi
 ## Outcome
 
 As a result of this substantially more detail weather record, my employer was able to get multi-million dollar change order requests approved. Additionally, the dailt weather report has been instrumental in planning workfronts to avoid causing environmental damage.
+
+---
+
+## Update - Jul 2022
+
+In 2022 the Pi stopped working so I deployed the codebase to a linux server hosted by [Linode](https://linode.com).
+
+---
+
+## Update - Sep 2023
+
+I built out a complete frontend and database for the project. The weather information is cached in the database to reduce the calls to the Weather Underground API. The frontend allows users to add and remove weather stations, update the Weather Underground API key, add and remove people from the email list, and view weather from any date in the past, as well as re-send the email from that date.
+
+The front and backend were built using the Astro web framework and deployed to the Vercel serverless runtime. I used Upstash to schedule an endpoint hit every hour so the emails would be sent on time. This was necessary because the temporary nature of serverless functions precluded scheduling system cronjobs.

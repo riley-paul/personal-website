@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import RootLayout from "./root-layout.astro";
 import Header from "@/components/Header.astro";
 import NavBar from "@/components/NavBar.astro";
 ---
 
-<Layout>
+<RootLayout>
   <Header />
   <NavBar />
   <div class="container">
     <slot />
   </div>
-</Layout>
+</RootLayout>

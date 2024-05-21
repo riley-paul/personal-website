@@ -5,9 +5,8 @@ import formatDate from "@/lib/formatDate";
 import { buttonVariants } from "@/components/ui/button";
 import LinkList from "@/components/LinkList.astro";
 import TagList from "@/components/TagList";
-import Layout from "@/layouts/Layout.astro";
-import Markdown from "@/layouts/Markdown.astro";
-import { Badge } from "@/components/ui/badge";
+import RootLayout from "@/layouts/root-layout.astro";
+import Markdown from "@/layouts/markdown.astro";
 import WipBadge from "@/components/badges/WipBadge";
 
 // 1. Generate a new path for every collection entry
@@ -27,7 +26,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}>
+<RootLayout title={entry.data.title}>
   <div class="container pt-8 bg-gradient-to-b from-background to-transparent">
     <div class="flex gap-2 items-center justify-between">
       <h1 class="text-4xl font-bold">{entry.data.title}</h1>
@@ -50,4 +49,4 @@ const { Content } = await entry.render();
       </a>
     </div>
   </div>
-</Layout>
+</RootLayout>
