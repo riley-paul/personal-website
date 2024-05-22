@@ -15,6 +15,8 @@ date: 2023-08
 top3: true
 ---
 
+![screenshot](./screenshot.png)
+
 ## Background
 
 While working on a remote construction project in Northern BC in 2020, adverse weather events such as torrential rain and extreme cold caused substantial budget and schedule overages. As I was working for the contractor, they had to justify these overages to the client but struggled to do so do to the limited coverage of public weather stations in the remote area.
