@@ -12,8 +12,6 @@ tags:
 links:
   - url: https://github.com/rjp301/pipeline-applets
     type: source
-  - url: https://pipeline-applets.vercel.app
-    type: home
 date: 2023-04
 top3: true
 ---
