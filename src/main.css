@@ -84,6 +84,10 @@
     scroll-gutter: static right;
   }
 
+  .container2 {
+    @apply max-w-[1024px] mx-auto px-4 md:px-8;
+  }
+
   .iframe-container {
     position: relative;
     overflow: hidden;

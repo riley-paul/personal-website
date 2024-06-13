@@ -27,7 +27,7 @@ const { Content } = await entry.render();
 ---
 
 <RootLayout title={entry.data.title}>
-  <div class="container pt-8 bg-gradient-to-b from-background to-transparent">
+  <div class="container2 pt-8 bg-gradient-to-b from-background to-transparent">
     <div class="flex gap-2 items-center justify-between">
       <h1 class="text-4xl font-bold">{entry.data.title}</h1>
       {entry.data.wip && <WipBadge />}
@@ -35,11 +35,11 @@ const { Content } = await entry.render();
     <p class="opacity-70">{formatDate(entry.data.date)}</p>
     <br />
   </div>
-  <div class="container space-y-2">
+  <div class="container2 space-y-2">
     <TagList tags={entry.data.tags} />
     <LinkList links={entry.data.links} />
   </div>
-  <div class="container pt-8">
+  <div class="container2 pt-8">
     <Markdown>
       <Content />
     </Markdown>
