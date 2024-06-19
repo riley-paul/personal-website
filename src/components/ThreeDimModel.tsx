@@ -1,52 +1,47 @@
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useSpring, a } from "@react-spring/three";
+import { OrbitControls } from "@react-three/drei";
+
 import React from "react";
-import { Card } from "./ui/card";
+import type { Mesh } from "three";
 
-interface Props {}
+const Box: React.FC = () => {
+  const meshRef = React.useRef<Mesh>(null);
 
-const Box: React.FC = (props) => {
-  // This reference will give us direct access to the mesh
-  const meshRef = React.useRef();
-  // Set up state for the hovered and active state
   const [hovered, setHover] = React.useState(false);
   const [active, setActive] = React.useState(false);
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (meshRef.current.rotation.x += delta));
-  // Return view, these are regular three.js elements expressed in JSX
+
+  const props = useSpring({
+    scale: active ? 1.5 : 1,
+    color: hovered ? "hotpink" : "grey",
+  });
+
   return (
-    <mesh
-      {...props}
+    <a.mesh
       ref={meshRef}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
+      scale={props.scale}
+      onClick={() => setActive(!active)}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
-    </mesh>
+      <boxGeometry attach="geometry" args={[1, 1, 1]} />
+      <a.meshBasicMaterial attach="material" color={props.color} />
+    </a.mesh>
   );
 };
 
-const ThreeDimModel: React.FC<Props> = (props) => {
-  const {} = props;
-
+const ThreeDimModel: React.FC = () => {
   return (
-    <Card className="min-h-[300px]">
+    <div className="h-[100svh]">
       <Canvas>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-          decay={0}
-          intensity={Math.PI}
+        <Box />
+        <OrbitControls
+          autoRotate
+          maxPolarAngle={Math.PI / 3}
+          minPolarAngle={Math.PI / 3}
         />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
       </Canvas>
-    </Card>
+    </div>
   );
 };
 
