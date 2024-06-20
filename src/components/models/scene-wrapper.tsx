@@ -1,11 +1,18 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls, useProgress } from "@react-three/drei";
 import * as THREE from "three";
 
 import React from "react";
-import { Model } from "./models/hovercraft-mk9";
 
-const ThreeDimModel: React.FC = () => {
+const Loader: React.FC = () => {
+  const { progress } = useProgress();
+  return <Html center>{progress} % loaded</Html>;
+};
+
+type Props = React.PropsWithChildren;
+
+export const SceneWrapper: React.FC<Props> = (props) => {
+  const { children } = props;
   return (
     <div className="h-[100svh]">
       <Canvas
@@ -22,19 +29,14 @@ const ThreeDimModel: React.FC = () => {
           intensity={300}
           castShadow
         />
-        <Model />
-        {/* <Box /> */}
-        {/* <Plane /> */}
+        <React.Suspense fallback={<Loader />}>{children}</React.Suspense>
         <OrbitControls
           autoRotate
           maxPolarAngle={Math.PI / 2.5}
           minPolarAngle={Math.PI / 3}
           enableDamping={false}
         />
-        {/* <fog attach="fog" args={["white", 5, 15]} /> */}
       </Canvas>
     </div>
   );
 };
-
-export default ThreeDimModel;

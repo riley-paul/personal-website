@@ -6,6 +6,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
+import { SceneWrapper } from "./scene-wrapper";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -2418,3 +2419,11 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
 }
 
 useGLTF.preload("/models/baja_seat.gltf");
+
+export const Scene: React.FC = () => {
+  return (
+    <SceneWrapper>
+      <Model />
+    </SceneWrapper>
+  );
+};
