@@ -1,11 +1,9 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useSpring, a } from "@react-spring/three";
+import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 import React from "react";
-import type { Mesh } from "three";
-import { Model } from "./models/hovercraft-mk1";
+import { Model } from "./models/hovercraft-mk9";
 
 const ThreeDimModel: React.FC = () => {
   return (
