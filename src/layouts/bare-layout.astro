@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <meta name="description" content="Personal and professional portfolio" />
     <title>{"Riley Paul" + (title ? ` - ${title}` : "")}</title>
   </head>
-  <body class="min-h-[100svh] bg-white">
+  <body class="min-h-[100svh]">
     <slot />
   </body>
 </html>
