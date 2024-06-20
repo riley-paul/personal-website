@@ -14,7 +14,7 @@ type Props = React.PropsWithChildren;
 export const SceneWrapper: React.FC<Props> = (props) => {
   const { children } = props;
   return (
-    <div className="h-[100svh]">
+    <div className="h-[500px] bg-muted/20 rounded-md">
       <Canvas
         camera={{ position: [0, 0, 1] }}
         onCreated={({ gl }) => {
