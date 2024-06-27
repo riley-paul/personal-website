@@ -8,7 +8,7 @@ tags:
   - Tailwind CSS
 date: 2024-04
 links:
-  - url: https://3x3-is-15.vercel.app
+  - url: https://3x3-is-15.rileys-projects.com
     type: home
   - url: https://github.com/rjp301/3x3-is-15
     type: source

@@ -8,7 +8,7 @@ tags:
 links:
   - url: https://github.com/rjp301/digitize-plot
     type: source
-  - url: https://digitize-plot.vercel.app/
+  - url: https://digitize-plot.rileys-projects.com
     type: home
 description: Web app to convert images of plots to raw data
 date: 2022-10
