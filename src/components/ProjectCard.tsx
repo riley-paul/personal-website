@@ -26,7 +26,7 @@ const ProjectCard: React.FC<Props> = (props) => {
     <a href={`/projects/${project.slug}`} className="w-full">
       <Card className="inline-block mb-4 w-full">
         <CardHeader>
-          <CardTitle className="text-base font-bold justify-between flex gap-2">
+          <CardTitle className="justify-between flex gap-2">
             {project.data.title}
             {project.data.wip && <WipBadge />}
             {project.data.top3 && <Top3Badge />}
