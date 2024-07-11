@@ -1,7 +1,10 @@
 ---
 import Footer from "@/components/Footer.astro";
-import "@fontsource/poppins";
 import "@/globals.css";
+
+import "@fontsource/poppins";
+import "@fontsource-variable/martian-mono";
+import '@fontsource/lato';
 
 export interface Props {
   title?: string;
@@ -11,7 +14,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
