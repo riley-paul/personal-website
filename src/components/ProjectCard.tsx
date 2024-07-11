@@ -9,11 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import WipBadge from "./badges/WipBadge";
+import WipBadge from "./badges/wip-badge";
 
 import React from "react";
 import type { CollectionEntry } from "astro:content";
-import Top3Badge from "./badges/Top3Badge";
+import Top3Badge from "./badges/top-3-badge";
 
 interface Props {
   project: CollectionEntry<"projects">;
