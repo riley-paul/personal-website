@@ -5,7 +5,7 @@ organization: Service-Link (Harris Computer)
 date_beg: 2023-08
 date_end: null
 
-category: 1-work
+category: work
 ---
 
 - Performed comprehensive refactor of flagship React application to address substantial technical debt, greatly reducing bundle size and improving performance and reliability

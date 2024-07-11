@@ -6,7 +6,7 @@ location: Western Canada
 date_beg: 2016-01
 date_end: 2021-03
 
-category: 1-work
+category: work
 ---
 
 - On-site contract roles on large-scale construction projects in Northern BC, Edmonton and Saskatchewan

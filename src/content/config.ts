@@ -1,4 +1,5 @@
 import { z, reference, defineCollection } from "astro:content";
+import { zExperienceCategory } from "./utils/experience-categories";
 
 const projectCollection = defineCollection({
   type: "content",
@@ -36,7 +37,7 @@ const experienceCollection = defineCollection({
     location: z.string().optional(),
     date_beg: z.string(),
     date_end: z.string().nullable(),
-    category: reference("experienceCategory"),
+    category: zExperienceCategory,
     draft: z.boolean().optional(),
   }),
 });

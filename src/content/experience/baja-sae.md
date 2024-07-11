@@ -6,7 +6,7 @@ location: St. John's, NL
 date_beg: 2017-01
 date_end: 2019-06
 
-category: 3-baja
+category: baja
 ---
 
 - Built a single-seat off-road vehicle alongside a team of students to compete against over 100 other North American engineering schools in various dynamic events, including a four-hour endurance race. Travelled to USA 3 years in a row to compete
