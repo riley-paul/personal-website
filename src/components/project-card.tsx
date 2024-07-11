@@ -1,4 +1,4 @@
-import TagList from "./TagList";
+import TagList from "./tag-list";
 import formatDate from "../lib/formatDate";
 
 import {

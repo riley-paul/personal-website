@@ -19,9 +19,7 @@ const sortDates = (
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 
-export type Props = {};
-
-export default function ExperienceTabs(props: Props) {
+export default function ExperienceTabs() {
   return (
     <Tabs defaultValue={categories[0].id} className="w-full">
       <TabsList className={`grid w-full grid-cols-3`}>
