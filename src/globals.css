@@ -75,7 +75,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: Menlo, monospace;
+    font-family: Poppins, sans-serif;
     line-height: 1.725;
     font-size: 14px;
     text-rendering: geometricPrecision;
