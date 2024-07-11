@@ -9,6 +9,6 @@ date_end: 2023-05
 category: work
 ---
 
-- Performed analysis of geospatial, ﬁnancial, and climate data to aid in the presentation of a contractual discrepancy suit
+- Performed analysis of geospatial, ﬁnancial, and climate data to aid in the presentation of a contractual discrepancy suit.
 
-- Prepared clear and concise maps and ﬁgures outlining extenuating circumstances and barriers to success which were presented in a court of law
+- Prepared clear and concise maps and ﬁgures outlining extenuating circumstances and barriers to success which were presented in a court of law.
