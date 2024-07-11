@@ -1,40 +1,31 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-
-import { projectLinkTypes, defaultLink } from "@/lib/projectLinks";
-
-type Links = CollectionEntry<"projects">["data"]["links"];
+import { getProjectLink } from "@/content/utils/project-links";
 
 interface Props {
-  links: Links;
+  links: { type: string; url: string }[];
 }
 
 const { links = [] } = Astro.props;
-
-const linksTyped = await Promise.all(
-  links.map((link) => {
-    const linkType = projectLinkTypes.find((type) => type.id === link.type);
-    return { ...link, ...defaultLink, ...linkType };
-  })
-);
 ---
 
 {
   links && (
     <div class="flex gap-2">
-      {linksTyped.map((link) => (
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={cn(buttonVariants({ variant: "link" }))}
-        >
-          <link.Icon className="h-4 w-4 mr-2" />
-          {link.name}
-        </a>
-      ))}
+      {links
+        .map((link) => ({ ...link, ...getProjectLink(link.type) }))
+        .map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cn(buttonVariants({ variant: "link" }))}
+          >
+            <link.Icon className="h-4 w-4 mr-2" />
+            {link.name}
+          </a>
+        ))}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import formatDate from "../lib/formatDate";
+import formatDate from "../lib/format-date";
 
 import {
   CardContent,

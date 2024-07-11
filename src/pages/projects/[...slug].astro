@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import formatDate from "@/lib/formatDate";
+import formatDate from "@/lib/format-date";
 
 import { buttonVariants } from "@/components/ui/button";
 import LinkList from "@/components/link-list.astro";
@@ -37,7 +37,7 @@ const { Content } = await entry.render();
   </div>
   <div class="container2 space-y-2">
     <TagList tags={entry.data.tags} />
-    <LinkList links={entry.data.links} />
+    <LinkList links={entry.data.links ?? []} />
   </div>
   <div class="container2 pt-8">
     <Markdown>

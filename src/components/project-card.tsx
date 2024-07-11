@@ -1,5 +1,5 @@
 import TagList from "./tag-list";
-import formatDate from "../lib/formatDate";
+import formatDate from "../lib/format-date";
 
 import {
   Card,
