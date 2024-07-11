@@ -9,11 +9,6 @@
 
 @layer base {
   :root {
-    /* Name: custom color palette
-       Author: Ilias Ism
-       URL: https://gradient.page */
-
-    /* CSS: .bg-gradient { background: var(--gradient) } */
     --gradient: #304352;
     --background: 219 96.3% 98.5%;
     --foreground: 219 2.6% 1%;
@@ -46,42 +41,40 @@
 
     --radius: 0.5rem;
   }
-  .dark {
-    /* Name: custom color palette
-       Author: Ilias Ism
-       URL: https://gradient.page */
 
-    /* CSS: .bg-gradient { background: var(--gradient) } */
-    --gradient: #b2fefa;
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --gradient: #b2fefa;
 
-    --background: 188 63.05% 6.8%;
-    --foreground: 188 9.7% 99.25%;
+      --background: 188 63.05% 6.8%;
+      --foreground: 188 9.7% 99.25%;
 
-    --muted: 188 48.5% 25.5%;
-    --muted-foreground: 188 9.7% 58.5%;
+      --muted: 188 48.5% 25.5%;
+      --muted-foreground: 188 9.7% 58.5%;
 
-    --popover: 188 45.6% 11.049999999999999%;
-    --popover-foreground: 188 9.7% 99.25%;
+      --popover: 188 45.6% 11.049999999999999%;
+      --popover-foreground: 188 9.7% 99.25%;
 
-    --card: 188 45.6% 11.049999999999999%;
-    --card-foreground: 188 9.7% 99.25%;
+      --card: 188 45.6% 11.049999999999999%;
+      --card-foreground: 188 9.7% 99.25%;
 
-    --border: 188 48.5% 25.5%;
-    --input: 188 48.5% 25.5%;
+      --border: 188 48.5% 25.5%;
+      --input: 188 48.5% 25.5%;
 
-    --primary: 188 97% 85%;
-    --primary-foreground: 188 9.7% 8.5%;
+      --primary: 188 97% 85%;
+      --primary-foreground: 188 9.7% 8.5%;
 
-    --secondary: 188 48.5% 25.5%;
-    --secondary-foreground: 188 9.7% 99.25%;
+      --secondary: 188 48.5% 25.5%;
+      --secondary-foreground: 188 9.7% 99.25%;
 
-    --accent: 188 48.5% 25.5%;
-    --accent-foreground: 188 9.7% 99.25%;
+      --accent: 188 48.5% 25.5%;
+      --accent-foreground: 188 9.7% 99.25%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 188 9.7% 99.25%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 188 9.7% 99.25%;
 
-    --ring: 188 97% 85%;
+      --ring: 188 97% 85%;
+    }
   }
 }
 
