@@ -1,4 +1,4 @@
-import { z, reference, defineCollection } from "astro:content";
+import { z, defineCollection } from "astro:content";
 import { zExperienceCategory } from "./utils/experience-categories";
 
 const projectCollection = defineCollection({
