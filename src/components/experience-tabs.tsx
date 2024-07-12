@@ -1,5 +1,5 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import Experience from "./experience.jsx";
+import Experience from "./experience";
 import {
   experienceCategories as categories,
   getExperienceCategoryName,
