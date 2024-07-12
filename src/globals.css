@@ -9,6 +9,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     --gradient: #304352;
     --background: 219 96.3% 98.5%;
     --foreground: 219 2.6% 1%;
@@ -44,6 +45,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
+      color-scheme: dark;
       --gradient: #b2fefa;
 
       --background: 188 63.05% 6.8%;
@@ -84,7 +86,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Noto Sans Variable', sans-serif;
+    font-family: "Noto Sans Variable", sans-serif;
     line-height: 1.725;
     font-size: 14px;
     text-rendering: geometricPrecision;
