@@ -1,4 +1,4 @@
-import { Link, type LucideIcon } from "lucide-react";
+import { Github, Home, Link, type LucideIcon } from "lucide-react";
 
 type ProjectLink = {
   id: string;
@@ -13,8 +13,8 @@ const defaultLink: ProjectLink = {
 };
 
 const projectLinks: ProjectLink[] = [
-  { id: "home", name: "Homepage", Icon: Link },
-  { id: "source", name: "Github", Icon: Link },
+  { id: "home", name: "Homepage", Icon: Home },
+  { id: "source", name: "Github", Icon: Github },
 ];
 export const getProjectLink = (id: string | undefined) => {
   return projectLinks.find((link) => link.id === id) || defaultLink;
