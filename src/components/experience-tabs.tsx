@@ -1,11 +1,13 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import Experience from "./Experience.jsx";
+import Experience from "./experience";
+import {
+  experienceCategories as categories,
+  getExperienceCategoryName,
+} from "@/content/utils/experience-categories";
 
 const experiences = (await getCollection("experience")).filter(
   (i) => !i.data.draft
 );
-
-const categories = await getCollection("experienceCategory");
 
 const sortDates = (
   a: CollectionEntry<"experience">,
@@ -19,23 +21,21 @@ const sortDates = (
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 
-export type Props = {};
-
-export default function ExperienceTabs(props: Props) {
+export default function ExperienceTabs() {
   return (
-    <Tabs defaultValue={categories[0].id} className="w-full">
+    <Tabs defaultValue={categories[0]} className="w-full">
       <TabsList className={`grid w-full grid-cols-3`}>
         {categories.map((category) => (
-          <TabsTrigger key={category.id} value={category.id}>
-            {category.data.name}
+          <TabsTrigger key={category} value={category}>
+            {getExperienceCategoryName(category)}
           </TabsTrigger>
         ))}
       </TabsList>
       {categories.map((category) => (
-        <TabsContent key={category.id} value={category.id}>
+        <TabsContent key={category} value={category}>
           <Card>
             {experiences
-              .filter((exp) => exp.data.category.id === category.id)
+              .filter((exp) => exp.data.category === category)
               .sort(sortDates)
               .map((exp) => (
                 <Experience key={exp.id} experience={exp}></Experience>

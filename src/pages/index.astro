@@ -1,6 +1,5 @@
 ---
-import RootLayout from "../layouts/root-layout.astro";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../components/project-card.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "@/layouts/main-layout.astro";
 
@@ -12,11 +11,6 @@ const sortProjectsDate = (
   a: CollectionEntry<"projects">,
   b: CollectionEntry<"projects">
 ) => Date.parse(b.data.date) - Date.parse(a.data.date);
-
-const sortProjectsTop3 = (
-  a: CollectionEntry<"projects">,
-  b: CollectionEntry<"projects">
-) => (b.data.top3 ? 1 : -1);
 ---
 
 <MainLayout>

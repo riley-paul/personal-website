@@ -1,0 +1,16 @@
+---
+import { Badge } from "./ui/badge";
+interface Props {
+  tags: string[];
+}
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2">
+  {tags.map((tag) => <Badge variant="secondary">{tag}</Badge>)}
+</div>

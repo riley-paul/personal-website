@@ -5,9 +5,9 @@ organization: Headwind Technologies
 date_beg: 2021-10
 date_end: 2022-01
 
-category: 1-work
+category: work
 ---
 
-- Refined the Solidworks model of the flagship turbine design to improve topology and be more strictly parametric
+- Refined the Solidworks model of the flagship turbine design to improve topology and be more strictly parametric.
 
-- Worked closely with injection molding manufacturer to optimize the complex design for mass production
+- Worked closely with injection molding manufacturer to optimize the complex design for mass production.

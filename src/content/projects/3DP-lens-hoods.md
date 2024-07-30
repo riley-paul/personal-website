@@ -1,10 +1,11 @@
 ---
 title: 3D Printed Lens Hoods
-tags: 
+tags:
   - 3D Printing
   - 3D Modelling
 description: Custom 3D printed lens hoods for several Fujifilm camera lenses
 date: 2018-06
+draft: true
 ---
 
 I designed some custom 3D-printed lens hoods for my Fujifilm cameras. I posted these designs on [Thingiverse](https://www.thingiverse.com/thing:2844334) - a popular design sharing community - and they gained quite a bit of popularity.

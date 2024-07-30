@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.18 public/models/hovercraft_mk9.gltf -t -r models -s -o
 */
 
 import * as THREE from "three";
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
 import { SceneWrapper } from "./scene-wrapper";
@@ -732,11 +732,6 @@ type GLTFResult = GLTF & {
     ["0.721569_0.450980_0.200000_0.000000_0.000000"]: THREE.MeshStandardMaterial;
   };
 };
-
-type ContextType = Record<
-  string,
-  React.ForwardRefExoticComponent<JSX.IntrinsicElements["mesh"]>
->;
 
 export function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
