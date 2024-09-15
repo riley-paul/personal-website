@@ -96,7 +96,7 @@
   }
 
   .container2 {
-    @apply max-w-4xl mx-auto px-4 md:px-8;
+    @apply max-w-screen-lg mx-auto px-4;
   }
 
   .iframe-container {
