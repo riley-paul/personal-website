@@ -18,7 +18,7 @@ const { project } = Astro.props;
 <a href={`/projects/${project.slug}`} class="w-full">
   <Card size="3" className="mb-4 w-full grid gap-5">
     <header>
-      <Heading className="justify-between flex gap-2">
+      <Heading as="h2" className="justify-between flex gap-2">
         {project.data.title}
         {project.data.wip && <WipBadge />}
         {project.data.top3 && <Top3Badge />}
