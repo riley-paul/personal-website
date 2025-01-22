@@ -1,12 +1,9 @@
 import React from "react";
 import { Badge } from "../ui/badge";
+import { Star } from "lucide-react";
 
 const Top3Badge: React.FC = () => {
-  return (
-    <Badge className="h-min bg-green-500 hover:bg-green-400 whitespace-nowrap w-min">
-      Top 3
-    </Badge>
-  );
+  return <Star className="w-4 h-4 text-yellow-500" />;
 };
 
 export default Top3Badge;
