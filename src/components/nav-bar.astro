@@ -1,4 +1,5 @@
 ---
+import { Button } from "@radix-ui/themes";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 
@@ -29,18 +30,19 @@ const links: Link[] = [
   <div class="container2 flex gap-4 justify-between">
     {
       links.map((link) => (
-        <a
-          href={link.href}
-          class={cn(
-            link.active(Astro.url.pathname) ? "flex-1" : "",
-            buttonVariants({
-              size: "lg",
-              variant: link.active(Astro.url.pathname) ? "default" : "invert",
-            })
-          )}
+        <Button
+          size="4"
+          highContrast
+          variant={link.active(Astro.url.pathname) ? "surface" : "outline"}
+          className={cn(link.active(Astro.url.pathname) && "flex-1")}
         >
-          {link.name}
-        </a>
+          <a
+            href={link.href}
+            class={cn(link.active(Astro.url.pathname) ? "flex-1" : "")}
+          >
+            {link.name}
+          </a>
+        </Button>
       ))
     }
   </div>

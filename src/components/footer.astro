@@ -1,5 +1,5 @@
 ---
-import { buttonVariants } from "./ui/button";
+import { IconButton } from "@radix-ui/themes";
 import { contactMethods } from "@/lib/config";
 ---
 
@@ -10,13 +10,11 @@ import { contactMethods } from "@/lib/config";
   <div class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       contactMethods.map((c) => (
-        <a
-          href={c.link}
-          target="_blank"
-          class={buttonVariants({ variant: "invert", size: "icon" })}
-        >
-          <c.Icon className="h-4 w-4" />
-        </a>
+        <IconButton asChild>
+          <a href={c.link} target="_blank">
+            <c.Icon className="h-4 w-4" />
+          </a>
+        </IconButton>
       ))
     }
   </div>

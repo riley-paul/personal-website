@@ -6,8 +6,7 @@ import WipBadge from "./badges/wip-badge";
 
 import type { CollectionEntry } from "astro:content";
 import Top3Badge from "./badges/top-3-badge";
-import { Card, Heading } from "@radix-ui/themes";
-import { Text } from "lucide-react";
+import { Card, Heading, Text } from "@radix-ui/themes";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -17,14 +16,14 @@ const { project } = Astro.props;
 ---
 
 <a href={`/projects/${project.slug}`} class="w-full">
-  <Card className="inline-block mb-4 w-full">
+  <Card size="3" className="mb-4 w-full grid gap-5">
     <header>
       <Heading className="justify-between flex gap-2">
         {project.data.title}
         {project.data.wip && <WipBadge />}
         {project.data.top3 && <Top3Badge />}
       </Heading>
-      <Text>{formatDate(project.data.date)}</Text>
+      <Text color="gray">{formatDate(project.data.date)}</Text>
     </header>
     <section>{project.data.description}</section>
     <footer>
