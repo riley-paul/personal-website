@@ -82,17 +82,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-gray-6;
   }
+  html,
   body {
-    @apply bg-background text-foreground;
-    font-family: "Noto Sans Variable", sans-serif;
-    line-height: 1.725;
-    font-size: 14px;
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: antialiased;
-
+    /* @apply bg-accent-11; */
     scroll-gutter: static right;
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
   }
 
   .container2 {

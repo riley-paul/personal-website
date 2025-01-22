@@ -2,18 +2,12 @@
 import TagList from "./tag-list.astro";
 import formatDate from "../lib/format-date";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import WipBadge from "./badges/wip-badge";
 
 import type { CollectionEntry } from "astro:content";
 import Top3Badge from "./badges/top-3-badge";
+import { Card, Heading } from "@radix-ui/themes";
+import { Text } from "lucide-react";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -24,17 +18,17 @@ const { project } = Astro.props;
 
 <a href={`/projects/${project.slug}`} class="w-full">
   <Card className="inline-block mb-4 w-full">
-    <CardHeader>
-      <CardTitle className="justify-between flex gap-2">
+    <header>
+      <Heading className="justify-between flex gap-2">
         {project.data.title}
         {project.data.wip && <WipBadge />}
         {project.data.top3 && <Top3Badge />}
-      </CardTitle>
-      <CardDescription>{formatDate(project.data.date)}</CardDescription>
-    </CardHeader>
-    <CardContent>{project.data.description}</CardContent>
-    <CardFooter>
+      </Heading>
+      <Text>{formatDate(project.data.date)}</Text>
+    </header>
+    <section>{project.data.description}</section>
+    <footer>
       <TagList tags={project.data.tags} />
-    </CardFooter>
+    </footer>
   </Card>
 </a>
