@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import formatDate from "../lib/format-date";
+import formatDate from "../../lib/format-date";
 
 import ReactMarkdown from "react-markdown";
 import { DateTime, Duration } from "luxon";

@@ -3,7 +3,7 @@ import Experience from "./experience";
 import {
   experienceCategories as categories,
   getExperienceCategoryName,
-} from "@/content/utils/experience-categories";
+} from "@/components/experiences/utils";
 import { Card, Tabs } from "@radix-ui/themes";
 
 const experiences = (await getCollection("experience")).filter(

@@ -15,7 +15,8 @@ const NavLink: React.FC<{ link: Link; pathname: string }> = ({
   <a
     href={link.href}
     className={cn(
-      "flex items-center justify-center font-bold text-3 rounded-3 px-6 py-2 border-accent-10 border-2 bg-accent-3",
+      "flex items-center justify-center font-bold text-3 rounded-3 px-6 py-2 border-accent-10 border-2 bg-accent-3 transition-colors",
+      !link.active(pathname) && "hover:bg-accent-4",
       link.active(pathname) && "bg-accent-10 text-accent-1 flex-1 font-medium"
     )}
   >
