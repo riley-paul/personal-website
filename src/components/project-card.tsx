@@ -14,10 +14,10 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project }) => {
   return (
-    <a href={`/projects/${project.slug}`} className="w-full">
-      <Card size="3" className="mb-4 w-full grid gap-5">
+    <Card asChild size="3" className="mb-4 w-full grid gap-5">
+      <a href={`/projects/${project.slug}`} className="w-full">
         <header>
-          <Heading as="h2" size="6" className="justify-between flex gap-2">
+          <Heading as="h2" size="5" className="justify-between flex gap-2">
             {project.data.title}
             {project.data.wip && <WipBadge />}
             {project.data.top3 && <Top3Badge />}
@@ -30,8 +30,8 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         <footer>
           <TagList tags={project.data.tags} />
         </footer>
-      </Card>
-    </a>
+      </a>
+    </Card>
   );
 };
 

@@ -4,7 +4,7 @@ import React from "react";
 
 const Top3Badge: React.FC = () => {
   return (
-    <IconButton color="yellow" variant="ghost" size="2">
+    <IconButton color="amber" variant="ghost" size="2">
       <Star className="size-4" />
     </IconButton>
   );

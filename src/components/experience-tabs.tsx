@@ -4,6 +4,7 @@ import {
   experienceCategories as categories,
   getExperienceCategoryName,
 } from "@/content/utils/experience-categories";
+import { Card, Tabs } from "@radix-ui/themes";
 
 const experiences = (await getCollection("experience")).filter(
   (i) => !i.data.draft
@@ -18,21 +19,18 @@ const sortDates = (
   return date_b - date_a;
 };
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card } from "@/components/ui/card";
-
 export default function ExperienceTabs() {
   return (
-    <Tabs defaultValue={categories[0]} className="w-full">
-      <TabsList className={`grid w-full grid-cols-3`}>
+    <Tabs.Root defaultValue={categories[0]} className="w-full">
+      <Tabs.List className={`grid w-full grid-cols-3`}>
         {categories.map((category) => (
-          <TabsTrigger key={category} value={category}>
+          <Tabs.Trigger key={category} value={category}>
             {getExperienceCategoryName(category)}
-          </TabsTrigger>
+          </Tabs.Trigger>
         ))}
-      </TabsList>
+      </Tabs.List>
       {categories.map((category) => (
-        <TabsContent key={category} value={category}>
+        <Tabs.Content key={category} value={category}>
           <Card>
             {experiences
               .filter((exp) => exp.data.category === category)
@@ -41,8 +39,8 @@ export default function ExperienceTabs() {
                 <Experience key={exp.id} experience={exp}></Experience>
               ))}
           </Card>
-        </TabsContent>
+        </Tabs.Content>
       ))}
-    </Tabs>
+    </Tabs.Root>
   );
 }

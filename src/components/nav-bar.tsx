@@ -15,8 +15,8 @@ const NavLink: React.FC<{ link: Link; pathname: string }> = ({
   <a
     href={link.href}
     className={cn(
-      "flex items-center justify-center font-bold rounded-3 px-6 py-2 border-accent-10 border-[3px] bg-accent-3",
-      link.active(pathname) && "bg-accent-10 text-accent-1 flex-1"
+      "flex items-center justify-center font-bold text-3 rounded-3 px-6 py-2 border-accent-10 border-2 bg-accent-3",
+      link.active(pathname) && "bg-accent-10 text-accent-1 flex-1 font-medium"
     )}
   >
     {link.name}
@@ -39,7 +39,7 @@ const links: Link[] = [
 
 const NavBar: React.FC<{ pathname: string }> = ({ pathname }) => {
   return (
-    <div className="pb-8 pt-4 w-full sticky top-0 z-50 bg-gradient-to-b from-background to-transparent">
+    <div className="pb-8 pt-4 w-full sticky top-0 z-50 bg-gradient-to-b from-accent-1">
       <div className="container2 flex gap-4 justify-between">
         {links.map((link) => (
           <NavLink key={link.href} link={link} pathname={pathname} />
