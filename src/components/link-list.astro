@@ -1,7 +1,7 @@
 ---
-import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { getProjectLink } from "@/content/utils/project-links";
+import { Button } from "@radix-ui/themes";
 
 interface Props {
   links: { type: string; url: string }[];
@@ -19,14 +19,11 @@ const { links = [] } = Astro.props;
           return { ...link, ...linkType };
         })
         .map((link) => (
-          <a
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={cn(buttonVariants({ variant: "link" }))}
-          >
-            <link.Icon className="h-4 w-4 mr-2" />
-            {link.name}
+          <a href={link.url} target="_blank" rel="noopener noreferrer">
+            <Button size="2" variant="ghost">
+              <link.Icon className="size-4" />
+              {link.name}
+            </Button>
           </a>
         ))}
     </div>

@@ -1,11 +1,12 @@
-import { Badge } from "@radix-ui/themes";
+import { IconButton } from "@radix-ui/themes";
+import { Star } from "lucide-react";
 import React from "react";
 
 const Top3Badge: React.FC = () => {
   return (
-    <Badge color="sky" highContrast variant="solid" radius="full">
-      Top 3
-    </Badge>
+    <IconButton color="yellow" variant="ghost" size="2">
+      <Star className="size-4" />
+    </IconButton>
   );
 };
 

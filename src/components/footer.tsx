@@ -1,4 +1,4 @@
-import { IconButton, Link } from "@radix-ui/themes";
+import { IconButton, Link, Text } from "@radix-ui/themes";
 import { contactMethods } from "@/lib/config";
 
 import React from "react";
@@ -7,13 +7,13 @@ const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="py-6 flex flex-col justify-center items-center gap-2"
+      className="py-6 flex flex-col justify-center items-center gap-3"
     >
       <div className="flex flex-row flex-wrap justify-center items-center gap-4">
         {contactMethods.map((c) => (
-          <IconButton asChild variant="outline">
+          <IconButton size="3" asChild highContrast variant="outline">
             <a href={c.link} target="_blank">
-              <c.Icon className="h-4 w-4" />
+              <c.Icon className="size-4" />
             </a>
           </IconButton>
         ))}
@@ -39,9 +39,9 @@ const Footer: React.FC = () => {
           Photography
         </Link>
       </div>
-      <span className="opacity-50 text-sm">
+      <Text size="1" color="gray">
         &copy <span>{new Date().getFullYear()}</span> Riley Paul
-      </span>
+      </Text>
     </footer>
   );
 };

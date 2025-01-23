@@ -1,12 +1,12 @@
 ---
 import RootLayout from "./root-layout.astro";
 import Header from "@/components/header.astro";
-import NavBar from "@/components/nav-bar.astro";
+import NavBar from "@/components/nav-bar.tsx";
 ---
 
 <RootLayout>
   <Header />
-  <NavBar />
+  <NavBar pathname={Astro.url.pathname} />
   <div class="container2">
     <slot />
   </div>
