@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="py-6 flex flex-col justify-center items-center gap-3"
+      className="py-6 pt-12 flex flex-col justify-center items-center gap-3"
     >
       <div className="flex flex-row flex-wrap justify-center items-center gap-4">
         {contactMethods.map((c) => (
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         </Link>
       </div>
       <Text size="1" color="gray">
-        &copy <span>{new Date().getFullYear()}</span> Riley Paul
+        © <span>{new Date().getFullYear()}</span> Riley Paul
       </Text>
     </footer>
   );

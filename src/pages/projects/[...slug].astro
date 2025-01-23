@@ -2,8 +2,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import formatDate from "@/lib/format-date";
 
-import LinkList from "@/components/link-list.astro";
-import TagList from "@/components/tag-list.astro";
+import LinkList from "@/components/link-list";
+import TagList from "@/components/tag-list";
 import RootLayout from "@/layouts/root-layout.astro";
 import Markdown from "@/layouts/markdown-layout.astro";
 import WipBadge from "@/components/badges/wip-badge";
@@ -27,26 +27,27 @@ const { Content } = await entry.render();
 ---
 
 <RootLayout title={entry.data.title}>
-  <div class="container2 pt-8 bg-gradient-to-b from-background to-transparent">
+  <header
+    class="container2 py-8 bg-gradient-to-b from-background to-transparent"
+  >
     <div class="flex gap-2 items-center justify-between">
       <Heading size="8">{entry.data.title}</Heading>
       {entry.data.wip && <WipBadge />}
     </div>
     <Text size="2" color="gray">{formatDate(entry.data.date)}</Text>
-    <br />
-  </div>
-  <div class="container2 grid gap-2">
+  </header>
+  <section class="container2 grid gap-4">
     <TagList tags={entry.data.tags} />
     <LinkList links={entry.data.links ?? []} />
-  </div>
-  <div class="container2 pt-8">
+  </section>
+  <section class="container2 pt-8">
     <Markdown>
       <Content />
     </Markdown>
     <div class="flex justify-center pt-20 pb-10">
-      <Button>
+      <Button size="3" variant="soft">
         <a href="/"> More Projects </a>
       </Button>
     </div>
-  </div>
+  </section>
 </RootLayout>
