@@ -1,20 +1,10 @@
-import { z } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-export const experienceCategories = ["work", "school", "baja"] as const;
-
-export const zExperienceCategory = z.enum(experienceCategories);
-type ExperienceCategory = z.infer<typeof zExperienceCategory>;
-
-const experienceCategoryNameMap: Map<ExperienceCategory, string> = new Map([
-  ["work", "Work"],
-  ["school", "School"],
-  ["baja", "Baja SAE"],
-]);
-
-export const getExperienceCategoryName = (id: string) => {
-  const parsed = zExperienceCategory.safeParse(id);
-  if (parsed.success) {
-    return experienceCategoryNameMap.get(parsed.data);
-  }
-  return "Uncategorized";
+export const sortExperienceByDate = (
+  a: CollectionEntry<"experience">,
+  b: CollectionEntry<"experience">
+) => {
+  const date_a = Date.parse(a.data.date_end || "2100-01");
+  const date_b = Date.parse(b.data.date_end || "2100-01");
+  return date_b - date_a;
 };

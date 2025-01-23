@@ -6,6 +6,7 @@ date_beg: 2023-08
 date_end: 2024-07
 
 category: work
+location: North Vancouver, BC
 ---
 
 - Architected a complex dashboard feature showing realtime feedback of field worker metrics.

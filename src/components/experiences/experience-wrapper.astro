@@ -1,0 +1,39 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import ExperienceTabs from "./experience-tabs";
+import { experienceCategories } from "./types";
+
+import { type ExperienceCategory, experienceCategoryNameMap } from "./types";
+
+const sortExperienceByDate = (
+  a: CollectionEntry<"experience">,
+  b: CollectionEntry<"experience">
+) => {
+  const date_a = Date.parse(a.data.date_end || "2100-01");
+  const date_b = Date.parse(b.data.date_end || "2100-01");
+  return date_b - date_a;
+};
+
+const experiences = await getCollection("experience");
+
+const categories: ExperienceCategory[] = experienceCategories.map(
+  (category) => ({
+    id: category,
+    name: experienceCategoryNameMap.get(category)!,
+    experiences: experiences
+      .filter((experience) => experience.data.category === category)
+      .sort(sortExperienceByDate)
+      .map((exp) => ({
+        id: exp.id,
+        position: exp.data.position,
+        organization: exp.data.organization,
+        location: exp.data.location,
+        date_beg: exp.data.date_beg,
+        date_end: exp.data.date_end,
+        markup: exp.body,
+      })),
+  })
+);
+---
+
+<ExperienceTabs client:load categories={categories} />
