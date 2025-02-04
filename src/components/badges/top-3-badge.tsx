@@ -1,5 +1,4 @@
 import React from "react";
-import { Badge } from "../ui/badge";
 import { Star } from "lucide-react";
 
 const Top3Badge: React.FC = () => {
