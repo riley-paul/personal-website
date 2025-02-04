@@ -27,7 +27,7 @@ const { Content } = await entry.render();
 ---
 
 <RootLayout title={entry.data.title}>
-  <div class="container2 pt-8 bg-gradient-to-b from-background to-transparent">
+  <div class="container2 pt-8 bg-linear-to-b from-background to-transparent">
     <div class="flex gap-2 items-center justify-between">
       <h1 class="text-4xl font-bold">{entry.data.title}</h1>
       {entry.data.wip && <WipBadge />}
