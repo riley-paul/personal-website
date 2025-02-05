@@ -1,5 +1,4 @@
-import type { CollectionEntry } from "astro:content";
-import formatDate from "../lib/format-date";
+import formatDate from "@/lib/format-date";
 
 import {
   CardContent,
@@ -9,15 +8,10 @@ import {
 } from "@/components/ui/card";
 import ReactMarkdown from "react-markdown";
 import { DateTime, Duration } from "luxon";
+import type { Experience as IExperience } from "./types";
 
-export type Props = {
-  experience: CollectionEntry<"experience">;
-};
-
-export default function Experience(props: Props) {
-  const { experience } = props;
-  const { position, organization, location, date_beg, date_end } =
-    experience.data;
+const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
+  const { position, organization, location, date_beg, date_end } = experience;
 
   const date_beg_lux = DateTime.fromISO(date_beg);
   const date_end_lux = date_end ? DateTime.fromISO(date_end) : DateTime.now();
@@ -54,8 +48,10 @@ export default function Experience(props: Props) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ReactMarkdown>{experience.body}</ReactMarkdown>
+        <ReactMarkdown>{experience.markup}</ReactMarkdown>
       </CardContent>
     </div>
   );
-}
+};
+
+export default Experience;
