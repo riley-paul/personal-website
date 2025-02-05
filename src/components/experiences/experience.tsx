@@ -28,7 +28,7 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
 
   return (
     <div className="prose dark:prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-1.5 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal">
-      <CardHeader className="pb-2">
+      <CardHeader className="pb-2 grid gap-2">
         <CardTitle>
           <span className="font-bold">{position}</span>
           <span className="block font-light mt-1 md:inline md:mt-0">
