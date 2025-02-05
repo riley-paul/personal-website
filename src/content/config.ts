@@ -22,13 +22,6 @@ const projectCollection = defineCollection({
   }),
 });
 
-const experienceCategoryCollection = defineCollection({
-  type: "data",
-  schema: z.object({
-    name: z.string(),
-  }),
-});
-
 const experienceCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -45,5 +38,4 @@ const experienceCollection = defineCollection({
 export const collections = {
   projects: projectCollection,
   experience: experienceCollection,
-  experienceCategory: experienceCategoryCollection,
 };
