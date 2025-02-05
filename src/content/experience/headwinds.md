@@ -9,5 +9,4 @@ category: work
 ---
 
 - Refined the Solidworks model of the flagship turbine design to improve topology and be more strictly parametric.
-
 - Worked closely with injection molding manufacturer to optimize the complex design for mass production.

@@ -8,4 +8,9 @@ date_end: null
 category: work
 ---
 
-TBD
+- Took initiative to address technical debt
+  - Table component rewrite
+  - Drive hooks merging
+- Quickly emerged as a subject matter expert on typescript
+- Led the replacement of our deprecated drag and drop library with a modern alternative
+- Behaved as a mentor to several of my peers

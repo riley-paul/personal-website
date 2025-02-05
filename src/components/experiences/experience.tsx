@@ -27,16 +27,16 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
   const roundedDuration = Duration.fromObject({ months: Math.round(months) });
 
   return (
-    <div className="prose dark:prose-invert prose-sm max-w-none prose-headings:my-0 prose-li:my-1.5 prose-p:my-0 prose-ul:my-0 prose-h2:mt-4 prose-em:font-normal">
-      <CardHeader className="pb-2 grid gap-2">
-        <CardTitle>
+    <div className="px-6 pb-4">
+      <header>
+        <h3 className="text-xl font-semibold leading-2">
           <span className="font-bold">{position}</span>
           <span className="block font-light mt-1 md:inline md:mt-0">
             <span className="mr-2 hidden md:inline">,</span>
             {organization}
           </span>
-        </CardTitle>
-        <CardDescription className="flex gap-2">
+        </h3>
+        <p className="flex gap-2 text-sm text-muted-foreground">
           {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"}
           <span>({roundedDuration.rescale().toHuman()})</span>
           {location && (
@@ -45,11 +45,11 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
               <span>{location}</span>
             </>
           )}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+        </p>
+      </header>
+      <section className="prose dark:prose-invert prose-sm max-w-none ">
         <ReactMarkdown>{experience.markup}</ReactMarkdown>
-      </CardContent>
+      </section>
     </div>
   );
 };
