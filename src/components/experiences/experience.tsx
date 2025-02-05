@@ -1,11 +1,5 @@
 import formatDate from "@/lib/format-date";
 
-import {
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import ReactMarkdown from "react-markdown";
 import { DateTime, Duration } from "luxon";
 import type { Experience as IExperience } from "./types";
@@ -28,10 +22,10 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
 
   return (
     <div className="px-6 pb-4">
-      <header>
-        <h3 className="text-xl font-semibold leading-2">
-          <span className="font-bold">{position}</span>
-          <span className="block font-light mt-1 md:inline md:mt-0">
+      <header className="text-left">
+        <h3 className="text-xl font-semibold grid md:flex">
+          <span className="font-bold tracking-tight">{position}</span>
+          <span className="block font-light">
             <span className="mr-2 hidden md:inline">,</span>
             {organization}
           </span>
