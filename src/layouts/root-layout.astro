@@ -3,6 +3,7 @@ import Footer from "@/components/footer.astro";
 import "@/globals.css";
 
 import "@fontsource-variable/noto-sans";
+import '@fontsource-variable/figtree';
 
 export interface Props {
   title?: string;
@@ -18,7 +19,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Personal and professional portfolio" />
-    <title>{"Riley Paul" + (title ? ` - ${title}` : "")}</title>
+    <title>{["Riley Paul", title].filter(Boolean).join(" - ")}</title>
   </head>
   <body class="min-h-screen h-full flex flex-col">
     <main class="w-full flex-1">
