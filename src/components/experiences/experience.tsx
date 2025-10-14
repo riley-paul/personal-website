@@ -23,14 +23,14 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
   return (
     <div className="px-6 pb-4">
       <header className="text-left">
-        <h3 className="text-xl font-semibold grid md:flex">
+        <h3 className="grid text-xl font-semibold md:flex">
           <span className="font-bold tracking-tight">{position}</span>
           <span className="block font-light">
             <span className="mr-2 hidden md:inline">,</span>
             {organization}
           </span>
         </h3>
-        <p className="flex gap-2 text-sm text-muted-foreground">
+        <p className="text-muted-foreground flex gap-2 text-sm">
           {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"}
           <span>({roundedDuration.rescale().toHuman()})</span>
           {location && (
@@ -41,7 +41,7 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
           )}
         </p>
       </header>
-      <section className="prose dark:prose-invert prose-sm max-w-none ">
+      <section className="prose dark:prose-invert prose-sm max-w-none">
         <ReactMarkdown>{experience.markup}</ReactMarkdown>
       </section>
     </div>
