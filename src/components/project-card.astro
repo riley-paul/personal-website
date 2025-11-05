@@ -3,7 +3,7 @@ import TagList from "./tag-list.astro";
 import formatDate from "../lib/format-date";
 
 import type { CollectionEntry } from "astro:content";
-import Top3Badge from "./badges/top-3-badge";
+import { StarIcon } from "lucide-react";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -22,7 +22,7 @@ const { project } = Astro.props;
         <h2 class="leading-tight text-xl font-medium">
           {project.data.title}
         </h2>
-        {project.data.top3 && <Top3Badge />}
+        {project.data.top3 && <StarIcon className="size-4 text-yellow-500" />}
       </header>
       <span class="text-sm opacity-70">
         {formatDate(project.data.date)}

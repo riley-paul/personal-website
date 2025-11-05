@@ -20,7 +20,7 @@ const ExperienceTabs: React.FC<{ categories: ExperienceCategory[] }> = ({
             <input
               key={id}
               type="radio"
-              className="tab [--tab-bg:var(--color-base-200)]"
+              className="tab checked:text-accent-content [--tab-bg:var(--color-base-200)]"
               name="experience-tabs"
               value={id}
               aria-label={name}
