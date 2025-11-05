@@ -19,7 +19,7 @@ export const contactMethods: ContactMethod[] = [
   },
   {
     name: "Github",
-    link: "https://github.com/rjp301",
+    link: "https://github.com/riley-paul",
     Icon: Github,
   },
   {

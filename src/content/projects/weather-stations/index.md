@@ -12,7 +12,6 @@ links:
     type: source
 description: Serverless web application running on Lambda functions to collect data from constellation of remote weather stations and send daily report to project management
 date: 2023-08
-top3: true
 ---
 
 ![screenshot](./screenshot.png)
