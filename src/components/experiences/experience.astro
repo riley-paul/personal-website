@@ -1,0 +1,54 @@
+---
+import formatDate from "@/lib/format-date";
+
+import ReactMarkdown from "react-markdown";
+import { DateTime, Duration } from "luxon";
+import type { Experience } from "./types";
+
+export interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+const { position, organization, location, date_beg, date_end } = experience;
+
+const date_beg_lux = DateTime.fromISO(date_beg);
+const date_end_lux = date_end ? DateTime.fromISO(date_end) : DateTime.now();
+const duration = date_end_lux.diff(date_beg_lux, ["months", "days"]);
+
+let months = duration.months;
+let days = duration.days;
+
+if (days >= 15) {
+  months += 1;
+}
+
+const roundedDuration = Duration.fromObject({ months: Math.round(months) });
+---
+
+<div class="text-left">
+  <header>
+    <h3 class="grid text-xl font-semibold md:flex">
+      <span class="font-bold tracking-tight">{position}</span>
+      <span class="block font-light">
+        <span class="mr-2 hidden md:inline">,</span>
+        {organization}
+      </span>
+    </h3>
+    <p class="flex gap-2 text-sm opacity-70">
+      {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"}
+      <span>({roundedDuration.rescale().toHuman()})</span>
+      {
+        location && (
+          <>
+            <span>|</span>
+            <span>{location}</span>
+          </>
+        )
+      }
+    </p>
+  </header>
+  <section class="prose dark:prose-invert prose-sm max-w-none">
+    <ReactMarkdown>{experience.markup}</ReactMarkdown>
+  </section>
+</div>
