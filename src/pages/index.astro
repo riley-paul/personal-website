@@ -5,16 +5,16 @@ import MainLayout from "@/layouts/main-layout.astro";
 
 const projects = await getCollection(
   "projects",
-  ({ data }) => data.draft !== true
+  ({ data }) => data.draft !== true,
 );
 const sortProjectsDate = (
   a: CollectionEntry<"projects">,
-  b: CollectionEntry<"projects">
+  b: CollectionEntry<"projects">,
 ) => Date.parse(b.data.date) - Date.parse(a.data.date);
 ---
 
 <MainLayout>
-  <div class="columns-xs gap-4">
+  <div class="columns-2xs gap-4">
     {
       projects
         .sort(sortProjectsDate)

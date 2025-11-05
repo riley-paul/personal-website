@@ -21,8 +21,8 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
   const roundedDuration = Duration.fromObject({ months: Math.round(months) });
 
   return (
-    <div className="px-6 pb-4">
-      <header className="text-left">
+    <div className="grid gap-2 text-left">
+      <header className="not-prose grid gap-1">
         <h3 className="grid text-xl font-semibold md:flex">
           <span className="font-bold tracking-tight">{position}</span>
           <span className="block font-light">
@@ -30,7 +30,7 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
             {organization}
           </span>
         </h3>
-        <p className="text-muted-foreground flex gap-2 text-sm">
+        <p className="flex gap-2 text-sm opacity-70">
           {formatDate(date_beg)} - {date_end ? formatDate(date_end) : "present"}
           <span>({roundedDuration.rescale().toHuman()})</span>
           {location && (

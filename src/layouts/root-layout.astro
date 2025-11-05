@@ -2,8 +2,7 @@
 import Footer from "@/components/footer.astro";
 import "@/globals.css";
 
-import "@fontsource-variable/noto-sans";
-import '@fontsource-variable/figtree';
+import "@fontsource-variable/figtree";
 
 export interface Props {
   title?: string;
@@ -21,7 +20,7 @@ const { title } = Astro.props;
     <meta name="description" content="Personal and professional portfolio" />
     <title>{["Riley Paul", title].filter(Boolean).join(" - ")}</title>
   </head>
-  <body class="min-h-screen h-full flex flex-col">
+  <body data-theme="dark" class="min-h-screen h-full flex flex-col">
     <main class="w-full flex-1">
       <slot />
     </main>

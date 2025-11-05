@@ -1,30 +1,37 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card } from "@/components/ui/card";
 import type { ExperienceCategory } from "./types";
 import Experience from "./experience";
+import React from "react";
 
 const ExperienceTabs: React.FC<{ categories: ExperienceCategory[] }> = ({
   categories,
 }) => {
+  const [selected, setSelected] = React.useState(categories[0].id);
   return (
-    <Tabs defaultValue={categories[0].id} className="w-full">
-      <TabsList className={`grid w-full grid-cols-3`}>
-        {categories.map(({ id, name }) => (
-          <TabsTrigger key={id} value={id}>
-            {name}
-          </TabsTrigger>
-        ))}
-      </TabsList>
-      {categories.map(({ id, experiences }) => (
-        <TabsContent key={id} value={id}>
-          <Card>
-            {experiences.map((experience) => (
-              <Experience key={experience.id} experience={experience} />
-            ))}
-          </Card>
-        </TabsContent>
-      ))}
-    </Tabs>
+    <div className="tabs tabs-border">
+      {categories.map(({ id, name, experiences }) => {
+        const isSelected = selected === id;
+        return (
+          <React.Fragment key={id}>
+            <input
+              type="radio"
+              className="tab"
+              name="experience-tabs"
+              value={id}
+              aria-label={name}
+              checked={isSelected}
+              onChange={(e) => setSelected(e.target.value)}
+            />
+            <div className="tab-content bg-base-200 border-base-300 p-6">
+              <div className="grid gap-6">
+                {experiences.map((experience) => (
+                  <Experience key={experience.id} experience={experience} />
+                ))}
+              </div>
+            </div>
+          </React.Fragment>
+        );
+      })}
+    </div>
   );
 };
 
