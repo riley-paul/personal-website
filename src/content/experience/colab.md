@@ -5,7 +5,7 @@ organization: Colab Software
 date_beg: 2024-07
 date_end: null
 
-category: work
+category: software
 ---
 
 - Took initiative to address technical debt

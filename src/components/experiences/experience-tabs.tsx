@@ -6,36 +6,33 @@ const ExperienceTabs: React.FC<{ categories: ExperienceCategory[] }> = ({
   categories,
 }) => {
   const [selected, setSelected] = React.useState(categories[0].id);
-  const category = categories.find((cat) => cat.id === selected);
   return (
-    <article className="grid gap-4">
-      <header
-        className="tabs tabs-box tabs-sm grid"
-        style={{ gridTemplateColumns: `repeat(${categories.length},1fr)` }}
-      >
-        {categories.map(({ id, name, experiences }) => {
-          const isSelected = selected === id;
-          return (
+    <article
+      className="tabs tabs-lift"
+      style={{ gridTemplateColumns: `repeat(${categories.length},1fr)` }}
+    >
+      {categories.map(({ id, name, experiences }) => {
+        const isSelected = selected === id;
+        return (
+          <React.Fragment key={id}>
             <input
               key={id}
               type="radio"
-              className="tab"
+              className="tab checked:bg-base-200 checked:before:rounded-none"
               name="experience-tabs"
               value={id}
               aria-label={name}
               checked={isSelected}
               onChange={(e) => setSelected(e.target.value)}
             />
-          );
-        })}
-      </header>
-      {category && (
-        <div className="card border-base-300 bg-base-200 border px-6 pb-6">
-          {category.experiences.map((experience) => (
-            <Experience key={experience.id} experience={experience} />
-          ))}
-        </div>
-      )}
+            <div className="tab-content bg-base-200 border-base-300 px-6 pb-8">
+              {experiences.map((experience) => (
+                <Experience key={experience.id} experience={experience} />
+              ))}
+            </div>
+          </React.Fragment>
+        );
+      })}
     </article>
   );
 };

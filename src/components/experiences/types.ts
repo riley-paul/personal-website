@@ -1,6 +1,11 @@
 import { z } from "astro/zod";
 
-export const experienceCategories = ["work", "school", "baja"] as const;
+export const experienceCategories = [
+  "software",
+  "engineering",
+  "school",
+  "baja",
+] as const;
 
 export const zExperienceCategory = z.enum(experienceCategories);
 
@@ -8,7 +13,8 @@ export const experienceCategoryNameMap: Map<
   (typeof experienceCategories)[number],
   string
 > = new Map([
-  ["work", "Work"],
+  ["engineering", "Engineering"],
+  ["software", "Software"],
   ["school", "School"],
   ["baja", "Baja SAE"],
 ]);
