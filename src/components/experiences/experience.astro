@@ -1,16 +1,17 @@
 ---
 import formatDate from "@/lib/format-date";
 
-import ReactMarkdown from "react-markdown";
 import { DateTime, Duration } from "luxon";
 import type { Experience } from "./types";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  experience: Experience;
+  experience: CollectionEntry<"experience">;
 }
 
 const { experience } = Astro.props;
-const { position, organization, location, date_beg, date_end } = experience;
+const { position, organization, location, date_beg, date_end } =
+  experience.data;
 
 const date_beg_lux = DateTime.fromISO(date_beg);
 const date_end_lux = date_end ? DateTime.fromISO(date_end) : DateTime.now();
@@ -24,6 +25,8 @@ if (days >= 15) {
 }
 
 const roundedDuration = Duration.fromObject({ months: Math.round(months) });
+
+const { Content } = await experience.render();
 ---
 
 <div class="text-left">
@@ -49,6 +52,6 @@ const roundedDuration = Duration.fromObject({ months: Math.round(months) });
     </p>
   </header>
   <section class="prose dark:prose-invert prose-sm max-w-none">
-    <ReactMarkdown>{experience.markup}</ReactMarkdown>
+    <Content />
   </section>
 </div>

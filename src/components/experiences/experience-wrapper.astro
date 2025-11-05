@@ -22,16 +22,7 @@ const categories: ExperienceCategory[] = experienceCategories.map(
     name: experienceCategoryNameMap.get(category)!,
     experiences: experiences
       .filter((experience) => experience.data.category === category)
-      .sort(sortExperienceByDate)
-      .map((exp) => ({
-        id: exp.id,
-        position: exp.data.position,
-        organization: exp.data.organization,
-        location: exp.data.location,
-        date_beg: exp.data.date_beg,
-        date_end: exp.data.date_end,
-        markup: exp.body,
-      })),
+      .sort(sortExperienceByDate),
   }),
 );
 ---

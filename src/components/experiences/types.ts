@@ -1,4 +1,5 @@
 import { z } from "astro/zod";
+import type { CollectionEntry } from "astro:content";
 
 export const experienceCategories = [
   "software",
@@ -32,5 +33,5 @@ export type Experience = {
 export type ExperienceCategory = {
   name: string;
   id: string;
-  experiences: Experience[];
+  experiences: CollectionEntry<"experience">[];
 };
