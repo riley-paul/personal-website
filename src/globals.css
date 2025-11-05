@@ -1,6 +1,45 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: dark --default;
+
+@theme {
+  --font-sans: "Figtree Variable", sans-serif;
+}
+
+@plugin "@tailwindcss/typography";
+
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: hsl(188 63.05% 6.8%);
+  --color-base-200: hsl(188 45.6% 11.049999999999999%);
+  --color-base-300: hsl(188 48.5% 25.5%);
+  --color-base-content: oklch(97.807% 0.029 256.847);
+  --color-primary: hsl(188 97% 85%);
+  --color-primary-content: hsl(188 9.7% 8.5%);
+  --color-secondary: hsl(188 48.5% 25.5%);
+  --color-secondary-content: hsl(188 9.7% 99.25%);
+  --color-accent: hsl(188 48.5% 25.5%);
+  --color-accent-content: hsl(188 9.7% 99.25%);
+  --color-neutral: oklch(21% 0.006 56.043);
+  --color-neutral-content: oklch(92% 0.003 48.717);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(63% 0.237 25.331);
+  --color-error-content: oklch(25% 0.092 26.042);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 @layer utilities {

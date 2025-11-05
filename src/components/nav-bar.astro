@@ -32,11 +32,8 @@ const links: Link[] = [
         <a
           href={link.href}
           class={cn(
-            link.active(Astro.url.pathname) ? "flex-1" : "",
-            buttonVariants({
-              size: "lg",
-              variant: link.active(Astro.url.pathname) ? "default" : "invert",
-            }),
+            "btn btn-primary border-2 btn-lg",
+            link.active(Astro.url.pathname) ? "flex-1" : "btn-outline",
           )}
         >
           {link.name}
