@@ -21,7 +21,7 @@ const Experience: React.FC<{ experience: IExperience }> = ({ experience }) => {
   const roundedDuration = Duration.fromObject({ months: Math.round(months) });
 
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 text-left">
       <header className="not-prose grid gap-1">
         <h3 className="grid text-xl font-semibold md:flex">
           <span className="font-bold tracking-tight">{position}</span>
