@@ -2,8 +2,6 @@
 import TagList from "./tag-list.astro";
 import formatDate from "../lib/format-date";
 
-import WipBadge from "./badges/wip-badge";
-
 import type { CollectionEntry } from "astro:content";
 import Top3Badge from "./badges/top-3-badge";
 
@@ -24,7 +22,6 @@ const { project } = Astro.props;
         <h2 class="leading-tight text-xl font-medium">
           {project.data.title}
         </h2>
-        {project.data.wip && <WipBadge />}
         {project.data.top3 && <Top3Badge />}
       </header>
       <span class="text-sm opacity-70">

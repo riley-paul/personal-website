@@ -2,12 +2,10 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import formatDate from "@/lib/format-date";
 
-import { buttonVariants } from "@/components/ui/button";
 import LinkList from "@/components/link-list.astro";
 import TagList from "@/components/tag-list.astro";
 import RootLayout from "@/layouts/root-layout.astro";
 import Markdown from "@/layouts/markdown-layout.astro";
-import WipBadge from "@/components/badges/wip-badge";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -30,7 +28,6 @@ const { Content } = await entry.render();
   <div class="container2 pt-8 bg-linear-to-b from-background to-transparent">
     <div class="flex gap-2 items-center justify-between">
       <h1 class="text-4xl font-bold">{entry.data.title}</h1>
-      {entry.data.wip && <WipBadge />}
     </div>
     <p class="opacity-70">{formatDate(entry.data.date)}</p>
     <br />
