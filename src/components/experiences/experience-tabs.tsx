@@ -9,7 +9,9 @@ const ExperienceTabs: React.FC<{ categories: ExperienceCategory[] }> = ({
   return (
     <article
       className="tabs tabs-lift"
-      style={{ gridTemplateColumns: `repeat(${categories.length},1fr)` }}
+      style={{
+        gridTemplateColumns: `repeat(${categories.length},1fr)`,
+      }}
     >
       {categories.map(({ id, name, experiences }) => {
         const isSelected = selected === id;
@@ -18,7 +20,7 @@ const ExperienceTabs: React.FC<{ categories: ExperienceCategory[] }> = ({
             <input
               key={id}
               type="radio"
-              className="tab checked:bg-base-200 checked:before:rounded-none"
+              className="tab [--tab-bg:var(--color-base-200)]"
               name="experience-tabs"
               value={id}
               aria-label={name}
