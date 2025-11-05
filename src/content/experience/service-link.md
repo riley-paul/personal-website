@@ -11,4 +11,4 @@ category: software
 - Architected a complex dashboard feature showing realtime feedback of field worker metrics.
 - Initiated and implemented a [monorepo](https://en.wikipedia.org/wiki/Monorepo) strategy for frontend projects, enhancing code-sharing and significantly reducing development time.
 - Conducted a comprehensive refactor of the flagship React application, addressing major technical debt, and substantially reducing bundle size, resulting in improved performance and reliability.
-- Led a team in transforming a legacy Windows application into a high-performance, user-friendly web app, justifying a 20% increase in licensing fees for the overall software package.
+- Led a team in transforming a legacy Windows application into a high-performance, user-friendly React app, justifying a 20% increase in licensing fees for the overall software package.
