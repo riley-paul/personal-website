@@ -2,10 +2,12 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import formatDate from "@/lib/format-date";
 
-import LinkList from "@/components/link-list.astro";
-import TagList from "@/components/tag-list.astro";
+import LinkList from "@/components/link-list";
+import TagList from "@/components/tag-list";
 import RootLayout from "@/layouts/root-layout.astro";
 import Markdown from "@/layouts/markdown-layout.astro";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -32,7 +34,7 @@ const { Content } = await entry.render();
     <p class="opacity-70">{formatDate(entry.data.date)}</p>
     <br />
   </div>
-  <div class="container2 space-y-2">
+  <div class="container2 flex flex-col gap-2">
     <TagList tags={entry.data.tags} />
     <LinkList links={entry.data.links ?? []} />
   </div>
@@ -41,7 +43,7 @@ const { Content } = await entry.render();
       <Content />
     </Markdown>
     <div class="flex justify-center pt-20 pb-10">
-      <a href="/" class="btn btn-primary btn-outline btn-lg"> More Projects </a>
+      <a href="/" class={cn(buttonVariants({ size: "lg" }))}> More Projects </a>
     </div>
   </div>
 </RootLayout>

@@ -1,16 +1,13 @@
----
+import { cn } from "@/lib/utils";
 import { getProjectLink } from "@/lib/utils/project-links";
+import React from "react";
+import { buttonVariants } from "./ui/button";
 
-interface Props {
-  links: { type: string; url: string }[];
-}
+type Props = { links: { type: string; url: string }[] };
 
-const { links = [] } = Astro.props;
----
-
-{
-  links && (
-    <div class="flex flex-wrap">
+const LinkList: React.FC<Props> = ({ links }) => {
+  return (
+    <div className="flex flex-wrap">
       {links
         .map((link) => {
           const linkType = getProjectLink(link.type);
@@ -21,12 +18,14 @@ const { links = [] } = Astro.props;
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-ghost link-hover"
+            className={cn(buttonVariants({ variant: "ghost" }))}
           >
-            <link.Icon className="size-4" />
+            <link.Icon />
             {link.name}
           </a>
         ))}
     </div>
-  )
-}
+  );
+};
+
+export default LinkList;
