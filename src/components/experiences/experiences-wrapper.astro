@@ -1,9 +1,9 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import { experienceCategories } from "./types";
-import Experience from "./experience.astro";
 
 import { type ExperienceCategory, experienceCategoryNameMap } from "./types";
+import Experiences from "./experiences";
 
 const sortExperienceByDate = (
   a: CollectionEntry<"experience">,
@@ -27,29 +27,4 @@ const categories: ExperienceCategory[] = experienceCategories.map(
 );
 ---
 
-<article
-  class="tabs tabs-lift"
-  style={{
-    gridTemplateColumns: `repeat(${categories.length},1fr)`,
-  }}
->
-  {
-    categories.map(({ id, name, experiences }, idx) => (
-      <>
-        <input
-          type="radio"
-          class="tab checked:text-accent-content [--tab-bg:var(--color-base-200)]"
-          name="experience-tabs"
-          value={id}
-          aria-label={name}
-          checked={idx === 0}
-        />
-        <div class="tab-content bg-base-200 border-base-300 px-6 pb-8">
-          {experiences.map((experience) => (
-            <Experience experience={experience} />
-          ))}
-        </div>
-      </>
-    ))
-  }
-</article>
+<Experiences client:load categories={categories} />
