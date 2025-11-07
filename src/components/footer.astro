@@ -1,40 +1,42 @@
 ---
 import { contactMethods } from "@/lib/config";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 ---
 
 <footer
   id="footer"
   class="py-6 flex flex-col justify-center items-center gap-2"
 >
-  <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+  <section class="flex flex-row flex-wrap justify-center items-center gap-4">
     {
       contactMethods.map((c) => (
         <a
           href={c.link}
           target="_blank"
-          class="btn btn-outline btn-primary btn-square"
+          class={cn(buttonVariants({ variant: "inverse", size: "icon" }))}
         >
           <c.Icon className="size-4" />
         </a>
       ))
     }
-  </div>
-  <div class="flex items-center">
+  </section>
+  <section class="flex items-center mt-2">
     <a
       href="/Resume - Riley Paul.pdf"
       title="Download resume as PDF"
-      class="btn btn-link link-hover opacity-70 btn-sm">Resume.pdf</a
+      class={cn(buttonVariants({ variant: "link", size: "sm" }))}>Resume.pdf</a
     >•<a
       href="https://photo.rileypaul.ca"
       title="Photography Portfolio"
-      class="btn btn-link link-hover opacity-70 btn-sm"
+      class={cn(buttonVariants({ variant: "link", size: "sm" }))}
       target="_blank"
       rel="noopener noreferrer"
     >
       <!-- <img src="/photo-logo.svg" alt="" class="invert h-5" /> -->Photography
     </a>
-  </div>
-  <span class="opacity-50 text-xs"
-    >&copy <span>{new Date().getFullYear()}</span> Riley Paul</span
-  >
+  </section>
+  <section class="text-muted-foreground text-xs">
+    &copy <span>{new Date().getFullYear()}</span> Riley Paul
+  </section>
 </footer>
