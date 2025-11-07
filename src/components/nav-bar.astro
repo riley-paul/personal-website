@@ -1,5 +1,6 @@
 ---
 import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 interface Link {
   name: string;
@@ -27,17 +28,23 @@ const links: Link[] = [
 >
   <div class="container2 flex gap-4 justify-between">
     {
-      links.map((link) => (
-        <a
-          href={link.href}
-          class={cn(
-            "btn btn-primary border-2 btn-lg backdrop-blur-sm",
-            link.active(Astro.url.pathname) ? "flex-1" : "btn-outline",
-          )}
-        >
-          {link.name}
-        </a>
-      ))
+      links.map((link) => {
+        const isActive = link.active(Astro.url.pathname);
+        return (
+          <a
+            href={link.href}
+            class={cn(
+              buttonVariants({
+                size: "xl",
+                variant: isActive ? "default" : "inverse",
+              }),
+              isActive && "flex-1",
+            )}
+          >
+            {link.name}
+          </a>
+        );
+      })
     }
   </div>
 </div>
