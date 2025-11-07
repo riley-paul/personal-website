@@ -43,7 +43,12 @@ const { Content } = await entry.render();
       <Content />
     </Markdown>
     <div class="flex justify-center pt-20 pb-10">
-      <a href="/" class={cn(buttonVariants({ size: "lg" }))}> More Projects </a>
+      <a
+        href="/"
+        class={cn(buttonVariants({ size: "lg", variant: "outline" }))}
+      >
+        More Projects
+      </a>
     </div>
   </div>
 </RootLayout>

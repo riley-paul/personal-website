@@ -17,7 +17,7 @@ type Props = { project: CollectionEntry<"projects"> };
 const ProjectCard: React.FC<Props> = ({ project }) => {
   return (
     <a href={`/projects/${project.slug}`} className="mb-4 inline-block">
-      <Card className="hover:border-ring hover:bg-secondary/30 transition-colors ease-out">
+      <Card className="hover:bg-secondary/40 transition-colors ease-out">
         <CardHeader>
           <CardTitle>{project.data.title}</CardTitle>
           <CardDescription>{formatDate(project.data.date)}</CardDescription>
